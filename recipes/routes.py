@@ -4,5 +4,5 @@ from recipes.models import User, Cookbook, Recipe
 
 
 @app.route("/")
-def index():
+def home():
     return render_template("base.html")
