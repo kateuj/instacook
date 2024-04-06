@@ -1,6 +1,6 @@
 # Instacook
 
-For my Milestone 3 project I have created a personalised Cookbook web application, where the user can log into their account, search for recipes, add their own recipes, as well as edit their own recipes and delete when required. They can also give star ratings to their recipes to help them highlight and bookmark their favourites and make them easier to find in the future.
+For my Milestone 3 project I have created a personalised Cookbook web application, where the user can log into their account, search for recipes and add them to their own virtual cookbooks. They can also add their own recipes into their cookbooks, as well as edit and delete when required. They can also give star ratings to their recipes to help them highlight their favourites and make them easier to find in the future.
 
 ![Screen mock-ups of Instacook website](assets/readme-images/mock-up-picture-coffee-cram.png)
 
