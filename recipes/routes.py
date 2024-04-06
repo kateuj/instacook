@@ -33,6 +33,7 @@ def search():
 
 @app.route("/cookbook")
 def cookbook():
+    cookbook = Cookbook.query.all()
     return render_template("cookbook.html")
 
 
