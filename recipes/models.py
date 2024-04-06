@@ -28,7 +28,7 @@ class Recipe(db.Model):
     recipe_instructions = db.Column(db.Text, unique=True, nullable=False)
     dish_origin = db.Column(db.String(50), unique=True, nullable=False)
     star_rating = db.Column(db.Integer, nullable=False)
-    cookbook_id = db.relationship(db.Integer, db.ForeignKey("cookbook.id", ondelete="CASCADE"), nullable=False)
+    cookbook_id = db.relationship(db.Integer, db.ForeignKey("cookbook.id", ondelete="CASCADE"))
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
