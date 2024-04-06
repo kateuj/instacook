@@ -32,7 +32,7 @@ def search():
 
 
 @app.route("/cookbook")
-def mealplans():
+def cookbook():
     return render_template("cookbook.html")
 
 
