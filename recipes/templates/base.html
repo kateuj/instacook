@@ -22,7 +22,6 @@
                     <li><a href="{{ url_for('search') }}"><i class="material-icons">search</i></a></li>
                     <li><a href="{{ url_for('login') }}">Login</a></li>
                     <li><a href="{{ url_for('cookbook') }}">Cookbooks</a></li>
-                    <!--<li><a href="{{ url_for('shoppingList') }}">Shopping List</a></li>-->
                     <li><a href="{{ url_for('contact') }}">Contact</a></li>
                 </ul>
             </div>
@@ -32,7 +31,6 @@
             <li><a href="{{ url_for('search') }}"><i class="material-icons">search</i></a></li>
             <li><a href="{{ url_for('login') }}">Login</a></li>
             <li><a href="{{ url_for('cookbook') }}">Cookbooks</a></li>
-            <!--<li><a href="{{ url_for('shoppingList') }}">Shopping List</a></li>-->
             <li><a href="{{ url_for('contact') }}">Contact</a></li>
         </ul>
 
@@ -47,8 +45,7 @@
         <div class="container">
             <div class="row">
                 <div class="col l4 offset-l2 s12">
-                        <a class="waves-effect waves-light btn" href="{{ url_for('cookbook') }}">Cookbooks</a></li>
-                        <!--<a class="waves-effect waves-light btn" href="{{ url_for('shoppingList') }}">Shopping List</a></li>-->
+                        <a class="waves-effect waves-light btn" href="{{ url_for('add_cookbook') }}">Cookbooks</a></li>
                         <a class="waves-effect waves-light btn" href="{{ url_for('contact') }}">Contact</a></li>
 
                 </div>
