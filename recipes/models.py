@@ -1,25 +1,26 @@
 from recipes import db
 
-class User(db.Model):
+class Users(db.Model):
     # schema for the User model
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(30), unique=True, nullable=False)
-    password = db.Column(db.String, nullable=False)
-    cookbook = db.relationship('Cookbook', backref='user', cascade="all, delete", lazy=True)
+    user_name = db.Column(db.String(50), unique=True, nullable=False)
+    password = db.Column(db.String(260), nullable=False)
+    cookbook = db.relationship('Cookbook', backref='users', cascade="all, delete", lazy=True)
 
     def __repr__(self):
-        return self.username
+        # __repr__ to represent itself in the form of a string
+        return self.user_name
 
 class Cookbook(db.Model):
     # schema for the Cookbook model
     id = db.Column(db.Integer, primary_key=True)
     cookbook_name = db.Column(db.String(25), unique=True, nullable=False)
     recipes = db.relationship("Recipe", backref="cookbook", cascade="all, delete", lazy=True)
-    user_id = db.relationship(db.Integer, db.ForeignKey("user.id", ondelete="CASCADE"))
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete="CASCADE"))
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
-        return self.coobook_name
+        return self.cookbook_name
 
 class Recipe(db.Model):
     # schema for the Recipe model
@@ -29,7 +30,7 @@ class Recipe(db.Model):
     recipe_instructions = db.Column(db.Text, nullable=False)
     dish_origin = db.Column(db.String(50), nullable=False)
     star_rating = db.Column(db.Integer, nullable=False)
-    cookbook_id = db.relationship(db.Integer, db.ForeignKey("cookbook.id", ondelete="CASCADE"))
+    cookbook_id = db.Column(db.Integer, db.ForeignKey("cookbook.id", ondelete="CASCADE"))
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
