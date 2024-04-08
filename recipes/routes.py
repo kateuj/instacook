@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, url_for
 from recipes import app, db
-from recipes.models import User, Cookbook, Recipe
+from recipes.models import Users, Cookbook, Recipe
 
 
 @app.route("/")
@@ -34,6 +34,7 @@ def search():
 @app.route("/cookbook")
 def cookbook():
     cookbook = list(Cookbook.query.order_by(Cookbook.cookbook_name).all())
+    print(cookbook)
     return render_template("cookbook.html", cookbook=cookbook)
 
 
@@ -55,6 +56,6 @@ def edit_cookbook(cookbook_id):
         return redirect(url_for("cookbook"))
     return render_template("edit_cookbook.html", cookbook=cookbook)
 
-#@app.error(404)
-#def page_not_found(e):
+# @app.error(404)
+# def page_not_found(e):
 #    return render_template("404.html"), 404
