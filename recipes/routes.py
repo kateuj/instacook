@@ -48,12 +48,12 @@ def add_cookbook():
 
 @app.route("/edit_cookbook/<int:cookbook_id>", methods=["GET", "POST"])
 def edit_cookbook(cookbook_id):
+    cookbook = Cookbook.query.get_or_404(cookbook_id)
     if request.method == "POST":
-        cookbook = Cookbook(cookbook_name=request.form.get("cookbook_name"))
-        db.session.add(cookbook)
+        cookbook.cookbook_name = request.form.get("cookbook_name")
         db.session.commit()
         return redirect(url_for("cookbook"))
-    return render_template("edit_cookbook.html")
+    return render_template("edit_cookbook.html", cookbook=cookbook)
 
 #@app.error(404)
 #def page_not_found(e):
