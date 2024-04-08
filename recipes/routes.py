@@ -33,8 +33,8 @@ def search():
 
 @app.route("/cookbook")
 def cookbook():
-    cookbook = Cookbook.query.all()
-    return render_template("cookbook.html")
+    cookbook = list(Cookbook.query.order_by(Cookbook.cookbook_name).all())
+    return render_template("cookbook.html", cookbook=cookbook)
 
 
 @app.route("/add_cookbook", methods=["GET", "POST"])
