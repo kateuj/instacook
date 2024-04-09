@@ -98,17 +98,17 @@ I have changed a features along the way after considering user experience, for i
 
 #### Mobile Design Wireframe
 
-![mobile design wireframe](assets/readme-images/mobile-wireframes.png)
+![mobile design wireframe](assets/readme-images/MS3-mobile-wireframes.png)
 
 #### Tablet Design Wireframe
 
-![tablet design wireframe](assets/readme-images/tablet-wireframes.png)
+![tablet design wireframe](assets/readme-images/MS3-tablet-wireframes.png)
 
 #### Desktop Design Wireframe
 
 ![desktop design wireframe](assets/readme-images/desktop-wireframes.png)
 
-[Link to my Figma page](https://www.figma.com/file/sE1FXwAGFZf3FEYIDAB8l0/Milestone-2---Coffee-Cram?type=design&node-id=0%3A1&mode=design&t=spVJTdSswAGCzuT1-1)
+[Link to my Figma page](https://www.figma.com/file/a16YGDltwNMRzhCTNCDAV1/Milestone-3---Instacook?type=design&node-id=0%3A1&mode=design&t=vR4mpWydSqybmKji-1)
 
 ### Colour Scheme
 
