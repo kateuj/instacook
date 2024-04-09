@@ -47,6 +47,7 @@ def add_cookbook():
         return redirect(url_for("cookbook"))
     return render_template("add_cookbook.html")
 
+
 @app.route("/edit_cookbook/<int:cookbook_id>", methods=["GET", "POST"])
 def edit_cookbook(cookbook_id):
     cookbook = Cookbook.query.get_or_404(cookbook_id)
@@ -56,6 +57,13 @@ def edit_cookbook(cookbook_id):
         return redirect(url_for("cookbook"))
     return render_template("edit_cookbook.html", cookbook=cookbook)
 
+
+@app.route("/delete_cookbook/<int:cookbook_id>")
+def delete_cookbook(cookbook_id):
+    cookbook = Cookbook.query.get_or_404(cookbook_id)
+    db.session.delete(cookbook)
+    db.session.commit()
+    return redirect(url_for("cookbook"))
 # @app.error(404)
 # def page_not_found(e):
 #    return render_template("404.html"), 404
