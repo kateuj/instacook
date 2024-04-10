@@ -65,7 +65,25 @@ def delete_cookbook(cookbook_id):
     db.session.commit()
     return redirect(url_for("cookbook"))
 
-    
+
+@app.route("/add_recipe", methods=["GET", "POST"])
+def add_recipe():
+    cookbook = list(Cookbook.query.order_by(Cookbook.cookbook_name).all())
+    if request.method == "POST":
+        recipe = Recipe(
+            recipe_name=request.form.get("recipe_name"),
+            recipe_ingredients=request.form.get("recipe_ingredients"),
+            recipe_instructions=request.form.get("recipe_instructions"),
+            dish_origin=request.form.get("dish_origin"),
+            star_rating=request.form.get("star_rating"),
+            cookbook_id=request.form.get("cookbook_id")
+        )
+        db.session.add(recipe)
+        db.session.commit()
+        return redirect(url_for("cookbook"))
+    return render_template("add_recipe.html", cookbook=cookbook)
+
+
 # @app.error(404)
 # def page_not_found(e):
 #    return render_template("404.html"), 404
