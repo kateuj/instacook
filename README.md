@@ -1,15 +1,15 @@
 # Instacook
 
-For my Milestone 3 project I have created a personalised Cookbook web application, where the user can log into their account, search for recipes and add them to their own virtual cookbooks. They can also add their own recipes into their cookbooks, as well as edit and delete when required. They can also give star ratings to their recipes to help them highlight their favourites and make them easier to find in the future.
+For my Milestone 3 project I have created a personalised Cookbook web application, where the user can log into their account, search for recipes and add them to their own virtual cookbook. They can also add their own recipes into their cookbook, as well as edit and delete when required. They can also give star ratings to their recipes to help them highlight their favourites and make them easier to find in the future.
 
-![Screen mock-ups of Instacook website](assets/readme-images/mock-up-picture-coffee-cram.png)
+![Screen mock-ups of Instacook website](assets/readme-images/)
 
 
-[Link to Instacook live site](https://kateuj.github.io/coffee_cram/)
+[Link to Instacook live site](https:)
 
 ## Table of Contents
 
-1. [Planning & Development](#planning--development)
+1. [User Experience (UX)](#user-experience-(UX))
 2. [Features](#features)
 3. [Testing](#testing)
 4. [Deployment](#deployment)
@@ -19,18 +19,17 @@ For my Milestone 3 project I have created a personalised Cookbook web applicatio
 8. [Code](#code)
 9. [Credits](#credits)
 
-# Planning & Development #
+# User Experience (UX)#
 
-### Site Purpose
-This game is been designed mainly to create a positive emotional response through entertainment. It could also be used as an informal and fun introduction for barista training where the trainer could use this as a tool to test their trainee's knowledge of drinks before and after training to have a constructive comparison on how their knowledge has been built and any areas for improvement.
+## User Stories
 
-### Target Audience
+### First Time Visitor Goals
 
-Broadly, the game is aimed at anyone with an interest in coffee, which could include people seeking entertainment in the form of a quiz, but also as mentioned above for trainee barista to revise their knowledge, as well as barista trainers to used as an energy boosting / ice-breaking tool in training sessions with their trainees.
+### Returning Visitor Goals
 
-### User Needs
+### Frequent Visitor Goals
 
-#### User Stories
+### User Stories
 1. User interested in coffee wants seeks coffee content based entertainment.
 ![Home page screenshot](assets/readme-images/home-page-screenshot.png)
 The user gets a quick overview of the ingredients required for drinks before they can go quickly into their game play for entertainment. They can also refer back to the coffee menu if required, with the 'How To Play' button.
@@ -49,6 +48,15 @@ Once submitted, they are directed to a thank you page to confirm their message h
 3. A barista trainer uses the game as a tool to test their trainees' knowledge.
 ![Home page mobile screenshot](assets/readme-images/mobile-home-page.png)
 A barista trainer would get users to open the page on their phones collectively to access the game as a quick and fun ice breaker before commencing a practical course. The mobile view makes it easy for the site to be accessed anywhere.
+
+## Site Purpose
+
+This game is been designed mainly to create a positive emotional response through entertainment. It could also be used as an informal and fun introduction for barista training where the trainer could use this as a tool to test their trainee's knowledge of drinks before and after training to have a constructive comparison on how their knowledge has been built and any areas for improvement.
+
+### Target Audience
+
+Broadly, the game is aimed at anyone with an interest in coffee, which could include people seeking entertainment in the form of a quiz, but also as mentioned above for trainee barista to revise their knowledge, as well as barista trainers to used as an energy boosting / ice-breaking tool in training sessions with their trainees.
+
 
 ### Site Objectives
 
