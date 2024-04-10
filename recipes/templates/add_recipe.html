@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ cookbook.cookbook_name }} Recipe</h1>
+
+<div class="row card-panel grey lighten-2">
+    <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
+        <!--Recipe Name-->
+        <div class="row">
+            <div class="input-field col s12">
+                <input placeholder="Add a name for your recipe" id="recipe_name" name="recipe_name" maxlength="25"
+                    type="text" class="validate" required>
+                <label for="recipe_name">Recipe Name</label>
+            </div>
+        </div>
+        <!--Recipe Ingredients-->
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea placeholder="Add a list of ingredients for your recipe" id="recipe_ingredients"
+                    name="recipe_ingredients" minlength="5" maxlength="500" type="text"
+                    class="materialize-textarea validate" required></textarea>
+                <label for="recipe_ingredients">Recipe Ingredients</label>
+            </div>
+        </div>
+        <!--Recipe Instructions-->
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea placeholder="Add a list of instructions for your recipe" id="recipe_instructions"
+                    name="recipe_instructions" minlength="5" maxlength="750" type="text"
+                    class="materialize-textarea validate" required></textarea>
+                <label for="recipe_instructions">Recipe Instructions</label>
+            </div>
+        </div>
+        <!--Dish Origin-->
+        <div class="row">
+            <div class="input-field col s12">
+                <input placeholder="Add an origin for your recipe" id="dish_origin" name="dish_origin" minlength="3" maxlength="25"
+                    type="text" class="validate" required>
+                <label for="dish_origin">Dish Origin</label>
+            </div>
+        </div>
+        <!--Star Rating-->
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="star_rating" name="star_rating" minlength="3" maxlength="25"
+                    type="text" class="validate" required>
+                <label for="star_rating">Rating out of 5</label>
+            </div>
+        </div>           
+        
+        <!-- Cookbook ID choice to add -->
+
+        <!--Submit button-->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large light-blue darken-1">
+                    Create Recipe
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
