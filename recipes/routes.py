@@ -35,7 +35,7 @@ def search():
 def cookbook():
     cookbook = list(Cookbook.query.order_by(Cookbook.cookbook_name).all())
     print(cookbook)
-    return render_template("cookbook.html", cookbook=cookbook)
+    return render_template("cookbook.html", cookbooks=cookbook)
 
 
 @app.route("/add_cookbook", methods=["GET", "POST"])
@@ -64,6 +64,8 @@ def delete_cookbook(cookbook_id):
     db.session.delete(cookbook)
     db.session.commit()
     return redirect(url_for("cookbook"))
+
+    
 # @app.error(404)
 # def page_not_found(e):
 #    return render_template("404.html"), 404
