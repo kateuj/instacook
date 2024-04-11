@@ -41,13 +41,33 @@
         <!--Star Rating-->
         <div class="row">
             <div class="input-field col s12">
-                <input id="star_rating" name="star_rating" minlength="3" maxlength="25"
-                    type="text" class="validate" required>
-                <label for="star_rating">Rating out of 5</label>
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <select id="star_rating" name="star_rating" class="validate" required>
+                    <option value="" disabled selected>Choose a rating out of 5</option>
+                    <option value="1">1 star</option>
+                    <option value="2">2 stars</option>
+                    <option value="3">3 stars</option>
+                    <option value="4">4 stars</option>
+                    <option value="5">5 stars</option>                    
+                </select>
+                <label for="star_rating">Star Rating</label>
             </div>
-        </div>           
+        </div>
         
-        <!-- Cookbook ID choice to add -->
+        <!-- Cookbook ID -->
+
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <select id="cookbook_id" name="cookbook_id" class="validate" required>
+                    <option value="" disabled selected>Choose Cookbook</option>
+                    {% for cookbook in cookbook %}
+                        <option value="{{ cookbook.id }}">{{ cookbook.cookbook_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="cookbook_id">Chapters</label>
+            </div>
+        </div>
 
         <!--Submit button-->
         <div class="row">
