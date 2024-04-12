@@ -1,30 +1,38 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Recipes</h1>
+<h1>Recipes</h1>
 
-    <div class="row">
-        <div class="col s12 center-align">
-            <a href="{{ url_for('add_cookbook') }}" class="btn-large light-blue darken-2">
-                <i class="material-icons">add</i>
-            </a>
-        </div>
+<div class="row">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_recipe') }}" class="btn-large light-blue darken-2">
+            <i class="material-icons">Add Recipe</i>
+        </a>
     </div>
+</div>
 
-    <div class="row">
-        {% for cookbook in cookbooks %}
-        <div class="col s12 m6 l3">
-            <div class="card light-blue darken-4 center-align">
-                <div class="card-content white-text">
-                    <span class="card-title">{{ cookbook.cookbook_name }}</span>
-                </div>
-                <div class="card-action">
-                    <a href="{{ url_for('edit_cookbook', cookbook_id=cookbook.id) }}" class="btn green accent-4">Edit</a>
-                    <a href="{{ url_for('delete_cookbook', cookbook_id=cookbook.id) }}" class="btn red">Delete</a>
-                    <a href="{{ url_for('add_recipe') }}" class="btn red">Add Recipe</a>
-                </div>
-            </div>
+<ul class="collapsible">
+    {% for recipe in recipes %}
+    <li>
+        <div class="collapsible-header">
+            <i class="material-icons">filter_drama</i>
+            <strong>{{ recipe.recipe_name}}</strong> : {{ recipe.star_rating }}
         </div>
-        {% endfor %}
-    </div>
+        <div class="collapsible-body">
+            <span>
+                <p><strong>Dish Origin: </strong>{{ recipe.dish_origin }}</p>
+                <p><strong>Ingredients:</strong>
+                    <br>
+                    {% autoescape false %}
+                    {{ recipe.recipe_ingredients | replace("\n", "<br/>") }}
+                    {% endautoescape %}
+                </p>
+                <p><strong>Instructions:</strong>
+                    <br>{% autoescape false %}
+                    {{ recipe.recipe_instructions | replace("\n", "<br/>") }}
+                    {% endautoescape %}</p>
+            </span></div>
+    </li>
+    {% endfor %}
+</ul>
 
 {% endblock %}
