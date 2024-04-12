@@ -151,7 +151,7 @@ I made a point of keeping my game code separate from the email JS code and the m
 * I have considered readability contrast carefully for all visual elements.
 * I have included a Favicon page tab icon to make the page look professional and consistent.
 
-![Favicon screenshot](assets/readme-images/favicon-screenshot.png)
+![Favicon screenshot]()
 
 ### Logo
 ![Logo in navigation bar](assets/readme-images/logo.png)
@@ -512,7 +512,7 @@ Here is the live link to my website - <https://kateuj.github.io/coffee_cram/inde
 ![Re-direct for the thank you page code snippet](assets/readme-images/redirect-code-snippet.png)
 
 * **Favicon** - I used a [Favicon generator](https://favicon.io/) to create the appropriate files for me to upload to my site, as well as this code snippet to install it site-wide.
-![Favicon installation code snippet](assets/readme-images/favicon-code-snippet.png)
+![Favicon installation code snippet]()
 
 * **Timer** - I found this code snippet and edited it to suit my site's needs to make my timer function effectively. [Pause setInterval function](https://stackoverflow.com/questions/21277900/how-can-i-pause-setinterval-functions)
 
