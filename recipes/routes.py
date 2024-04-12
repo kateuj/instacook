@@ -7,6 +7,11 @@ from recipes.models import Users, Cookbook, Recipe
 def home():
     return render_template("base.html")
 
+@app.route("/recipes")
+def recipes():
+    recipes = list(Recipe.query.order_by(Recipe.id).all())
+    return render_template("recipes.html", recipes=recipes)
+
 #register required
 # sign out required
 # delete account required
