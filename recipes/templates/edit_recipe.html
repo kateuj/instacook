@@ -7,8 +7,8 @@
         <!--Recipe Name-->
         <div class="row">
             <div class="input-field col s12">
-                <input placeholder="edit a name for your recipe" id="recipe_name" name="recipe_name" maxlength="25"
-                    type="text" class="validate" required>
+                <input placeholder="edit a name for your recipe" value="{{ recipe.recipe_name }}" id="recipe_name"
+                    name="recipe_name" maxlength="25" type="text" class="validate" required>
                 <label for="recipe_name">Recipe Name</label>
             </div>
         </div>
@@ -17,7 +17,9 @@
             <div class="input-field col s12">
                 <textarea placeholder="Edit list of ingredients for your recipe" id="recipe_ingredients"
                     name="recipe_ingredients" minlength="5" maxlength="500" type="text"
-                    class="materialize-textarea validate" required></textarea>
+                    class="materialize-textarea validate" required>
+                    {{ recipe.recipe_ingredients }}
+                </textarea>
                 <label for="recipe_ingredients">Recipe Ingredients</label>
             </div>
         </div>
@@ -26,15 +28,17 @@
             <div class="input-field col s12">
                 <textarea placeholder="Edit list of instructions for your recipe" id="recipe_instructions"
                     name="recipe_instructions" minlength="5" maxlength="750" type="text"
-                    class="materialize-textarea validate" required></textarea>
+                    class="materialize-textarea validate" required>
+                    {{ recipe.recipe_instructions }}
+                </textarea>
                 <label for="recipe_instructions">Recipe Instructions</label>
             </div>
         </div>
         <!--Dish Origin-->
         <div class="row">
             <div class="input-field col s12">
-                <input placeholder="Edit origin for your recipe" id="dish_origin" name="dish_origin" minlength="3" maxlength="25"
-                    type="text" class="validate" required>
+                <input placeholder="Edit origin for your recipe" value="{{ recipe.dish_origin }}" id="dish_origin"
+                    name="dish_origin" minlength="3" maxlength="25" type="text" class="validate" required>
                 <label for="dish_origin">Dish Origin</label>
             </div>
         </div>
@@ -43,17 +47,17 @@
             <div class="input-field col s12">
                 <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
                 <select id="star_rating" name="star_rating" class="validate" required>
-                    <option value="" disabled selected>Choose a rating out of 5</option>
+                    <option value="{{ recipe.star_rating }}" disabled selected>Choose a rating out of 5</option>
                     <option value="1 star">1 star</option>
                     <option value="2 stars">2 stars</option>
                     <option value="3 stars">3 stars</option>
                     <option value="4 stars">4 stars</option>
-                    <option value="5 stars">5 stars</option>                    
+                    <option value="5 stars">5 stars</option>
                 </select>
                 <label for="star_rating">Star Rating</label>
             </div>
         </div>
-        
+
         <!-- Cookbook ID -->
 
         <div class="row">
@@ -62,7 +66,11 @@
                 <select id="cookbook_id" name="cookbook_id" class="validate" required>
                     <option value="" disabled selected>Choose Cookbook</option>
                     {% for cookbook in cookbook %}
-                        <option value="{{ cookbook.id }}">{{ cookbook.cookbook_name }}</option>
+                        {% if cookbook == recipe.coobook %}                    
+                            <option value="{{ cookbook.id }}" selected>{{ cookbook.cookbook_name }}</option>
+                        {% else %}
+                            <option value="{{ cookbook.id }}">{{ cookbook.cookbook_name }}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
                 <label for="cookbook_id">Chapters</label>
@@ -73,7 +81,7 @@
         <div class="row">
             <div class="col s12 center-align">
                 <button type="submit" class="btn-large light-blue darken-1">
-                    Create Recipe
+                    Update Recipe
                 </button>
             </div>
         </div>
