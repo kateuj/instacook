@@ -89,6 +89,21 @@ def add_recipe():
     return render_template("add_recipe.html", cookbook=cookbook)
 
 
+@app.route("/edit_recipe/<int:recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
+    recipe = Recipe.query.get_or_404(recipe_id)
+    cookbook = list(Cookbook.query.order_by(Cookbook.cookbook_name).all())
+    if request.method == "POST":
+        recipe.recipe_name = request.form.get("recipe_name"),
+        recipe.recipe_ingredients = request.form.get("recipe_ingredients"),
+        recipe.recipe_instructions = request.form.get("recipe_instructions"),
+        recipe.dish_origin = request.form.get("dish_origin"),
+        recipe.star_rating = request.form.get("star_rating"),
+        recipe.cookbook_id = request.form.get("cookbook_id")
+        db.session.commit()
+    return render_template("edit_recipe.html", recipe=recipe, cookbook=cookbook)
+
+
 # @app.error(404)
 # def page_not_found(e):
 #    return render_template("404.html"), 404
