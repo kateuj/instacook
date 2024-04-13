@@ -19,7 +19,7 @@
             </div>
             <div class="card-action">
                 <a href="{{ url_for('edit_cookbook', cookbook_id=cookbook.id) }}" class="btn green accent-4">Edit</a>
-                <a href="#modal-{{ cookbook.id }}" class="btn red">Delete</a>
+                <a href="#modal-{{ cookbook.id }}" class="btn red modal-trigger">Delete</a>
                 <a href="{{ url_for('add_recipe') }}" class="btn red">Add Recipe</a>
 
                 <!-- Modal Structure -->
