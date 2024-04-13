@@ -32,6 +32,7 @@
                     {% endautoescape %}</p>
                 <p>
                     <a href="{{ url_for('edit_recipe', recipe_id=recipe.id) }}" class="btn green accent-4">Edit</a>
+                    <a href="{{ url_for('delete_recipe', recipe_id=recipe.id) }}" class="btn red">Delete</a>
                 </p>
             </span></div>
     </li>
