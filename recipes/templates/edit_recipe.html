@@ -18,7 +18,7 @@
                 <textarea placeholder="Edit list of ingredients for your recipe" id="recipe_ingredients"
                     name="recipe_ingredients" minlength="5" maxlength="500" type="text"
                     class="materialize-textarea validate" required>
-                    {{ recipe.recipe_ingredients }}
+                    {{- recipe.recipe_ingredients -}}
                 </textarea>
                 <label for="recipe_ingredients">Recipe Ingredients</label>
             </div>
@@ -29,7 +29,7 @@
                 <textarea placeholder="Edit list of instructions for your recipe" id="recipe_instructions"
                     name="recipe_instructions" minlength="5" maxlength="750" type="text"
                     class="materialize-textarea validate" required>
-                    {{ recipe.recipe_instructions }}
+                    {{- recipe.recipe_instructions -}}
                 </textarea>
                 <label for="recipe_instructions">Recipe Instructions</label>
             </div>
