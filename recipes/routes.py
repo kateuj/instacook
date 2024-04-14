@@ -43,7 +43,7 @@ def register():
         db.session.commit()
 
         # put the new user into 'session' cookie
-        session["users"] = request.form.get("user_name").lower()
+        session["user"] = request.form.get("user_name").lower()
         flash("Registration successful")
         return redirect(url_for("home", user_name=session["user"]))
 
