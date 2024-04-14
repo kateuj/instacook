@@ -1,6 +1,7 @@
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, session, flash
 from recipes import app, db
 from recipes.models import Users, Cookbook, Recipe
+from werkzeug.security import generate_password_hash, check_password_hash
 
 @app.route("/")
 def home():
@@ -16,13 +17,36 @@ def recipes():
     recipes = list(Recipe.query.order_by(Recipe.id).all())
     return render_template("recipes.html", recipes=recipes)
 
-#register required
 # sign out required
 # delete account required
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """Register a new user and log them in."""
+    if request.method == "POST":
+        # Check if username already exists in DB
+        existing_user = Users.query.filter_by(
+            user_name=request.form.get("user_name")
+        ).first()
+
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("register"))
+
+        # Register new user
+        new_user = Users(
+            user_name=request.form.get("user_name").lower(),
+            password=generate_password_hash(request.form.get("password")),
+        )
+        db.session.add(new_user)
+        db.session.commit()
+
+        # put the new user into 'session' cookie
+        session["users"] = request.form.get("user_name").lower()
+        flash("Registration successful")
+        return redirect(url_for("home", user_name=session["user"]))
+
     return render_template("register.html")
 
     
