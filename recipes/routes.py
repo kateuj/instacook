@@ -2,7 +2,6 @@ from flask import render_template, request, redirect, url_for
 from recipes import app, db
 from recipes.models import Users, Cookbook, Recipe
 
-
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -10,6 +9,7 @@ def home():
 @app.route("/home")
 def index():
     return render_template("index.html")
+
 
 @app.route("/recipes")
 def recipes():
@@ -20,6 +20,12 @@ def recipes():
 # sign out required
 # delete account required
 
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    return render_template("register.html")
+
+    
 @app.route("/login")
 def login():
     return render_template("login.html")
