@@ -79,6 +79,15 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/logout")
+def logout():
+    # remove users from session cookies
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
+
+
+
 @app.route("/dashboard/<user_name>", methods=["GET", "POST"])
 def dashboard(user_name):
     # grab the session user's username from db
