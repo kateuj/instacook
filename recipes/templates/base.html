@@ -27,7 +27,7 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('search') }}"><i class="material-icons">search</i></a></li>
                     <li><a href="{{ url_for('login') }}">Login</a></li>
-                    <li><a href="{{ url_for('cookbook') }}">Cookbook</a></li>
+                    <li><a href="{{ url_for('dashboard', user_name=session['user']) }}">Dashboard</a></li>
                     <li><a href="{{ url_for('contact') }}">Contact</a></li>
                     <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
                 </ul>
@@ -37,7 +37,7 @@
         <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('search') }}"><i class="material-icons">search</i></a></li>
             <li><a href="{{ url_for('login') }}">Login</a></li>
-            <li><a href="{{ url_for('cookbook') }}">Cookbook</a></li>
+            <li><a href="{{ url_for('dashboard', user_name=session['user']) }}">Dashboard</a></li>
             <li><a href="{{ url_for('contact') }}">Contact</a></li>
         </ul>
 
