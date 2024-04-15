@@ -45,7 +45,7 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("user_name").lower()
         flash("Registration successful")
-        return redirect(url_for("home", user_name=session["user"]))
+        return redirect(url_for("dashboard", user_name=session["user"]))
 
     return render_template("register.html")
 
@@ -54,8 +54,8 @@ def register():
 def login():
     if request.method == "POST":
         # check if username exists in db
-        existing_user = User.query.filter_by(
-            username=request.form.get("username").lower()
+        existing_user = Users.query.filter_by(
+            user_name=request.form.get("user_name").lower()
         ).first()
 
         if existing_user:
@@ -63,7 +63,10 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("user_name").lower()
-                    flash("Welcome, {}".format(request.form.get("user_name")))
+                    flash("Welcome, {}".format(
+                        request.form.get("user_name")))
+                    return redirect(url_for(
+                        "dashboard", user_name=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -75,6 +78,14 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+@app.route("/dashboard/<user_name>", methods=["GET", "POST"])
+def dashboard(user_name):
+    # grab the session user's username from db
+    user_name = Users.query.filter_by(
+        {"user_name": session["user"]})["user_name"]
+    return render_template("user_dashboard.html", user_name=user_name)
 
 
 @app.route("/contact")
