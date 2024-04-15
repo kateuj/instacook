@@ -26,19 +26,30 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('search') }}"><i class="material-icons">search</i></a></li>
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
-                    <li><a href="{{ url_for('dashboard', user_name=session['user']) }}">Dashboard</a></li>
                     <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                    <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+                {% if session.user %}
+                    <li><a href="{{ url_for('cookbook') }}">Cookbook</a></li>
+                    <li><a href="{{ url_for('dashboard', user_name=session['user']) }}">Dashboard</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                {% endif %}    
                 </ul>
             </div>
         </nav>
 
         <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('search') }}"><i class="material-icons">search</i></a></li>
-            <li><a href="{{ url_for('login') }}">Login</a></li>
-            <li><a href="{{ url_for('dashboard', user_name=session['user']) }}">Dashboard</a></li>
             <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        {% if session.user %}
+            <li><a href="{{ url_for('cookbook') }}">Cookbook</a></li>
+            <li><a href="{{ url_for('dashboard', user_name=session['user']) }}">Dashboard</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% else %}
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+        {% endif %} 
         </ul>
 
     </header>
@@ -66,9 +77,9 @@
         <div class="container">
             <div class="row">
                 <div class="col l4 offset-l2 s12">
-                    <a class="waves-effect waves-light btn" href="{{ url_for('cookbook') }}">Cookbook</a></li>
-                    <a class="waves-effect waves-light btn" href="{{ url_for('contact') }}">Contact</a></li>
-                    <a class="waves-effect waves-light btn" href="{{ url_for('logout') }}">Log Out</a></li>
+                    <li><a class="waves-effect waves-light btn" href="{{ url_for('cookbook') }}">Cookbook</a></li>
+                    <li><a class="waves-effect waves-light btn" href="{{ url_for('contact') }}">Contact</a></li>
+                    <li><a class="waves-effect waves-light btn" href="{{ url_for('logout') }}">Log Out</a></li>
 
                 </div>
             </div>
