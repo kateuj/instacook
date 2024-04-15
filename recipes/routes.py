@@ -60,8 +60,7 @@ def login():
 
         if existing_user:
             # ensure hashed password matches user input
-            if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+            if check_password_hash(existing_user.password, request.form.get("password")):
                     session["user"] = request.form.get("user_name").lower()
                     flash("Welcome, {}".format(
                         request.form.get("user_name")))
@@ -83,8 +82,13 @@ def login():
 @app.route("/dashboard/<user_name>", methods=["GET", "POST"])
 def dashboard(user_name):
     # grab the session user's username from db
-    user_name = Users.query.filter_by(
-        {"user_name": session["user"]})["user_name"]
+    # user_name = Users.query.filter_by(
+    #     {"user_name": session["user"]})["user_name"]
+    user = Users.query.filter_by(user_name=session["user"]).first()
+    if user:
+        user_name = user.user_name
+
+        # add else statement for no user in session
     return render_template("user_dashboard.html", user_name=user_name)
 
 
