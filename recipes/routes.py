@@ -17,9 +17,6 @@ def recipes():
     recipes = list(Recipe.query.order_by(Recipe.id).all())
     return render_template("recipes.html", recipes=recipes)
 
-# sign out required
-# delete account required
-
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -87,12 +84,17 @@ def logout():
     return redirect(url_for("login"))
 
 
+# @app.route("/delete_user/<int:user_id>")
+# def delete_user(user_id):
+#     user = Users.query.get_or_404(user_id)
+#     db.session.delete(users)
+#     db.session.commit()
+#     return redirect(url_for("home"))
+
 
 @app.route("/dashboard/<user_name>", methods=["GET", "POST"])
 def dashboard(user_name):
     # grab the session user's username from db
-    # user_name = Users.query.filter_by(
-    #     {"user_name": session["user"]})["user_name"]
     user = Users.query.filter_by(user_name=session["user"]).first()
     if user:
         user_name = user.user_name
