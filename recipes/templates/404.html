@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Error 404</h1>
+
+<div class="card-action">
+    <h2 class="main-header">OOPS!</h2>
+    <h3>Looks like this page doesn't exist</h3>
+    <p>Click below to go back to the site</p>
+
+    <div class="card-action">
+        <a href="{{ url_for('home') }}" class="btn green accent-4">Back to Home page</a>
+    </div>
+</div>
+
+{% endblock %}
