@@ -84,14 +84,6 @@ def logout():
     return redirect(url_for("login"))
 
 
-# @app.route("/delete_user/<int:user_id>")
-# def delete_user(user_id):
-#     user = Users.query.get_or_404(user_id)
-#     db.session.delete(users)
-#     db.session.commit()
-#     return redirect(url_for("home"))
-
-
 @app.route("/dashboard/<user_name>", methods=["GET", "POST"])
 def dashboard(user_name):
     # grab the session user's username from db
@@ -111,11 +103,6 @@ def contact():
 @app.route("/search")
 def search():
     return render_template("search.html")
-
-
-#@app.route("/shopping-list")
-#def shoppingList():
-#    return render_template("shopping-list.html")
 
 
 @app.route("/cookbook")
