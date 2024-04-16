@@ -29,7 +29,7 @@ class Recipe(db.Model):
     recipe_ingredients = db.Column(db.Text, nullable=False)
     recipe_instructions = db.Column(db.Text, nullable=False)
     dish_origin = db.Column(db.String(50), nullable=False)
-    star_rating = db.Column(db.String(25), nullable=False)
+    star_rating = db.Column(db.Integer, nullable=False)
     cookbook_id = db.Column(db.Integer, db.ForeignKey("cookbook.id", ondelete="CASCADE"))
 
     def __repr__(self):
