@@ -1,0 +1,28 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Pacifico', sans-serif;
+    color: #5856D6;
+}
+
+#nav-logo {
+    height: 5vh;
+    margin: 1vh;
+}
+
+.pink-background {
+    color: #D95B96;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.carousel {
+    height: 50vh;
+}
