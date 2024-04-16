@@ -8,11 +8,15 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
-    integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" type="text/css">
+        integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
+        crossorigin="anonymous" type="text/css">
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
     <title>Instacook</title>
 </head>
@@ -20,21 +24,23 @@
 <body>
 
     <header>
-        <nav class="teal lighten-2">
+        <nav class="pink-background">
             <div class="nav-wrapper">
-                <a href="{{ url_for('index') }}" class="brand-logo">Instacook</a>
+                <a href="{{ url_for('index') }}" class="brand-logo">
+                    <img id="nav-logo" src="{{ url_for('static', filename='assets/site-images/instacook-logo.webp') }}">
+                </a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('search') }}"><i class="material-icons">search</i></a></li>
                     <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                {% if session.user %}
+                    {% if session.user %}
                     <li><a href="{{ url_for('cookbook') }}">Cookbook</a></li>
                     <li><a href="{{ url_for('dashboard', user_name=session['user']) }}">Dashboard</a></li>
                     <li><a href="{{ url_for('logout') }}">Logout</a></li>
-                {% else %}
+                    {% else %}
                     <li><a href="{{ url_for('login') }}">Login</a></li>
                     <li><a href="{{ url_for('register') }}">Register</a></li>
-                {% endif %}    
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -42,14 +48,14 @@
         <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('search') }}"><i class="material-icons">search</i></a></li>
             <li><a href="{{ url_for('contact') }}">Contact</a></li>
-        {% if session.user %}
+            {% if session.user %}
             <li><a href="{{ url_for('cookbook') }}">Cookbook</a></li>
             <li><a href="{{ url_for('dashboard', user_name=session['user']) }}">Dashboard</a></li>
             <li><a href="{{ url_for('logout') }}">Logout</a></li>
-        {% else %}
+            {% else %}
             <li><a href="{{ url_for('login') }}">Login</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
-        {% endif %} 
+            {% endif %}
         </ul>
 
     </header>
@@ -57,34 +63,33 @@
     <section>
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="row flashes">
-                        <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
-                    </div>
-                {% endfor %}
-            {% endif %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="row flashes">
+            <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
+        </div>
+        {% endfor %}
+        {% endif %}
         {% endwith %}
     </section>
-    
+
 
     <main class="container">
         {% block content %}
         {% endblock %}
     </main>
 
-    <footer class="page-footer teal lighten-2">
+    <footer class="page-footer pink-background">
         <div class="container">
-            <div class="row">
-                <div class="col l4 offset-l2 s12">
-                    <li><a class="waves-effect waves-light btn" href="{{ url_for('cookbook') }}">Cookbook</a></li>
-                    <li><a class="waves-effect waves-light btn" href="{{ url_for('contact') }}">Contact</a></li>
-                    <li><a class="waves-effect waves-light btn" href="{{ url_for('logout') }}">Log Out</a></li>
-
+            <div class="row center-align">
+                <div class="col s12">
+                    <a class="waves-effect waves-light btn" href="{{ url_for('cookbook') }}">Cookbook</a>
+                    <a class="waves-effect waves-light btn" href="{{ url_for('contact') }}">Contact</a>
+                    <a class="waves-effect waves-light btn" href="{{ url_for('logout') }}">Log Out</a>
                 </div>
             </div>
         </div>
-        <div class="footer-copyright teal lighten-2">
+        <div class="footer-copyright pink-background">
             <div class="container">
                 © 2014 Copyright Text
             </div>
