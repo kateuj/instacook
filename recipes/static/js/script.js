@@ -15,4 +15,8 @@ document.addEventListener("DOMContentLoaded", function() {
   let modals = document.querySelectorAll('.modal');
   M.Modal.init(modals);
 
+  // Carousel initialization
+  let carousel = document.querySelectorAll('.carousel');
+  M.Carousel.init(carousel);
+
 });
