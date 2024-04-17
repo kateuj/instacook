@@ -12,12 +12,6 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/recipes")
-def recipes():
-    recipes = list(Recipe.query.order_by(Recipe.id).all())
-    return render_template("recipes.html", recipes=recipes)
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register a new user and log them in."""
@@ -84,15 +78,30 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/dashboard/<user_name>", methods=["GET", "POST"])
-def dashboard(user_name):
+@app.route("/dashboard", methods=["GET", "POST"])
+def dashboard():
     # grab the session user's username from db
     user = Users.query.filter_by(user_name=session["user"]).first()
+    print("hello")
     if user:
-        user_name = user.user_name
+        user_id = user.id
+        print(user_id)
+        user_cookbook = list(Cookbook.query.filter(Cookbook.user_id==user_id).all())
+        print(user_cookbook)
+        return render_template("user_dashboard.html", cookbooks=user_cookbook, user_name=user.user_name)
+    
+    else:
+        # if user is not logged in
+        flash("You are not logged in")
+        return redirect(url_for("login"))
 
-        # add else statement for no user in session
     return render_template("user_dashboard.html", user_name=user_name)
+
+
+@app.route("/recipes/<int:id>", methods=["GET"])
+def recipes(id):
+    recipes = list(Recipe.query.filter(Recipe.cookbook_id==id).all())
+    return render_template("recipes.html", recipes=recipes)
 
 
 @app.route("/contact")
@@ -103,6 +112,7 @@ def contact():
 @app.route("/search")
 def search():
     return render_template("search.html")
+
 
 
 @app.route("/cookbook")
@@ -116,6 +126,9 @@ def cookbook():
 def add_cookbook():
     if request.method == "POST":
         cookbook = Cookbook(cookbook_name=request.form.get("cookbook_name"))
+        user = Users.query.filter_by(user_name=session["user"]).first()
+        print(session["user"])
+        cookbook.user_id = user.id
         db.session.add(cookbook)
         db.session.commit()
         return redirect(url_for("cookbook"))
