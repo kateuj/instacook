@@ -16,7 +16,7 @@ class Cookbook(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     cookbook_name = db.Column(db.String(25), unique=True, nullable=False)
     recipes = db.relationship("Recipe", backref="cookbook", cascade="all, delete", lazy=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete="CASCADE"))
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
