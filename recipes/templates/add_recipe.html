@@ -33,8 +33,17 @@
         <!--Dish Origin-->
         <div class="row">
             <div class="input-field col s12">
-                <input placeholder="Add an origin for your recipe" id="dish_origin" name="dish_origin" minlength="3"
-                    maxlength="25" type="text" class="validate" required>
+                <i class="fa-solid fa-star prefix"></i>
+                <select id="dish_origin" name="dish_origin" class="validate" required>
+                    <option value="" disabled selected>Choose an origin for your recipe</option>
+                    <option value="European">European</option>
+                    <option value="North American">North American</option>
+                    <option value="South American">South American</option>
+                    <option value="Asian">Asian</option>
+                    <option value="African">African</option>
+                    <option value="Australian">Australian</option>
+                    <option value="Antarctican">Antarctican</option>
+                </select>
                 <label for="dish_origin">Dish Origin</label>
             </div>
         </div>
