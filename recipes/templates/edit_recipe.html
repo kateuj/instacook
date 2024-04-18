@@ -2,7 +2,7 @@
 {% block content %}
 <h1>{{ cookbook.cookbook_name }}Edit Recipe</h1>
 
-<div class="row card-panel grey lighten-2">
+<div class="row card-panel ">
     <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe.id) }}">
         <!--Recipe Name-->
         <div class="row">
@@ -37,15 +37,23 @@
         <!--Dish Origin-->
         <div class="row">
             <div class="input-field col s12">
-                <input placeholder="Edit origin for your recipe" value="{{ recipe.dish_origin }}" id="dish_origin"
-                    name="dish_origin" minlength="3" maxlength="25" type="text" class="validate" required>
-                <label for="dish_origin">Dish Origin</label>
+                <i class="fa-solid fa-earth-americas prefix"></i>
+                <select id="dish_origin" name="dish_origin" class="validate" required>
+                    <option value="" disabled selected>Choose a dish origin</option>
+                    <option value="European">European</option>
+                    <option value="North American">North American</option>
+                    <option value="South American">South American</option>
+                    <option value="Asian">Asian</option>
+                    <option value="African">African</option>
+                    <option value="Australian">Australian</option>
+                    <option value="Antarctican">Antarctican</option>
+                </select>
             </div>
         </div>
         <!--Star Rating-->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <i class="fa-solid fa-star prefix"></i>
                 <select id="star_rating" name="star_rating" class="validate" required>
                     <option value="{{ recipe.star_rating }}" disabled selected>Choose a rating out of 5</option>
                     <option value="1">1</option>
@@ -58,11 +66,25 @@
             </div>
         </div>
 
+        <!--Meal Type-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fa-solid fa-drumstick-bite prefix"></i>
+                <select id="meal_type" name="meal_type" class="validate" required>
+                    <option value="{{ recipe.meal_type }}" disabled selected>Choose a meal type</option>
+                    <option value="Starter">Starter</option>
+                    <option value="Main">Main</option>
+                    <option value="Dessert">Dessert</option>
+                    <option value="Snack">Snack</option>
+                </select>
+            </div>
+        </div>
+
         <!-- Cookbook ID -->
 
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <i class="fa-solid fa-book prefix"></i>
                 <select id="cookbook_id" name="cookbook_id" class="validate" required>
                     <option value="" disabled selected>Choose Cookbook</option>
                     {% for cookbook in cookbook %}
@@ -73,14 +95,14 @@
                         {% endif %}
                     {% endfor %}
                 </select>
-                <label for="cookbook_id">Chapters</label>
+                <label for="cookbook_id">Cookbook</label>
             </div>
         </div>
 
         <!--Submit button-->
         <div class="row">
             <div class="col s12 center-align">
-                <button type="submit" class="btn-large light-blue darken-1">
+                <button type="submit" class="btn-large purple-btns">
                     Update Recipe
                 </button>
             </div>

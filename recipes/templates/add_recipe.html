@@ -7,35 +7,35 @@
         <!--Recipe Name-->
         <div class="row">
             <div class="input-field col s12">
-                <input placeholder="Add a name for your recipe" id="recipe_name" name="recipe_name" maxlength="100"
+                <input id="recipe_name" name="recipe_name" maxlength="100"
                     type="text" class="validate" required>
-                <label for="recipe_name">Recipe Name</label>
+                <label for="recipe_name" class="input-text">Recipe Name</label>
             </div>
         </div>
         <!--Recipe Ingredients-->
         <div class="row">
             <div class="input-field col s12">
-                <textarea placeholder="Add a list of ingredients for your recipe" id="recipe_ingredients"
+                <textarea id="recipe_ingredients"
                     name="recipe_ingredients" minlength="5" maxlength="1000" type="text"
                     class="materialize-textarea validate" required></textarea>
-                <label for="recipe_ingredients">Recipe Ingredients</label>
+                <label for="recipe_ingredients" class="input-text">Recipe Ingredients</label>
             </div>
         </div>
         <!--Recipe Instructions-->
         <div class="row">
             <div class="input-field col s12">
-                <textarea placeholder="Add a list of instructions for your recipe" id="recipe_instructions"
+                <textarea id="recipe_instructions"
                     name="recipe_instructions" minlength="5" maxlength="1000" type="text"
                     class="materialize-textarea validate" required></textarea>
-                <label for="recipe_instructions">Recipe Instructions</label>
+                <label for="recipe_instructions" class="input-text">Recipe Instructions</label>
             </div>
         </div>
         <!--Dish Origin-->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fa-solid fa-earth-americas"></i>
+                <i class="fa-solid fa-earth-americas prefix"></i>
                 <select id="dish_origin" name="dish_origin" class="validate" required>
-                    <option value="" disabled selected>Choose an origin for your recipe</option>
+                    <option value="" disabled selected>Choose a dish origin</option>
                     <option value="European">European</option>
                     <option value="North American">North American</option>
                     <option value="South American">South American</option>
@@ -44,7 +44,6 @@
                     <option value="Australian">Australian</option>
                     <option value="Antarctican">Antarctican</option>
                 </select>
-                <label for="dish_origin">Dish Origin</label>
             </div>
         </div>
         <!--Star Rating-->
@@ -59,7 +58,6 @@
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-                <label for="star_rating">Star Rating</label>
             </div>
         </div>
         <!--Meal Type-->
@@ -73,7 +71,6 @@
                     <option value="Dessert">Dessert</option>
                     <option value="Snack">Snack</option>
                 </select>
-                <label for="star_rating">Meal Type</label>
             </div>
         </div>
 
@@ -88,14 +85,13 @@
                     <option value="{{ cookbook.id }}">{{ cookbook.cookbook_name }}</option>
                     {% endfor %}
                 </select>
-                <label for="cookbook_id">Cookbooks</label>
             </div>
         </div>
 
         <!--Submit button-->
         <div class="row">
             <div class="col s12 center-align">
-                <button type="submit" class="btn-large light-blue darken-1">
+                <button type="submit" class="btn-large purple-btns">
                     <i class="fa-solid fa-pencil"></i> Create Recipe
                 </button>
             </div>

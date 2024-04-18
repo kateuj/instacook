@@ -2,20 +2,20 @@
 {% block content %}
 <h1>Edit Cookbook</h1>
 
-<div class="row card-panel grey lighten-2">
+<div class="row card-panel">
     <form class="col s12" method="POST" action="{{ url_for('edit_cookbook', cookbook_id=cookbook.id) }}">
         <!--Cookbook Name-->
         <div class="row">
             <div class="input-field col s12">
-                <input placeholder="edit a name for your cookbook" id="cookbook_name" name="cookbook_name" value="{{ cookbook.cokbook_name }}" maxlength="25"
-                    type="text" class="validate" required>
-                <label for="cookbook_name">Cookbook Name</label>
+                <input id="cookbook_name" name="cookbook_name"
+                    value="{{ cookbook.cokbook_name }}" maxlength="25" type="text" class="validate input-text" required>
+                <label for="cookbook_name" class="input-text">Cookbook Name</label>
             </div>
         </div>
         <!--Submit button-->
         <div class="row">
             <div class="col s12 center-align">
-                <button type="submit" class="btn-large light-blue darken-1">
+                <button type="submit" class="btn-large purple-btns">
                     Save changes
                 </button>
             </div>
