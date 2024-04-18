@@ -1,4 +1,72 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Search</h1>
+<h1>Search</h1>
+
+<div class="row">
+    <h5>Explore and filter all recipes with the drop down boxes below.</h5>
+</div>
+<div class="row">
+    <div class="input-field col s4">
+        <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+        <select id="star_rating" name="star_rating" class="validate" required>
+            <option value="" disabled selected>Choose a Star rating</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <label for="star_rating">Star Rating</label>
+    </div>
+    <div class="input-field col s4">
+        <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+        <select id="meal_type" name="meal_type" class="validate" required>
+            <option value="" disabled selected>Choose a Meal type</option>
+            <option value="Starter">Starter</option>
+            <option value="Main">Main</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Snack">Snack</option>
+        </select>
+        <label for="meal_type">Meal Type</label>
+    </div>
+    <div class="input-field col s4">
+        <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+        <select id="dish_origin" name="dish_origin" class="validate" required>
+            <option value="" disabled selected>Choose a dish origin</option>
+            {% for dish_origin in dish_origin %}
+            <option value="{{ recipe.id }}">{{ recipe.dish_origin }}</option>
+            {% endfor %}
+        </select>
+        <label for="dish_origin">Dish Origin</label>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s12">
+        <ul class="collapsible">
+            {% for recipe in recipes %}
+            <li>
+                <div class="collapsible-header">
+                    <i class="material-icons">filter_drama</i>
+                    <strong>{{ recipe.recipe_name}}</strong> : {{ recipe.star_rating }} star rating
+                </div>
+                <div class="collapsible-body">
+                    <span>
+                        <p><strong>Dish Origin: </strong>{{ recipe.dish_origin }}</p>
+                        <p><strong>Ingredients:</strong>
+                            <br>
+                            {% autoescape false %}
+                            {{ recipe.recipe_ingredients | replace("\n", "<br/>") }}
+                            {% endautoescape %}
+                        </p>
+                        <p><strong>Instructions:</strong>
+                            <br>{% autoescape false %}
+                            {{ recipe.recipe_instructions | replace("\n", "<br/>") }}
+                            {% endautoescape %}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
 {% endblock %}
