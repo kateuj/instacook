@@ -193,7 +193,11 @@ def delete_recipe(recipe_id):
     db.session.commit()
     return redirect(url_for("recipes"))
 
+@app.route("/thank_you")
+def thank_you():
+    return render_template("thank_you.html")
 
-# @app.error(404)
-# def page_not_found(e):
-#    return render_template("404.html"), 404
+
+@app.route("/404")
+def page_not_found():
+    return render_template("404.html"), 404
