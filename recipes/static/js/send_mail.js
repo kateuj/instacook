@@ -7,11 +7,11 @@ function sendMail(contactForm) {
     .then(
         function(response) {
             console.log("SUCCESS", response);
-            window.open("thank-you.html");
+            window.open("thank_you");
         },
         function(error) {
             console.log("FAILED", error);
-            window.open("404.html");
+            window.open("404");
         }
     );
     return false;  // To block from loading a new page
