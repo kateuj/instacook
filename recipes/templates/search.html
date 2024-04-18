@@ -7,7 +7,7 @@
 </div>
 <div class="row">
     <div class="input-field col s4">
-        <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+        <i class="fa-solid fa-star prefix"></i>
         <select id="star_rating" name="star_rating" class="validate" required>
             <option value="" disabled selected>Choose a Star rating</option>
             <option value="1">1</option>
@@ -19,7 +19,7 @@
         <label for="star_rating">Star Rating</label>
     </div>
     <div class="input-field col s4">
-        <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+        <i class="fa-solid fa-drumstick-bite prefix"></i>
         <select id="meal_type" name="meal_type" class="validate" required>
             <option value="" disabled selected>Choose a Meal type</option>
             <option value="Starter">Starter</option>
@@ -29,15 +29,21 @@
         </select>
         <label for="meal_type">Meal Type</label>
     </div>
-    <div class="input-field col s4">
-        <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-        <select id="dish_origin" name="dish_origin" class="validate" required>
-            <option value="" disabled selected>Choose a dish origin</option>
-            {% for dish_origin in dish_origin %}
-            <option value="{{ recipe.id }}">{{ recipe.dish_origin }}</option>
-            {% endfor %}
-        </select>
-        <label for="dish_origin">Dish Origin</label>
+    <div class="row">
+        <div class="input-field col s4">
+            <i class="fa-solid fa-earth-americas prefix"></i>
+            <select id="dish_origin" name="dish_origin" class="validate" required>
+                <option value="" disabled selected>Choose an origin for your recipe</option>
+                <option value="European">European</option>
+                <option value="North American">North American</option>
+                <option value="South American">South American</option>
+                <option value="Asian">Asian</option>
+                <option value="African">African</option>
+                <option value="Australian">Australian</option>
+                <option value="Antarctican">Antarctican</option>
+            </select>
+            <label for="dish_origin">Dish Origin</label>
+        </div>
     </div>
 </div>
 
@@ -47,12 +53,16 @@
             {% for recipe in recipes %}
             <li>
                 <div class="collapsible-header">
-                    <i class="material-icons">filter_drama</i>
-                    <strong>{{ recipe.recipe_name}}</strong> : {{ recipe.star_rating }} star rating
+                    <p>
+                        <i class="fa-solid fa-clipboard"></i>
+                        <strong>{{ recipe.recipe_name }} </strong> : <strong> {{ recipe.star_rating }} </strong> star
+                        rating
+                    </p>
                 </div>
                 <div class="collapsible-body">
                     <span>
                         <p><strong>Dish Origin: </strong>{{ recipe.dish_origin }}</p>
+                        <p><strong>Meal Type: </strong>{{ recipe.meal_type }}</p>
                         <p><strong>Ingredients:</strong>
                             <br>
                             {% autoescape false %}
