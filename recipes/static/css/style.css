@@ -79,6 +79,17 @@ main {
     background-color: #D5EDF2;
 }
 
-.input-text{
-    color: #5856D6;
+.input-text {
+    color: #5856D6!important;
+    font-size: large!important;
+}
+
+.collapsible-header{
+    background-color: #c93a7d;
+    color: aliceblue;
+}
+
+.purple-btns {
+    background-color: #5856D6;
+    margin: 5px;
 }
