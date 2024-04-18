@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>{{ cookbook.cookbook_name }} Recipe</h1>
-
-<div class="row card-panel grey lighten-2">
+<h1>Recipe</h1>
+<br>
+<div class="row card-panel">
     <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
         <!--Recipe Name-->
         <div class="row">
@@ -41,7 +41,7 @@
         <!--Star Rating-->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <i class="fa-solid fa-star prefix"></i>
                 <select id="star_rating" name="star_rating" class="validate" required>
                     <option value="" disabled selected>Choose a rating out of 5</option>
                     <option value="1">1</option>
@@ -56,7 +56,7 @@
         <!--Meal Type-->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <i class="fa-solid fa-drumstick-bite prefix"></i>
                 <select id="meal_type" name="meal_type" class="validate" required>
                     <option value="" disabled selected>Choose a meal type</option>
                     <option value="Starter">Starter</option>
@@ -72,7 +72,7 @@
 
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <i class="fa-solid fa-book prefix"></i>
                 <select id="cookbook_id" name="cookbook_id" class="validate" required>
                     <option value="" disabled selected>Choose Cookbook</option>
                     {% for cookbook in cookbook %}
@@ -87,7 +87,7 @@
         <div class="row">
             <div class="col s12 center-align">
                 <button type="submit" class="btn-large light-blue darken-1">
-                    Create Recipe
+                    <i class="fa-solid fa-pencil"></i> Create Recipe
                 </button>
             </div>
         </div>
