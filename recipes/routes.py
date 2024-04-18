@@ -180,10 +180,11 @@ def edit_recipe(recipe_id):
         recipe.recipe_instructions = request.form.get("recipe_instructions"),
         recipe.dish_origin = request.form.get("dish_origin"),
         recipe.star_rating = request.form.get("star_rating"),
+        recipe.meal_type = request.form.get("meal_type"),
         recipe.cookbook_id = request.form.get("cookbook_id")
         db.session.commit()
+        flash("Recipe updated")
     return render_template("edit_recipe.html", recipe=recipe, cookbook=cookbook)
-
 
 @app.route("/delete_recipe/<int:recipe_id>")
 def delete_recipe(recipe_id):
