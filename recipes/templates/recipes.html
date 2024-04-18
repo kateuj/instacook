@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<h1><i class="fa-solid fa-clipboard"></i>{{ cookbook_name }} Recipes</h1>
+<h1><i class="fa-solid fa-clipboard"></i> {{ cookbook_name }} Cookbook Recipes</h1>
 
 <div class="row">
     <div class="col s12 center-align">
         <a href="{{ url_for('add_recipe') }}" class="btn-large light-blue darken-2">
             <i class="fa-solid fa-circle-plus"></i> Add Recipe
+        </a>
+        <a href="{{ url_for('dashboard') }}" class="btn-large light-blue darken-2">Back to Cookbooks
         </a>
     </div>
 </div>
@@ -14,12 +16,15 @@
     {% for recipe in recipes %}
     <li>
         <div class="collapsible-header">
-            <i class="fa-solid fa-clipboard"></i>
-            <strong>{{ recipe.recipe_name}}</strong> : {{ recipe.star_rating }}
+            <p>
+                <i class="fa-solid fa-clipboard"></i>
+                <strong>{{ recipe.recipe_name }} </strong> : <strong> {{ recipe.star_rating }} </strong> star rating
+            </p>
         </div>
         <div class="collapsible-body">
             <span>
                 <p><strong>Dish Origin: </strong>{{ recipe.dish_origin }}</p>
+                <p><strong>Meal Type: </strong>{{ recipe.meal_type }}</p>
                 <p><strong>Ingredients:</strong>
                     <br>
                     {% autoescape false %}
@@ -32,7 +37,7 @@
                     {% endautoescape %}</p>
                 <p>
                     <a href="{{ url_for('edit_recipe', recipe_id=recipe.id) }}" class="btn green accent-4">Edit</a>
-                    <a href="#modal-{{ recipe.id }}" class="btn red modal-trigger">Delete</a>
+                    <a href="#modal-{{ recipe.id }}" class="btn delete-btn modal-trigger">Delete</a>
                 </p>
 
                 <!-- Modal Structure -->
