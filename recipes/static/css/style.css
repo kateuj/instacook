@@ -3,6 +3,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    color: #5856D6;
 }
 
 h1 {
@@ -25,4 +26,59 @@ main {
 
 .carousel {
     height: 50vh;
+}
+
+.card_buttons {
+    margin: 5px;
+    background-color: #5bd9b5;
+    color: #5856D6;
+}
+
+.card {
+    background-color: #5856D6;
+}
+
+.card-title {
+    color:aliceblue;
+}
+
+.card-title:active {
+    color:aliceblue;
+}
+
+.card-title:hover {
+    color: #f2cb05;
+}
+
+.add-btn {
+    background-color: #5bd9b5;
+    color: #5856D6;
+    margin: 5px;
+}
+
+.edit-btn {
+    background-color: #f2cb05;
+    color: #5856D6;
+    margin: 5px;
+}
+
+.edit-btn:hover {
+    background-color: #f29305;
+}
+
+.delete-btn {
+    background-color: #D95B96;
+    margin: 5px;
+}
+
+.delete-btn:hover {
+    background-color: #c93a7d;
+}
+
+.card-panel {
+    background-color: #D5EDF2;
+}
+
+.input-text{
+    color: #5856D6;
 }
