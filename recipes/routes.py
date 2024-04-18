@@ -82,12 +82,9 @@ def logout():
 def dashboard():
     # grab the session user's username from db
     user = Users.query.filter_by(user_name=session["user"]).first()
-    print("hello")
     if user:
         user_id = user.id
-        print(user_id)
         user_cookbook = list(Cookbook.query.filter(Cookbook.user_id==user_id).all())
-        print(user_cookbook)
         return render_template("user_dashboard.html", cookbooks=user_cookbook, user_name=user.user_name)
     
     else:
@@ -100,8 +97,10 @@ def dashboard():
 
 @app.route("/recipes/<int:id>", methods=["GET"])
 def recipes(id):
+    cookbook_name = Cookbook.query.get_or_404(id)
+    print(cookbook_name)
     recipes = list(Recipe.query.filter(Recipe.cookbook_id==id).all())
-    return render_template("recipes.html", recipes=recipes)
+    return render_template("recipes.html", recipes=recipes, cookbook_name=cookbook_name)
 
 
 @app.route("/contact")
@@ -111,14 +110,13 @@ def contact():
 
 @app.route("/search")
 def search():
-    return render_template("search.html")
-
+    recipes = list(Recipe.query.order_by(Recipe.id).all())
+    return render_template("search.html", recipes=recipes)
 
 
 @app.route("/cookbook")
 def cookbook():
     cookbook = list(Cookbook.query.order_by(Cookbook.cookbook_name).all())
-    print(cookbook)
     return render_template("cookbook.html", cookbooks=cookbook)
 
 
@@ -131,7 +129,7 @@ def add_cookbook():
         cookbook.user_id = user.id
         db.session.add(cookbook)
         db.session.commit()
-        return redirect(url_for("cookbook"))
+        return redirect(url_for("dashboard"))
     return render_template("add_cookbook.html")
 
 
@@ -141,7 +139,7 @@ def edit_cookbook(cookbook_id):
     if request.method == "POST":
         cookbook.cookbook_name = request.form.get("cookbook_name")
         db.session.commit()
-        return redirect(url_for("cookbook"))
+        return redirect(url_for("dashboard"))
     return render_template("edit_cookbook.html", cookbook=cookbook)
 
 
@@ -162,12 +160,13 @@ def add_recipe():
             recipe_ingredients=request.form.get("recipe_ingredients"),
             recipe_instructions=request.form.get("recipe_instructions"),
             dish_origin=request.form.get("dish_origin"),
+            meal_type=request.form.get("meal_type"),
             star_rating=request.form.get("star_rating"),
             cookbook_id=request.form.get("cookbook_id")
         )
         db.session.add(recipe)
         db.session.commit()
-        return redirect(url_for("cookbook"))
+        return redirect(url_for("dashboard"))
     return render_template("add_recipe.html", cookbook=cookbook)
 
 
