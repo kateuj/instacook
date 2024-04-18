@@ -7,7 +7,7 @@
         <!--Recipe Name-->
         <div class="row">
             <div class="input-field col s12">
-                <input placeholder="Add a name for your recipe" id="recipe_name" name="recipe_name" maxlength="25"
+                <input placeholder="Add a name for your recipe" id="recipe_name" name="recipe_name" maxlength="100"
                     type="text" class="validate" required>
                 <label for="recipe_name">Recipe Name</label>
             </div>
@@ -16,7 +16,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <textarea placeholder="Add a list of ingredients for your recipe" id="recipe_ingredients"
-                    name="recipe_ingredients" minlength="5" maxlength="500" type="text"
+                    name="recipe_ingredients" minlength="5" maxlength="1000" type="text"
                     class="materialize-textarea validate" required></textarea>
                 <label for="recipe_ingredients">Recipe Ingredients</label>
             </div>
@@ -25,7 +25,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <textarea placeholder="Add a list of instructions for your recipe" id="recipe_instructions"
-                    name="recipe_instructions" minlength="5" maxlength="750" type="text"
+                    name="recipe_instructions" minlength="5" maxlength="1000" type="text"
                     class="materialize-textarea validate" required></textarea>
                 <label for="recipe_instructions">Recipe Instructions</label>
             </div>
@@ -33,8 +33,8 @@
         <!--Dish Origin-->
         <div class="row">
             <div class="input-field col s12">
-                <input placeholder="Add an origin for your recipe" id="dish_origin" name="dish_origin" minlength="3" maxlength="25"
-                    type="text" class="validate" required>
+                <input placeholder="Add an origin for your recipe" id="dish_origin" name="dish_origin" minlength="3"
+                    maxlength="25" type="text" class="validate" required>
                 <label for="dish_origin">Dish Origin</label>
             </div>
         </div>
@@ -48,12 +48,26 @@
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
-                    <option value="5">5</option>                    
+                    <option value="5">5</option>
                 </select>
                 <label for="star_rating">Star Rating</label>
             </div>
         </div>
-        
+        <!--Meal Type-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <select id="meal_type" name="meal_type" class="validate" required>
+                    <option value="" disabled selected>Choose a meal type</option>
+                    <option value="Starter">Starter</option>
+                    <option value="Main">Main</option>
+                    <option value="Dessert">Dessert</option>
+                    <option value="Snack">Snack</option>
+                </select>
+                <label for="star_rating">Meal Type</label>
+            </div>
+        </div>
+
         <!-- Cookbook ID -->
 
         <div class="row">
@@ -62,7 +76,7 @@
                 <select id="cookbook_id" name="cookbook_id" class="validate" required>
                     <option value="" disabled selected>Choose Cookbook</option>
                     {% for cookbook in cookbook %}
-                        <option value="{{ cookbook.id }}">{{ cookbook.cookbook_name }}</option>
+                    <option value="{{ cookbook.id }}">{{ cookbook.cookbook_name }}</option>
                     {% endfor %}
                 </select>
                 <label for="cookbook_id">Cookbooks</label>
