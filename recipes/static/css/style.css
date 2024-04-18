@@ -7,7 +7,7 @@ body {
 
 h1 {
     font-family: 'Pacifico', sans-serif;
-    color: #5856D6;
+    color: #f2cb05;
 }
 
 #nav-logo {
@@ -15,8 +15,8 @@ h1 {
     margin: 1vh;
 }
 
-.pink-background {
-    color: #D95B96;
+.nav-footer-background {
+    background-color: #5856D6;
 }
 
 main {
