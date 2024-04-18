@@ -129,6 +129,7 @@ def add_cookbook():
         cookbook.user_id = user.id
         db.session.add(cookbook)
         db.session.commit()
+        flash("Cookbook created")
         return redirect(url_for("dashboard"))
     return render_template("add_cookbook.html")
 
@@ -139,6 +140,7 @@ def edit_cookbook(cookbook_id):
     if request.method == "POST":
         cookbook.cookbook_name = request.form.get("cookbook_name")
         db.session.commit()
+        flash("Cookbook updated")
         return redirect(url_for("dashboard"))
     return render_template("edit_cookbook.html", cookbook=cookbook)
 
@@ -166,6 +168,7 @@ def add_recipe():
         )
         db.session.add(recipe)
         db.session.commit()
+        flash("Recipe added")
         return redirect(url_for("dashboard"))
     return render_template("add_recipe.html", cookbook=cookbook)
 
@@ -184,6 +187,7 @@ def edit_recipe(recipe_id):
         recipe.cookbook_id = request.form.get("cookbook_id")
         db.session.commit()
         flash("Recipe updated")
+        return redirect(url_for("dashboard"))
     return render_template("edit_recipe.html", recipe=recipe, cookbook=cookbook)
 
 @app.route("/delete_recipe/<int:recipe_id>")
