@@ -93,3 +93,9 @@ main {
     background-color: #5856D6;
     margin: 5px;
 }
+
+.footer-text {
+    color: #ffffff!important;
+    font-weight: 400;
+    padding: 1vw;
+}
