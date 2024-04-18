@@ -2,5 +2,27 @@
 {% block content %}
 <h1>Thank you</h1>
 
+<div class="container-fluid max-width">
+    <section class="thank-you">
+      <div class="row">
+        <h2 class="main-header">Thanks for getting in touch.</h2>
+        <p>We'll get back to you soon!</p>
+      </div>
+    </section>
+    <div class="row">
+      <div id="counter">5</div>
+    </div>
+  </div>
+  <script>
+    setInterval(function () {
+      var div = document.querySelector("#counter");
+      var count = div.textContent * 1 - 1;
+      div.textContent = count;
+      if (count <= 0) {
+        window.location.replace("home");
+      }
+    }, 1000);
+
+  </script>
 
 {% endblock %}
