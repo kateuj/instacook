@@ -2,10 +2,9 @@
 
 For my Milestone 3 project I have created a personalised Cookbook web application, where the user can log into their account, search for recipes and add them to their own virtual cookbook. They can also add their own recipes into their cookbook, as well as edit and delete when required. They can also give star ratings to their recipes to help them highlight their favourites and make them easier to find in the future.
 
-![Screen mock-ups of Instacook website](assets/readme-images/)
+![Screen mock-ups of Instacook website](assets/readme-images/#)
 
-
-[Link to Instacook live site](https:)
+[Link to Instacook live site](https://instacook-64f0d9d64709.herokuapp.com/)
 
 ## Table of Contents
 
@@ -14,10 +13,9 @@ For my Milestone 3 project I have created a personalised Cookbook web applicatio
 3. [Testing](#testing)
 4. [Deployment](#deployment)
 5. [Languages](#languages)
-6. [Media Queries](#media-queries)
-7. [Software](#software)
-8. [Code](#code)
-9. [Credits](#credits)
+6. [Technologies Used](#technologies-used)
+7. [Code](#code)
+8. [Credits](#credits)
 
 # User Experience (UX)#
 
@@ -488,33 +486,51 @@ Here is the live link to my website - <https://kateuj.github.io/coffee_cram/inde
 
 * I used Media Queries to debug and override some display issues that were not rectified with Bootstrap's responsive layouts.
 
-# Software
+# Technologies Used
 
-* I used Visual Studio Code to create, edit, preview and push my code to my Github repository.
-* Git and Github for version control.
-* I used Procreate for my graphics, planning and design work.
-* Balsamiq for wireframes.
-* Figma was used as a design board to lay out my wireframes and keep a copy of my design thought process all in one place.
-* Adobe Photoshop was used to create visual mock-ups for this document, as well as reformatting all my images as .webp files to reduce file size and in turn improve the performance of my site.
-* EmailJS was used in the background to help me create a functional contact form.
+## Languages Used
+* HTML
+* CSS
+* Python
+* Javascript
+
+## Databases used
+* PostgresSQL relational database
+
+## Frameworks, Libraries & Programs Used
+* [Am I Responsive](https://amiresponsive.co.uk/) - To generate a screen mockup of my web app for this README.
+* [Gitpod](https://gitpod.com) - To create, edit, preview and push my code to my Github repository.
+* [Git](https://git-scm.com/) - For version control.
+* [Github](github.com) - To store versions of my site's repository while developing and then for deployment.
+* [Heroku](heroku.com) - I deployed my project through Heroku.
+* [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html) - For designing the logo and favicon.
+* [Balsamiq](https://balsamiq.com/) - For wireframes.
+* [Figma](figma.com) - Used as a design board to lay out my wireframes and keep a copy of my design thought process all in one place. I also used it to creat UX flow charts while planning my web app.
+* [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html) - Used for exporting any site images as .webp files to reduce file size and in turn improve the performance of my site.
+* [EmailJS](https://www.emailjs.com/) - Used with my functional contact form that sends user messages to my inbox.
+* [ElephantSQL](https://www.elephantsql.com/index.html) - Hosted my PostgresSQL database online.
+* [Coolors](https://coolors.co/contrast-checker/112a46-acc8e5) - Contrast checker to test readability.
+* [Materialize](https://materializecss.com/) -
+* [Flask](https://flask.palletsprojects.com/en/2.3.x/) - The micro framework I used for my project.
+* [Font Awesome](https://fontawesome.com/) - For all the icons in my web app.
+* Google Dev Tools - Used to troubleshoot issues both front-end and back-end. It also includes Lighthouse which I used for testing.
+* [Google Fonts](https://fonts.google.com/) - To import the fonts I chose for the website.
+* [Jinja](https://jinja.palletsprojects.com/en/3.1.x/) - Templating engine
+* [html5pattern](html5pattern.com) - The the HTML 5 regex pattern to ensure users create a secure password.
+* [JSHint](https://jshint.com/) - To validate javaScript code.
+* [SQLAlchemy](https://www.sqlalchemy.org/) - Database toolkit library for Python.
+* [W3C](https://validator.w3.org/) - To validate and test HTML and CSS code.
+* [Favicon](https://favicon.io/) - Generated my favicon files from the favicon I designed.
 
 # Code
 
 * **Text overlay on ingredients** - I followed this tutorial and tailored it to my own style and needs [Text image overlays](https://www.youtube.com/watch?v=Qt-70hrdJZI&ab_channel=LearnWeb)
-
-* **Modal pop-ups** - I followed this tutorial to create my pop-ups and tailored it to my own needs [Pop-ups in Javascript](https://www.youtube.com/watch?v=r_PL0K2fGkY&ab_channel=FlorinPop)
-
-* **Contact form** - this was based on the code used in the 'Putting it all together' emailJS exercises of Milestone 2 on Code Institute.
-
-* **Footer** - code is based on the code used in the 'Love Running' exercise of Code Institute.
 
 * **Thank-you page** - I used this code snippet to get the Thank You page to re-direct back to the site after 5 seconds. This was from a [Stack Overflow thread.](https://stackoverflow.com/questions/3292038/redirect-website-after-specified-amount-of-time)
 ![Re-direct for the thank you page code snippet](assets/readme-images/redirect-code-snippet.png)
 
 * **Favicon** - I used a [Favicon generator](https://favicon.io/) to create the appropriate files for me to upload to my site, as well as this code snippet to install it site-wide.
 ![Favicon installation code snippet]()
-
-* **Timer** - I found this code snippet and edited it to suit my site's needs to make my timer function effectively. [Pause setInterval function](https://stackoverflow.com/questions/21277900/how-can-i-pause-setinterval-functions)
 
 # Credits
 
@@ -525,6 +541,7 @@ Here is the live link to my website - <https://kateuj.github.io/coffee_cram/inde
 
 * [Image for visual mock up at top of README document by CosmoStudio</a> on Freepik.](https://www.freepik.com/psd/desktop-tablet-phone-mockup)
 * All graphics are my own work.
+* Images from [Pexel](pexel.com)
 
 
 ### Thanks
