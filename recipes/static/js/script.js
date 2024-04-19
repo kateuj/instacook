@@ -19,4 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
   let carousel = document.querySelectorAll('.carousel');
   M.Carousel.init(carousel);
 
+  // Hero Slider initialization
+  let slider = document.querySelectorAll('.slider');
+  M.Slider.init(slider);
+
 });
