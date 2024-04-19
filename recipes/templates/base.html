@@ -76,6 +76,49 @@
 
     </header>
 
+    {% if request.path == url_for('home') %}
+    <div class="slider">
+        <ul class="slides">
+            <li>
+                <img src="{{ url_for('static', filename='assets/site-images/hero-image.webp') }}"> <!-- random image -->
+                <div class="caption center-align">
+                    <h1>Welcome to Instacook</h1>
+                    <h5 class="light grey-text text-lighten-3">Create digital cookbooks to store your favourite recipes
+                        in.</h5>
+                    <div class="row center-align">
+                        <div class="col s12">
+                            <a href="{{ url_for('register') }}"
+                                class="light-blue-text text-darken-4 btn-large">Register</a>
+                            <a href="{{ url_for('login') }}" class="light-blue-text text-darken-4 btn-large">Log In</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <img src="https://lorempixel.com/580/250/nature/2"> <!-- random image -->
+                <div class="caption left-align">
+                    <h3>Left Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="https://lorempixel.com/580/250/nature/3"> <!-- random image -->
+                <div class="caption right-align">
+                    <h3>Right Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="https://lorempixel.com/580/250/nature/4"> <!-- random image -->
+                <div class="caption center-align">
+                    <h3>This is our big Tagline!</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+        </ul>
+    </div>
+    {% endif %}
+
     <section>
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
@@ -100,13 +143,13 @@
             <div class="row center-align">
                 <div class="col s12">
                     {% if session.user %}
-                        <a href="{{ url_for('dashboard', user_name=session['user']) }}" class="footer-text">Dashboard</a> | 
-                        <a href="{{ url_for('logout') }}" class="footer-text">Logout</a> | 
-                        <a href="{{ url_for('contact') }}" class="footer-text">Contact</a>
+                    <a href="{{ url_for('dashboard', user_name=session['user']) }}" class="footer-text">Dashboard</a> |
+                    <a href="{{ url_for('logout') }}" class="footer-text">Logout</a> |
+                    <a href="{{ url_for('contact') }}" class="footer-text">Contact</a>
                     {% else %}
-                        <a href="{{ url_for('login') }}" class="footer-text">Login</a> | 
-                        <a href="{{ url_for('register') }}" class="footer-text">Register</a> | 
-                        <a href="{{ url_for('contact') }}" class="footer-text">Contact</a>
+                    <a href="{{ url_for('login') }}" class="footer-text">Login</a> |
+                    <a href="{{ url_for('register') }}" class="footer-text">Register</a> |
+                    <a href="{{ url_for('contact') }}" class="footer-text">Contact</a>
                     {% endif %}
                 </div>
             </div>
