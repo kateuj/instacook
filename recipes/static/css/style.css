@@ -4,6 +4,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
     color: #5856D6;
+    background-color: aliceblue;
 }
 
 h1 {
@@ -24,6 +25,11 @@ main {
     flex: 1 0 auto;
 }
 
+.container {
+    width: 100%;
+}
+
+
 .carousel {
     height: 50vh;
 }
@@ -32,6 +38,11 @@ main {
     margin: 5px;
     background-color: #5bd9b5;
     color: #5856D6;
+}
+
+.caption {
+    background-color: rgba(rgb(31, 32, 33, 1));
+
 }
 
 .card {
