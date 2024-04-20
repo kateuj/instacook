@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
+<script>
+    function updateQueryParams(key, value) {
+        const url = new URL(window.location);
+        if (value === 'All') {
+            url.searchParams.delete(key)
+        } else {
+            url.searchParams.set(key, value)
+        }
+        window.location = url.toString()
+    }
+</script>
 <h1>Search</h1>
 
 <div class="row">
@@ -7,43 +18,46 @@
 </div>
 
 <div class="row">
-    <div class="input-field col s4">
-        <i class="fa-solid fa-star prefix"></i>
-        <select id="star_rating" name="star_rating" class="validate" required>
-            <option value="" disabled selected>Choose a Star rating</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-        <label for="star_rating">Star Rating</label>
-    </div>
-    <div class="input-field col s4">
-        <i class="fa-solid fa-drumstick-bite prefix"></i>
-        <select id="meal_type" name="meal_type" class="validate" required>
-            <option value="" disabled selected>Choose a Meal type</option>
-            <option value="Starter">Starter</option>
-            <option value="Main">Main</option>
-            <option value="Dessert">Dessert</option>
-            <option value="Snack">Snack</option>
-        </select>
-        <label for="meal_type">Meal Type</label>
-    </div>
     <div class="row">
-        <div class="input-field col s4">
+        <div class="input-field col s3">
+            <i class="fa-solid fa-drumstick-bite prefix"></i>
+            <select id="meal_type" name="meal_type" class="validate"
+                onchange="updateQueryParams('meal_type', event.target.value)">
+                <option value="" disabled selected>{{ selected_meal_type }}</option>
+                <option value="Starter">Starter</option>
+                <option value="Main">Main</option>
+                <option value="Dessert">Dessert</option>
+                <option value="Snack">Snack</option>
+            </select>
+            <label for="meal_type">Meal Type</label>
+        </div>
+        <div class="input-field col s3">
             <i class="fa-solid fa-earth-americas prefix"></i>
-            <select id="dish_origin" name="dish_origin" class="validate" required>
-                <option value="" disabled selected>Choose an origin for your recipe</option>
-                <option value="European">European</option>
-                <option value="North American">North American</option>
-                <option value="South American">South American</option>
-                <option value="Asian">Asian</option>
-                <option value="African">African</option>
-                <option value="Australian">Australian</option>
-                <option value="Antarctican">Antarctican</option>
+            <select id="dish_origin" name="dish_origin" class="validate"
+                onchange="updateQueryParams('dish_origin', event.target.value)">
+                <option value="" disabled selected>{{ selected_dish_origin }}</option>
+                <option>All</option>
+                {% for dish_origin in dish_origins %}
+                <option>{{ dish_origin }}</option>
+                {% endfor %}
             </select>
             <label for="dish_origin">Dish Origin</label>
+        </div>
+        <div class="input-field col s3">
+            <i class="fa-solid fa-star prefix"></i>
+            <select id="star_rating" name="star_rating" class="validate"
+                onchange="updateQueryParams('star_rating', event.target.value)">
+                <option value="" disabled selected>{{ selected_star_rating }}</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <label for="star_rating">Star Rating</label>
+        </div>
+        <div class="input-field col s3">
+            <a class="btn purple-btns" href="{{ url_for('search') }}">Clear Selection</a>
         </div>
     </div>
 </div>
