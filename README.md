@@ -37,7 +37,7 @@ A returning visitor will need to:
 * View, edit and delete cookbooks that were made in a previous session.
 * View, edit and delete recipes that were made in a previous session.
 ![Home page mobile screenshot](assets/readme-images/mobile-home-page.png)
-A barista trainer would get users to open the page on their phones collectively to access the game as a quick and fun ice breaker before commencing a practical course. The mobile view makes it easy for the site to be accessed anywhere.
+A barista trainer would get users to open the page on their phones collectively to access the app as a quick and fun ice breaker before commencing a practical course. The mobile view makes it easy for the site to be accessed anywhere.
 
 ## Site Purpose
 
@@ -62,40 +62,18 @@ The web app is aimed at people who enjoy exploring food and recipes, who want to
 * Provide the users with a way of contacting me and submitting a message to my email inbox
 * A good UI site flow.
 * To be accessible for screen readers.
-* To be able to reset the game easily.
-* Links to the creator's social media in footer.
-
-* Nice to have feature would be a shopping list
 
 ### Approach
 
-* User experience design will be planned and carefully considered when designing the flow of layout of the game.
-* The site will provide users links through to my social media accounts to contact me.
 * The content of the site will be family-friendly and accessible to all.
-* The game design will be consistent and visually engaging for the users.
+* Before developing, I have planned out the UX flow using a flow chart (please see below) to ensure that the design of the site is intuitive for all user stories documented above.
+* I wanted to make evertything accessible to the user, keeping click rate as low as possible without making the pages too busy and difficult to read, or take too long to load. 
 
-![Information Flow of the site](assets/readme-images/information-flow.png)
-
-### Research
-
-I looked at other javascript-based games before making a decision on what I wanted to create, to see what was possible using the javascript concepts and skills I have learnt recently.
-
-Sites included:
-* [Burger Make](https://www.culinaryschools.org/kids-games/burger-maker/)
-* [Hang Man](https://codepen.io/cathydutton/pen/JjpxMm)
-
-Thoughts noted:
-* Minimalist design.
-* Responsive design.
-* Game on one page.
-* Pop up with instructions included.
-
-All of the above, I have reflecting in the design of my own website.
+![UX Flow of the site](#)
 
 ### Wireframes
 
-I used Figma and Balsamiq to plan and design my wireframes and user journey. I like using Figma in particular because it always you to brainstorm and keep all ideas and inspiration in one place as a singular visual to refer back to, which has been very useful throughout the project. I designed my site in mobile format initially before moving onto bigger screens, to ensure responsiveness was considered, especially since most users will predominantly use their phones to access this game.
-I have changed a features along the way after considering user experience, for instance, I chose not to add a drop down menu at the top of the mobile version due to the site only being two pages long and felt it unnecessary in the end, due to the link to the contact page being below the game. If I had included an accordion nav bar at the top it would have pushed the game content further down the screen, meaning the user may need to scroll to see all the ingredients, which I decided was not acceptable for a good user experience.
+I used Figma and Balsamiq to plan and design my wireframes and user journey. I like using Figma in particular because it always you to brainstorm and keep all ideas and inspiration in one place as a singular visual to refer back to, which has been very useful throughout the project. I designed my web app in mobile format initially, before moving onto bigger screens, to ensure responsiveness was considered from the beginning, especially since most users will predominantly use their phones to access this app.
 
 #### Mobile Design Wireframe
 
@@ -111,28 +89,32 @@ I have changed a features along the way after considering user experience, for i
 
 [Link to my Figma page](https://www.figma.com/file/a16YGDltwNMRzhCTNCDAV1/Milestone-3---Instacook?type=design&node-id=0%3A1&mode=design&t=vR4mpWydSqybmKji-1)
 
+### Database Schema
+Here is a database schema flow chart I created using Miro.
+
+![database design diagram](recipes/static/assets/readme-images/database-design-diagram.png)
+
+
 ### Colour Scheme
 
-After looking at coffee based content, branding and cafe simulator games, I found a lot of them to have quite muted, bland colour palettes, due to coffee being brown and having to work with that colour predominantly. However I was adamant to make this game as visually exciting as possible, so I looked at retro game palettes as well as bright 'vaporwave' colours to form my own striking colour palette to engage the user. The retro look and feel was intentional to invoke a cosy, reminiscent experience for users.
-I made sure I had a good mix of high contrasting colours for good readability, which I have learn is important to consider when designing a website or application to ensure inclusivity for all users.
+I used Coolor to choose a fresh, vibrant colour palette for the site. Once chosen, I then checked colour combinations of the palette through the contrast checker to make sure the readability of my site was at a high standard and that I was followed good practices for accessibility.
 
-![Colour Scheme](assets/readme-images/colour-palette.png)
+![Colour Scheme](recipes/static/assets/readme-images/instacook-colour-scheme.png)
 
-### Graphics
-
-I was conscious that with 6 different ingredients and over 6 different variations of drinks, that this game could end up looking visually confusing if not approached carefully. I chose to create simple, isometric, flat graphics, which are in-keeping with the retro feel, but also creating a minimalist look and feel to keep the game approachable and not too overwhelming for the user.
-
-![Coffee Cup Graphic](assets/readme-images/cappuccino.png)
+I checked the contrast combinations I would use, all with good readability except for yellow on white:
+Purple
+![Purple contrast](recipes/static/assets/readme-images/purple-contrast-checker.png)
+![White Purple contrast](recipes/static/assets/readme-images/white-purple-contrast-checker.png)
+![Blue Purple contrast](recipes/static/assets/readme-images/blue-purple-contrast-checker.png)
+Pink
+![Pink contrast](recipes/static/assets/readme-images/pink-contrast-checker.png)
+Yellow
+![Yellow contrast](recipes/static/assets/readme-images/yellow-contrast-checker.png)
+With the contrast not being acceptable between yellow and white, I have made sure I do not put yellow text on white  anywhere on the site.
 
 ### Typography
 
-I chose a retro pixelated style font for headings and the logo for the game to accentuate the retro feel of the game, but also coupled it with Rubik, a simple, easy to read sans-serif font, for any body text sentences etc. to maintain good readability and in turn a good user experience.
-
-![Typefaces used](assets/readme-images/fonts.png)
-
-### Javascript coding approach
-
-I made a point of keeping my game code separate from the email JS code and the modal pop-up code, to improve usability of the code for future coding users. With this in mind, I have commented on each function to provide explanation of each to make my code and thought process as clear as possible to future viewers. I have also used a mixture of plain Javascript and Jquery to demonstrate my knowledge.
+I chose a cursive font for titles, 'Pacifico' and 'Poppins' a simple sans-serif for the body text that is easy to read. I wanted to ensure I maintained good readability, which in turn will give an overall better user experience.
 
 # Features #
 
@@ -151,7 +133,7 @@ I made a point of keeping my game code separate from the email JS code and the m
 
 * I created my simple text logo using the Silkscreen font to give it the retro gaming feel.
 
-## Game page
+## app page
 
 ![Home page screenshot](assets/readme-images/home-page-screenshot.png)
 
@@ -159,7 +141,7 @@ I made a point of keeping my game code separate from the email JS code and the m
 
 ### Instructions pop-up
 
-![Game instructions pop-up screenshot](assets/readme-images/game-pop-up-screenshot.png)
+![app instructions pop-up screenshot](assets/readme-images/app-pop-up-screenshot.png)
 
 * I created an animated gif for the centre of the landing page to add to the initial visual impact of the site to draw users in. I have kept it in a hand-drawn style to keep it fun and intriguing for a younger audience and to get my own personality across to the user to make it feel more casual and relatable.
 
@@ -167,8 +149,8 @@ I made a point of keeping my game code separate from the email JS code and the m
 
 ![Drink title generator screenshot](assets/readme-images/random-drink-generator.png)
 
-* This title prints a random drink from an array in the script-game.js file.
-* I have used a while loop to make sure no drink appears twice during one game. The loop checks the users correct drink answers array against the original drink name array. This user array has also been useful to then print out the drinks the user got correct in a pop up at the end of game play, to help them know where to focus on next time to improve their score.
+* This title prints a random drink from an array in the script-app.js file.
+* I have used a while loop to make sure no drink appears twice during one app. The loop checks the users correct drink answers array against the original drink name array. This user array has also been useful to then print out the drinks the user got correct in a pop up at the end of app play, to help them know where to focus on next time to improve their score.
 
 ![Javascript code for drink name generator screenshot](assets/readme-images/drink-name-random-code.png)
 
@@ -200,18 +182,18 @@ I made a point of keeping my game code separate from the email JS code and the m
 
 ![Well done pop-up screenshot](assets/readme-images/well-done-pop-up.png)
 
-* A well done pop-up appears for every correct sequence completed so the user knows the game has progressed and they are moving onto the next drink.
+* A well done pop-up appears for every correct sequence completed so the user knows the app has progressed and they are moving onto the next drink.
 
-### End of game pop-up / Out of time pop-up
+### End of app pop-up / Out of time pop-up
 
-![End of game pop-up screenshot](assets/readme-images/pop-up-with-score.png)
+![End of app pop-up screenshot](assets/readme-images/pop-up-with-score.png)
 
-* Conscious I wanted to make this as intuitive as possible for giving the user feedback as this is can be used as a training tool, I have created logic that tailors the pop-up message based on if they answer any questions correctly, if time ran out, or if they completed the game.
-* The user array I created to use in the while loop for the random drink generator (to make sure no drink appears twice during one game) allows me to print out the drinks the user got correct in a pop up at the end of game play, to help them know where to focus on next time to improve their score.
+* Conscious I wanted to make this as intuitive as possible for giving the user feedback as this is can be used as a training tool, I have created logic that tailors the pop-up message based on if they answer any questions correctly, if time ran out, or if they completed the app.
+* The user array I created to use in the while loop for the random drink generator (to make sure no drink appears twice during one app) allows me to print out the drinks the user got correct in a pop up at the end of app play, to help them know where to focus on next time to improve their score.
 
-![End of game pop-up no drinks correct screenshot](assets/readme-images/pop-up-with-no-score.png)
+![End of app pop-up no drinks correct screenshot](assets/readme-images/pop-up-with-no-score.png)
 
-![End of game pop-up all drinks correct screenshot](assets/readme-images/pop-up-with-finished-game.png)
+![End of app pop-up all drinks correct screenshot](assets/readme-images/pop-up-with-finished-app.png)
 
 ### Footer
 
@@ -239,13 +221,13 @@ I made a point of keeping my game code separate from the email JS code and the m
 
 ![Thank you re-direct page screenshot](assets/readme-images/thank-you-page.png)
 
-* A quick message to the user to confirm their message has been submitted and to redirect them back to the game page within 5 seconds.
+* A quick message to the user to confirm their message has been submitted and to redirect them back to the app page within 5 seconds.
 
 ## Error 404 page
 
 ![Error 404 page screenshot](assets/readme-images/error-404-page.png)
 
-* Should any errors occur, the user will be directed to this page. I have included this page in the sendmail js file function, should the form not successfully submit. The page has a button that links back to the game page, so the user can return back to the main site easily and quickly.
+* Should any errors occur, the user will be directed to this page. I have included this page in the sendmail js file function, should the form not successfully submit. The page has a button that links back to the app page, so the user can return back to the main site easily and quickly.
 
 ## Possible Future Features
 
@@ -312,6 +294,7 @@ I have documented my testing in a separate document [TESTING.md](TESTING.md)
 * [Heroku](heroku.com) - I deployed my project through Heroku.
 * [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html) - For designing the logo and favicon.
 * [Balsamiq](https://balsamiq.com/) - For wireframes.
+* [Miro]() - To create my database design diagram.
 * [Figma](figma.com) - Used as a design board to lay out my wireframes and keep a copy of my design thought process all in one place. I also used it to creat UX flow charts while planning my web app.
 * [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html) - Used for exporting any site images as .webp files to reduce file size and in turn improve the performance of my site.
 * [EmailJS](https://www.emailjs.com/) - Used with my functional contact form that sends user messages to my inbox.
