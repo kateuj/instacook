@@ -110,8 +110,19 @@ def contact():
 
 @app.route("/search")
 def search():
-    recipes = list(Recipe.query.order_by(Recipe.id).all())
-    return render_template("search.html", recipes=recipes)
+
+    # Get the query parameters from the request
+    dish_origin = request.args.get('dish_origin')
+    star_rating = request.args.get('star_rating')
+    meal_type = request.args.get('meal_type')
+    recipes = Recipe.query.filter(Recipe.dish_origin == dish_origin if dish_origin else True,
+                                  Recipe.star_rating == star_rating if star_rating else True,
+                                  Recipe.meal_type == meal_type if meal_type else True
+                                  ).all()
+    distinct_dish_origins = Recipe.query.distinct('dish_origin').all()
+    return render_template("search.html", recipes=recipes, selected_meal_type=meal_type, 
+                            selected_star_rating=star_rating, dish_origins=[i.dish_origin 
+                            for i in distinct_dish_origins], selected_dish_origin=dish_origin)
 
 
 @app.route("/cookbook")
@@ -200,7 +211,6 @@ def delete_recipe(recipe_id):
 @app.route("/thank_you")
 def thank_you():
     return render_template("thank_you.html")
-
 
 @app.route("/404")
 def page_not_found():
