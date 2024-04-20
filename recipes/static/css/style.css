@@ -1,3 +1,4 @@
+/*Site-wide*/
 body {
     font-family: 'Poppins', sans-serif;
     display: flex;
@@ -12,6 +13,11 @@ h1 {
     color: #D95B96;
 }
 
+main {
+    flex: 1 0 auto;
+}
+
+/*Nav-bar*/
 #nav-logo {
     height: 5vh;
     margin: 1vh;
@@ -21,28 +27,27 @@ h1 {
     background-color: #5856D6;
 }
 
-main {
-    flex: 1 0 auto;
+/*Footer*/
+.footer-text {
+    color: #ffffff!important;
+    font-weight: 400;
+    padding: 1vw;
 }
 
-.container {
-    width: 100%;
+/*Hero-slider*/
+.slider {
+    height: 82vh!important;
 }
 
-
-.carousel {
-    height: 50vh;
+.slides {
+    height: 82vh!important;
 }
 
+/*Cards*/
 .card_buttons {
     margin: 5px;
     background-color: #5bd9b5;
     color: #5856D6;
-}
-
-.caption {
-    background-color: rgba(rgb(31, 32, 33, 1));
-
 }
 
 .card {
@@ -61,6 +66,11 @@ main {
     color: #f2cb05;
 }
 
+.card-panel {
+    background-color: #D5EDF2;
+}
+
+/*Buttons*/
 .add-btn {
     background-color: #5bd9b5;
     color: #5856D6;
@@ -86,35 +96,19 @@ main {
     background-color: #c93a7d;
 }
 
-.card-panel {
-    background-color: #D5EDF2;
-}
-
-.input-text {
-    color: #5856D6!important;
-    font-size: large!important;
-}
-
-.collapsible-header{
-    background-color: #c93a7d;
-    color: aliceblue;
-}
-
 .purple-btns {
     background-color: #5856D6;
     margin: 5px;
 }
 
-.footer-text {
-    color: #ffffff!important;
-    font-weight: 400;
-    padding: 1vw;
+/*Forms*/
+.input-text {
+    color: #5856D6!important;
+    font-size: large!important;
 }
 
-.slider {
-    height: 82vh!important;
-}
-
-.slides {
-    height: 82vh!important;
+/*Collapsible recipes*/
+.collapsible-header{
+    background-color: #c93a7d;
+    color: aliceblue;
 }
