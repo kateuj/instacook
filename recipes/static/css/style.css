@@ -9,7 +9,7 @@ body {
 
 h1 {
     font-family: 'Pacifico', sans-serif;
-    color: #f2cb05;
+    color: #D95B96;
 }
 
 #nav-logo {
@@ -109,4 +109,12 @@ main {
     color: #ffffff!important;
     font-weight: 400;
     padding: 1vw;
+}
+
+.slider {
+    height: 82vh!important;
+}
+
+.slides {
+    height: 82vh!important;
 }
