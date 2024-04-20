@@ -1,3 +1,4 @@
+// Contact form function
 function sendMail(contactForm) {
     emailjs.send("service_ld8bf5j", "instacook_template", {
         "user_name": contactForm.user_name.value,
