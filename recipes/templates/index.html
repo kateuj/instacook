@@ -1,49 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="slider">
-  <div class="overlay">
-    <span></span>
 
-  </div>
-  <ul class="slides">
-      <li>
-          <img src="{{ url_for('static', filename='assets/site-images/hero-image.webp') }}"> <!-- random image -->
-          <div class="caption center-align">
-              <h1>Welcome to Instacook</h1>
-              <h5 class="light grey-text text-lighten-3">Create digital cookbooks to store your favourite recipes
-                  in.</h5>
-              <div class="row center-align">
-                  <div class="col s12">
-                      <a href="{{ url_for('register') }}"
-                          class="purple-btns btn-large">Register</a>
-                      <a href="{{ url_for('login') }}" class="purple-btns btn-large">Log In</a>
-                  </div>
-              </div>
-          </div>
-      </li>
-      <li>
-          <img src="https://lorempixel.com/580/250/nature/2"> <!-- random image -->
-          <div class="caption left-align">
-              <h3>Left Aligned Caption</h3>
-              <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-          </div>
-      </li>
-      <li>
-          <img src="https://lorempixel.com/580/250/nature/3"> <!-- random image -->
-          <div class="caption right-align">
-              <h3>Right Aligned Caption</h3>
-              <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-          </div>
-      </li>
-      <li>
-          <img src="https://lorempixel.com/580/250/nature/4"> <!-- random image -->
-          <div class="caption center-align">
-              <h3>This is our big Tagline!</h3>
-              <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-          </div>
-      </li>
-  </ul>
-</div>
 
 {% endblock %}
