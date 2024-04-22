@@ -14,12 +14,11 @@ For my Milestone 3 project I have created a personalised Cookbook web applicatio
 2. [Features](#features)
 3. [Testing](#testing)
 4. [Deployment](#deployment)
-6. [Languages](#languages)
-7. [Technologies Used](#technologies-used)
-8. [Code](#code)
-9. [Credits](#credits)
+5. [Technologies Used](#technologies-used)
+6. [Code](#code)
+7. [Credits](#credits)
 
-# User Experience (UX)#
+# User Experience (UX) #
 
 ## User Stories
 
@@ -96,7 +95,7 @@ New visitor
 
 Returning and frequent visitor
 
-![UX Flow for new visitor](recipes/static/assets/readme-images/MS3-UX-flow-returning-user.jpg)
+![UX Flow for returning visitor](recipes/static/assets/readme-images/MS3-UX-returning-user.jpg)
 
 ### Database Schema
 Here is a database schema flow chart I created using Miro.
@@ -289,9 +288,9 @@ I have documented my testing in a separate document [TESTING.md](TESTING.md)
 
 * I used Media Queries to debug and override some display issues that were not rectified with Bootstrap's responsive layouts.
 
-# Technologies Used
+# Technologies Used #
 
-## Languages Used
+## Languages used
 * HTML
 * CSS
 * Python
@@ -338,14 +337,14 @@ I have documented my testing in a separate document [TESTING.md](TESTING.md)
 
 # Credits
 
-* Code Institute Bootstrap lessons helped me with working out how to use the Bootstrap grid layout on my pages.
+* Code Institute relational database walkthrough helped me work out how to create and best approach creating this project.
 * Google fonts for ['Silkscreen' typography.](https://fonts.google.com/specimen/Silkscreen) and ['Rubik' typography.](https://fonts.google.com/specimen/Rubik)
 * Logo and favicon I designed myself.
-* Images from [Pexel](pexel.com)
+* Images from [Pexels](pexels.com).
 
 
 ### Thanks
 
-* Martina Terlevic my CI mentor, for her invaluable advice.
+* Martina Terlevic my CI mentor, for her encouragement and advice.
 * Liz Curtis my friend and fellow coder, for patiently listening, giving encouragement and brainstorming with me when I was troubleshooting.
 * The big and little human beings of the Ulloa-James household who have been very patient with me, allowing me the time day or night to get my coding done.
