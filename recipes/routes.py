@@ -161,7 +161,7 @@ def delete_cookbook(cookbook_id):
     cookbook = Cookbook.query.get_or_404(cookbook_id)
     db.session.delete(cookbook)
     db.session.commit()
-    return redirect(url_for("cookbook"))
+    return redirect(url_for("dashboard"))
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
