@@ -19,7 +19,7 @@ main {
 
 /*Nav-bar*/
 #nav-logo {
-    width: 20vh;
+    width: 15vw;
     margin-top: 2vh;
     padding-left: 2vh;
 }
@@ -127,16 +127,38 @@ main {
 
 @media screen and (max-width: 991px) {
     #nav-logo {
+        margin: 18px;
         padding-left: 0vh;
     }
 }
 
 @media screen and (max-width: 767px) {
     #nav-logo {
-        margin: 1vh;
+        width: 20vw;
     }
 }
 
 @media screen and (max-width: 360px) {
+
+    #nav-logo {
+        width: 40vw;
+    }
+
+    .slides {
+        height: 95vh !important;
+        z-index: 2 !important;
+    }
+
+    h1 {
+        font-size: 8vh;
+    }
+
+    h3 {
+        font-size: 5vh;
+    }
+
+    h5 {
+        font-size: 3vh;
+    }
 
 }
