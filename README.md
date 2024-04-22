@@ -36,8 +36,6 @@ A returning visitor will need to:
 * Be able to log in easily into existing account.
 * View, edit and delete cookbooks that were made in a previous session.
 * View, edit and delete recipes that were made in a previous session.
-![Home page mobile screenshot](assets/readme-images/mobile-home-page.png)
-A barista trainer would get users to open the page on their phones collectively to access the app as a quick and fun ice breaker before commencing a practical course. The mobile view makes it easy for the site to be accessed anywhere.
 
 ## Site Purpose
 
@@ -69,8 +67,6 @@ The web app is aimed at people who enjoy exploring food and recipes, who want to
 * Before developing, I have planned out the UX flow using a flow chart (please see below) to ensure that the design of the site is intuitive for all user stories documented above.
 * I wanted to make evertything accessible to the user, keeping click rate as low as possible without making the pages too busy and difficult to read, or take too long to load. 
 
-![UX Flow of the site](#)
-
 ### Wireframes
 
 I used Figma and Balsamiq to plan and design my wireframes and user journey. I like using Figma in particular because it always you to brainstorm and keep all ideas and inspiration in one place as a singular visual to refer back to, which has been very useful throughout the project. I designed my web app in mobile format initially, before moving onto bigger screens, to ensure responsiveness was considered from the beginning, especially since most users will predominantly use their phones to access this app.
@@ -85,9 +81,22 @@ I used Figma and Balsamiq to plan and design my wireframes and user journey. I l
 
 #### Desktop Design Wireframe
 
-![desktop design wireframe](assets/readme-images/desktop-wireframes.png)
+![desktop design wireframe](assets/readme-images/MS3-desktop-wireframes.png)
 
 [Link to my Figma page](https://www.figma.com/file/a16YGDltwNMRzhCTNCDAV1/Milestone-3---Instacook?type=design&node-id=0%3A1&mode=design&t=vR4mpWydSqybmKji-1)
+
+### User Journey
+I created UX flow charts using FigJam to map out the user stories.
+
+![UX Flow key](assets/readme-images/MS3-UX-flow-key.jpg)
+
+New visitor
+
+![UX Flow for new visitor](assets/readme-images/MS3-UX-flow-new-user.jpg)
+
+Returning and frequent visitor
+
+![UX Flow for new visitor](assets/readme-images/MS3-UX-flow-returning-user.jpg)
 
 ### Database Schema
 Here is a database schema flow chart I created using Miro.
@@ -115,6 +124,11 @@ With the contrast not being acceptable between yellow and white, I have made sur
 ### Typography
 
 I chose a cursive font for titles, 'Pacifico' and 'Poppins' a simple sans-serif for the body text that is easy to read. I wanted to ensure I maintained good readability, which in turn will give an overall better user experience.
+
+### Imagery
+
+* I created the logo myself using the main title font 'Pacifico' and designing the logo in Adobe Illustrator.
+![Instacook logo](recipes/static/assets/site-images/instacook-logo.webp)
 
 # Features #
 
@@ -294,8 +308,8 @@ I have documented my testing in a separate document [TESTING.md](TESTING.md)
 * [Heroku](heroku.com) - I deployed my project through Heroku.
 * [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html) - For designing the logo and favicon.
 * [Balsamiq](https://balsamiq.com/) - For wireframes.
-* [Miro]() - To create my database design diagram.
-* [Figma](figma.com) - Used as a design board to lay out my wireframes and keep a copy of my design thought process all in one place. I also used it to creat UX flow charts while planning my web app.
+* [Miro](https://miro.com/) - To create my database schema.
+* [Figma ad FigJam](figma.com) - Used as a design board to lay out my wireframes and keep a copy of my design thought process all in one place. I also used it to creat UX flow charts while planning my web app.
 * [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html) - Used for exporting any site images as .webp files to reduce file size and in turn improve the performance of my site.
 * [EmailJS](https://www.emailjs.com/) - Used with my functional contact form that sends user messages to my inbox.
 * [ElephantSQL](https://www.elephantsql.com/index.html) - Hosted my PostgresSQL database online.
