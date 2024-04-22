@@ -4,7 +4,7 @@
 
 For my Milestone 3 project I have created a personalised Cookbook web application, where the user can log into their account, search for recipes and add them to their own virtual cookbook. They can also add their own recipes into their cookbook, as well as edit and delete when required. They can also give star ratings to their recipes to help them highlight their favourites and make them easier to find in the future.
 
-![Screen mock-ups of Instacook website](assets/readme-images/#)
+![Screen mock-ups of Instacook website](recipes/static/assets/readme-images/#)
 
 [Link to Instacook live site](https://instacook-64f0d9d64709.herokuapp.com/)
 
@@ -73,30 +73,30 @@ I used Figma and Balsamiq to plan and design my wireframes and user journey. I l
 
 #### Mobile Design Wireframe
 
-![mobile design wireframe](assets/readme-images/MS3-mobile-wireframes.png)
+![mobile design wireframe](recipes/static/assets/readme-images/MS3-mobile-wireframes.png)
 
 #### Tablet Design Wireframe
 
-![tablet design wireframe](assets/readme-images/MS3-tablet-wireframes.png)
+![tablet design wireframe](recipes/static/assets/readme-images/MS3-tablet-wireframes.png)
 
 #### Desktop Design Wireframe
 
-![desktop design wireframe](assets/readme-images/MS3-desktop-wireframes.png)
+![desktop design wireframe](recipes/static/assets/readme-images/MS3-desktop-wireframes.png)
 
 [Link to my Figma page](https://www.figma.com/file/a16YGDltwNMRzhCTNCDAV1/Milestone-3---Instacook?type=design&node-id=0%3A1&mode=design&t=vR4mpWydSqybmKji-1)
 
 ### User Journey
 I created UX flow charts using FigJam to map out the user stories.
 
-![UX Flow key](assets/readme-images/MS3-UX-flow-key.jpg)
+![UX Flow key](recipes/static/assets/readme-images/MS3-UX-flow-key.jpg)
 
 New visitor
 
-![UX Flow for new visitor](assets/readme-images/MS3-UX-flow-new-user.jpg)
+![UX Flow for new visitor](recipes/static/assets/readme-images/MS3-UX-flow-new-user.jpg)
 
 Returning and frequent visitor
 
-![UX Flow for new visitor](assets/readme-images/MS3-UX-flow-returning-user.jpg)
+![UX Flow for new visitor](recipes/static/assets/readme-images/MS3-UX-flow-returning-user.jpg)
 
 ### Database Schema
 Here is a database schema flow chart I created using Miro.
@@ -143,103 +143,103 @@ I chose a cursive font for titles, 'Pacifico' and 'Poppins' a simple sans-serif 
 ![Favicon screenshot]()
 
 ### Logo
-![Logo in navigation bar](assets/readme-images/logo.png)
+![Logo in navigation bar](recipes/static/assets/readme-images/logo.png)
 
 * I created my simple text logo using the Silkscreen font to give it the retro gaming feel.
 
 ## app page
 
-![Home page screenshot](assets/readme-images/home-page-screenshot.png)
+![Home page screenshot](recipes/static/assets/readme-images/home-page-screenshot.png)
 
 * To keep things clear I have sectioned out the page, so that the ingredients are on the left and the coffee drink is on the right to be created and filled up by the user. In mobile and tablet, the cup appears at the top with the ingredients at the bottom so the user instinctively reads the drink name first, sees the cup to fill and then proceeds to the ingredients to make choices.
 
 ### Instructions pop-up
 
-![app instructions pop-up screenshot](assets/readme-images/app-pop-up-screenshot.png)
+![app instructions pop-up screenshot](recipes/static/assets/readme-images/app-pop-up-screenshot.png)
 
 * I created an animated gif for the centre of the landing page to add to the initial visual impact of the site to draw users in. I have kept it in a hand-drawn style to keep it fun and intriguing for a younger audience and to get my own personality across to the user to make it feel more casual and relatable.
 
 ### Random drink generator
 
-![Drink title generator screenshot](assets/readme-images/random-drink-generator.png)
+![Drink title generator screenshot](recipes/static/assets/readme-images/random-drink-generator.png)
 
 * This title prints a random drink from an array in the script-app.js file.
 * I have used a while loop to make sure no drink appears twice during one app. The loop checks the users correct drink answers array against the original drink name array. This user array has also been useful to then print out the drinks the user got correct in a pop up at the end of app play, to help them know where to focus on next time to improve their score.
 
-![Javascript code for drink name generator screenshot](assets/readme-images/drink-name-random-code.png)
+![Javascript code for drink name generator screenshot](recipes/static/assets/readme-images/drink-name-random-code.png)
 
 ### Ingredient text overlays
 
-![Ingredient with hover overlays screenshot](assets/readme-images/ingredient-drawer-image-overlays.png)
+![Ingredient with hover overlays screenshot](recipes/static/assets/readme-images/ingredient-drawer-image-overlays.png)
 
 * When the user clicks on an ingredient in the mobile version, or hovers over in the desktop version, the name of ingredient appears as a text overlay over the graphic. I felt this was intuitive for the user and also maintained the minimalist visual due to there not being an overload of text on the page.
 
 ### Changing coffee cup graphic
 
-![Coffee cup graphic screenshot](assets/readme-images/coffee-cup-change.png)
+![Coffee cup graphic screenshot](recipes/static/assets/readme-images/coffee-cup-change.png)
 
 * The coffee cup image changes if the correct ingredient is clicked for the drink name that has been generated at the top of the page. It go through each step, gradually filling up with each ingredient until the drink is complete.
 
 ### Timer, score count and order count
 
-![Timer, score count and order count screenshot](assets/readme-images/timer-and-counts.png)
+![Timer, score count and order count screenshot](recipes/static/assets/readme-images/timer-and-counts.png)
 
 * Each drink gets a 15 second timer for the user to guess the ingredient sequence correctly. For every incorrect ingredient clicked, the player loses 5 points in their score, and for every correctly guessed drink sequence, they get 10 points. The order count also keeps track of how many drinks have been successfully completed so far.
 
 ### Try again pop-up
 
-![Try again pop-up screenshot](assets/readme-images/try-again-pop-up.png)
+![Try again pop-up screenshot](recipes/static/assets/readme-images/try-again-pop-up.png)
 
 * For each incorrect ingredient clicked, a timed pop-up appears prompting the user to try again and check the how to play section if unsure.
 
 ### Well done pop-up
 
-![Well done pop-up screenshot](assets/readme-images/well-done-pop-up.png)
+![Well done pop-up screenshot](recipes/static/assets/readme-images/well-done-pop-up.png)
 
 * A well done pop-up appears for every correct sequence completed so the user knows the app has progressed and they are moving onto the next drink.
 
 ### End of app pop-up / Out of time pop-up
 
-![End of app pop-up screenshot](assets/readme-images/pop-up-with-score.png)
+![End of app pop-up screenshot](recipes/static/assets/readme-images/pop-up-with-score.png)
 
 * Conscious I wanted to make this as intuitive as possible for giving the user feedback as this is can be used as a training tool, I have created logic that tailors the pop-up message based on if they answer any questions correctly, if time ran out, or if they completed the app.
 * The user array I created to use in the while loop for the random drink generator (to make sure no drink appears twice during one app) allows me to print out the drinks the user got correct in a pop up at the end of app play, to help them know where to focus on next time to improve their score.
 
-![End of app pop-up no drinks correct screenshot](assets/readme-images/pop-up-with-no-score.png)
+![End of app pop-up no drinks correct screenshot](recipes/static/assets/readme-images/pop-up-with-no-score.png)
 
-![End of app pop-up all drinks correct screenshot](assets/readme-images/pop-up-with-finished-app.png)
+![End of app pop-up all drinks correct screenshot](recipes/static/assets/readme-images/pop-up-with-finished-app.png)
 
 ### Footer
 
-![Footer screenshot](assets/readme-images/footer.png)
+![Footer screenshot](recipes/static/assets/readme-images/footer.png)
 
 * I have included links to my Instagram profile in the footer along with an icon that links to the contact form page. This way if the user is more driven by icons than text, they will instinctively know to click the email icon to get in touch, versus the users who might be encouraged or prompted to contact from the text and 'click here' link I have included within the footer too.
 * The external link to Instagram opens a separate window, whereas the internal link to my contact form redirects to the contact page within the same window, which is good practice when designing a user journey and saves several windows opening for the user for the same website.
 
 ## Get in touch page
 
-![Get in touch screenshot](assets/readme-images/contact-page.png)
+![Get in touch screenshot](recipes/static/assets/readme-images/contact-page.png)
 
 * I have included a functional contact form created using emailjs for users to contact me.
 
 ### Contact Form
 
-![Contact Form screenshot](assets/readme-images/contact-form.png)
+![Contact Form screenshot](recipes/static/assets/readme-images/contact-form.png)
 
 * All inputs are required
 * The contact form checks the input is valid before sending and if not it will alert the user - the email input will not work unless a proper email address is added, and you cannot leave any field blank.
 
-![Contact Form pop up screenshot](assets/readme-images/invalid-input-error-email-form.png)
+![Contact Form pop up screenshot](recipes/static/assets/readme-images/invalid-input-error-email-form.png)
 
 ## Thank you page
 
-![Thank you re-direct page screenshot](assets/readme-images/thank-you-page.png)
+![Thank you re-direct page screenshot](recipes/static/assets/readme-images/thank-you-page.png)
 
 * A quick message to the user to confirm their message has been submitted and to redirect them back to the app page within 5 seconds.
 
 ## Error 404 page
 
-![Error 404 page screenshot](assets/readme-images/error-404-page.png)
+![Error 404 page screenshot](recipes/static/assets/readme-images/error-404-page.png)
 
 * Should any errors occur, the user will be directed to this page. I have included this page in the sendmail js file function, should the form not successfully submit. The page has a button that links back to the app page, so the user can return back to the main site easily and quickly.
 
@@ -331,7 +331,7 @@ I have documented my testing in a separate document [TESTING.md](TESTING.md)
 * **Text overlay on ingredients** - I followed this tutorial and tailored it to my own style and needs [Text image overlays](https://www.youtube.com/watch?v=Qt-70hrdJZI&ab_channel=LearnWeb)
 
 * **Thank-you page** - I used this code snippet to get the Thank You page to re-direct back to the site after 5 seconds. This was from a [Stack Overflow thread.](https://stackoverflow.com/questions/3292038/redirect-website-after-specified-amount-of-time)
-![Re-direct for the thank you page code snippet](assets/readme-images/redirect-code-snippet.png)
+![Re-direct for the thank you page code snippet](recipes/static/assets/readme-images/redirect-code-snippet.png)
 
 * **Favicon** - I used a [Favicon generator](https://favicon.io/) to create the appropriate files for me to upload to my site, as well as this code snippet to install it site-wide.
 ![Favicon installation code snippet](#)
