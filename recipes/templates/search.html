@@ -17,9 +17,10 @@
     <h5>Explore and filter all recipes with the drop down boxes below.</h5>
 </div>
 
+<!-- Dropdown filters -->
 <div class="row">
     <div class="row">
-        <div class="input-field col s3">
+        <div class="input-field col l3 m6 s12">
             <i class="fa-solid fa-drumstick-bite prefix"></i>
             <select id="meal_type" name="meal_type" class="validate"
                 onchange="updateQueryParams('meal_type', event.target.value)">
@@ -31,7 +32,7 @@
             </select>
             <label for="meal_type">Meal Type</label>
         </div>
-        <div class="input-field col s3">
+        <div class="input-field col l3 m6 s12">
             <i class="fa-solid fa-earth-americas prefix"></i>
             <select id="dish_origin" name="dish_origin" class="validate"
                 onchange="updateQueryParams('dish_origin', event.target.value)">
@@ -43,7 +44,7 @@
             </select>
             <label for="dish_origin">Dish Origin</label>
         </div>
-        <div class="input-field col s3">
+        <div class="input-field col l3 m6 s12">
             <i class="fa-solid fa-star prefix"></i>
             <select id="star_rating" name="star_rating" class="validate"
                 onchange="updateQueryParams('star_rating', event.target.value)">
@@ -56,12 +57,13 @@
             </select>
             <label for="star_rating">Star Rating</label>
         </div>
-        <div class="input-field col s3">
+        <div class="input-field col l3 m6 s12 center-align">
             <a class="btn purple-btns" href="{{ url_for('search') }}">Clear Selection</a>
         </div>
     </div>
 </div>
 
+<!-- Show filtered recipes -->
 <div class="row">
     <div class="col s12">
         <ul class="collapsible">

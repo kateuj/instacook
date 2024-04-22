@@ -11,9 +11,10 @@
     </div>
 </div>
 
+<!-- Cookbook tiles -->
 <div class="row">
     {% for cookbook in cookbooks %}
-    <div class="col s12 m6 l3">
+    <div class="col s12 m6 l4">
         <div class="card center-align">
             <div class="card-content white-text">
                 <a href="{{ url_for('recipes', id=cookbook.id) }}"><span class="card-title"><i class="fa-solid fa-book"></i> {{ cookbook.cookbook_name }} Cookbook</span></a>

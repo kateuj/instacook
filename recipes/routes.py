@@ -33,7 +33,7 @@ def register():
         db.session.add(new_user)
         db.session.commit()
 
-        # put the new user into 'session' cookie
+        # Put the new user into 'session' cookie
         session["user"] = request.form.get("user_name").lower()
         flash("Registration successful")
         return redirect(url_for("dashboard", user_name=session["user"]))
@@ -44,13 +44,13 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        # check if username exists in db
+        # Check if username exists in db
         existing_user = Users.query.filter_by(
             user_name=request.form.get("user_name").lower()
         ).first()
 
         if existing_user:
-            # ensure hashed password matches user input
+            # Ensure hashed password matches user input
             if check_password_hash(existing_user.password, request.form.get("password")):
                     session["user"] = request.form.get("user_name").lower()
                     flash("Welcome, {}".format(
@@ -58,12 +58,12 @@ def login():
                     return redirect(url_for(
                         "dashboard", user_name=session["user"]))
             else:
-                # invalid password match
+                # Invalid password match
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
-            # username doesn't exist
+            # Username doesn't exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 

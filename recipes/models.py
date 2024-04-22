@@ -38,5 +38,3 @@ class Recipe(db.Model):
         return "#{0} - Recipe Name: {1} | Star Rating: {2} | Ingredients: {3} | Instructions: {4}".format(
             self.id, self.recipe_name, self.star_rating, self.recipe_ingredients, self.recipe_instructions
         )
-
-# potential class for recipe ingredients and instructions

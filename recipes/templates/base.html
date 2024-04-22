@@ -27,6 +27,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
     </script>
     <script src="https://kit.fontawesome.com/5588c9f8ee.js" crossorigin="anonymous"></script>
+    <!-- EmailJS script -->
     <script type="text/javascript">
         (function () {
             emailjs.init("fevU8dJKDBCLh5y5o");
@@ -37,6 +38,7 @@
 <body>
 
     <header>
+        <!-- Nav bar -->
         <nav class="nav-footer-background">
             <div class="nav-wrapper">
                 <a href="{{ url_for('home') }}" class="brand-logo">
@@ -47,6 +49,7 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('search') }}"><i class="material-icons">search</i></a></li>
                     <li><a href="{{ url_for('search') }}">Explore Recipes</a></li>
+                    <!-- If user is logged in, different links display -->
                     {% if session.user %}
                     <li><a href="{{ url_for('dashboard', user_name=session['user']) }}">Dashboard</a></li>
                     <li><a href="{{ url_for('logout') }}">Logout</a></li>
@@ -60,6 +63,7 @@
             </div>
         </nav>
 
+        <!-- Mobile nav bar -->
         <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ url_for('search') }}"><i class="material-icons">search</i></a></li>
             <li><a href="{{ url_for('search') }}">Explore Recipes</a></li>
@@ -89,22 +93,26 @@
         {% endwith %}
     </section>
 
+    <!-- If request to allow full page slider on index page to go full width rather than in a container -->
     {% if request.path == url_for('home') %}
-        <main>
+    <main>
     {% else %}
-        <main class="container">
+    <main class="container">
     {% endif %}
 
     {% block content %}
     {% endblock %}
-        </main>
+    </main>
 
+    <!-- Footer -->
     <footer class="page-footer nav-footer-background">
         <div class="container">
             <div class="row center-align">
                 <div class="col s12">
+                    <!-- If user is logged in, different links display -->
                     {% if session.user %}
-                    <a href="{{ url_for('dashboard', user_name=session['user']) }}" class="footer-text">Dashboard</a> |
+                    <a href="{{ url_for('dashboard', user_name=session['user']) }}"
+                        class="footer-text">Dashboard</a> |
                     <a href="{{ url_for('logout') }}" class="footer-text">Logout</a> |
                     <a href="{{ url_for('contact') }}" class="footer-text">Contact</a>
                     {% else %}
@@ -117,7 +125,7 @@
         </div>
         <div class="footer-copyright nav-footer-background">
             <div class="container center-align">
-                © 2014 Copyright Text
+                © 2024 Copyright Text
             </div>
         </div>
     </footer>
