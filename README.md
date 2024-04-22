@@ -152,99 +152,42 @@ I chose a cursive font for titles, 'Pacifico' and 'Poppins' a simple sans-serif 
 
 * To keep things clear I have sectioned out the page, so that the ingredients are on the left and the coffee drink is on the right to be created and filled up by the user. In mobile and tablet, the cup appears at the top with the ingredients at the bottom so the user instinctively reads the drink name first, sees the cup to fill and then proceeds to the ingredients to make choices.
 
+### Register page
+
+![Login page screenshot](recipes/static/assets/readme-images/register-page.png)
+
+* I c
+
 ### Login page
 
 ![Login page screenshot](recipes/static/assets/readme-images/login-page.png)
 
-* I created an animated gif for the centre of the landing page to add to the initial visual impact of the site to draw users in. I have kept it in a hand-drawn style to keep it fun and intriguing for a younger audience and to get my own personality across to the user to make it feel more casual and relatable.
+### Explore recipes page
 
-### Random drink generator
-
-![Register page screenshot](recipes/static/assets/readme-images/register-page.png)
-
-* This title prints a random drink from an array in the script-app.js file.
-* I have used a while loop to make sure no drink appears twice during one app. The loop checks the users correct drink answers array against the original drink name array. This user array has also been useful to then print out the drinks the user got correct in a pop up at the end of app play, to help them know where to focus on next time to improve their score.
-
-### Ingredient text overlays
-
-![Ingredient with hover overlays screenshot](recipes/static/assets/readme-images/ingredient-drawer-image-overlays.png)
-
-* When the user clicks on an ingredient in the mobile version, or hovers over in the desktop version, the name of ingredient appears as a text overlay over the graphic. I felt this was intuitive for the user and also maintained the minimalist visual due to there not being an overload of text on the page.
-
-### Changing coffee cup graphic
-
-![Coffee cup graphic screenshot](recipes/static/assets/readme-images/coffee-cup-change.png)
-
-* The coffee cup image changes if the correct ingredient is clicked for the drink name that has been generated at the top of the page. It go through each step, gradually filling up with each ingredient until the drink is complete.
-
-### Timer, score count and order count
-
-![Timer, score count and order count screenshot](recipes/static/assets/readme-images/timer-and-counts.png)
-
-* Each drink gets a 15 second timer for the user to guess the ingredient sequence correctly. For every incorrect ingredient clicked, the player loses 5 points in their score, and for every correctly guessed drink sequence, they get 10 points. The order count also keeps track of how many drinks have been successfully completed so far.
-
-### Try again pop-up
-
-![Try again pop-up screenshot](recipes/static/assets/readme-images/try-again-pop-up.png)
-
-* For each incorrect ingredient clicked, a timed pop-up appears prompting the user to try again and check the how to play section if unsure.
-
-### Well done pop-up
-
-![Well done pop-up screenshot](recipes/static/assets/readme-images/well-done-pop-up.png)
-
-* A well done pop-up appears for every correct sequence completed so the user knows the app has progressed and they are moving onto the next drink.
-
-### End of app pop-up / Out of time pop-up
-
-![End of app pop-up screenshot](recipes/static/assets/readme-images/pop-up-with-score.png)
-
-* Conscious I wanted to make this as intuitive as possible for giving the user feedback as this is can be used as a training tool, I have created logic that tailors the pop-up message based on if they answer any questions correctly, if time ran out, or if they completed the app.
-* The user array I created to use in the while loop for the random drink generator (to make sure no drink appears twice during one app) allows me to print out the drinks the user got correct in a pop up at the end of app play, to help them know where to focus on next time to improve their score.
-
-![End of app pop-up no drinks correct screenshot](recipes/static/assets/readme-images/pop-up-with-no-score.png)
-
-![End of app pop-up all drinks correct screenshot](recipes/static/assets/readme-images/pop-up-with-finished-app.png)
-
-### Footer
-
-![Footer screenshot](recipes/static/assets/readme-images/footer.png)
-
-* I have included links to my Instagram profile in the footer along with an icon that links to the contact form page. This way if the user is more driven by icons than text, they will instinctively know to click the email icon to get in touch, versus the users who might be encouraged or prompted to contact from the text and 'click here' link I have included within the footer too.
-* The external link to Instagram opens a separate window, whereas the internal link to my contact form redirects to the contact page within the same window, which is good practice when designing a user journey and saves several windows opening for the user for the same website.
-
-## Get in touch page
-
-![Get in touch screenshot](recipes/static/assets/readme-images/contact-page.png)
-
-* I have included a functional contact form created using emailjs for users to contact me.
+![Search page screenshot](recipes/static/assets/readme-images/search-page.png)
 
 ### Contact Form
 
-![Contact Form screenshot](recipes/static/assets/readme-images/contact-form.png)
+![Contact Form screenshot](recipes/static/assets/readme-images/contact-page.png)
 
 * All inputs are required
 * The contact form checks the input is valid before sending and if not it will alert the user - the email input will not work unless a proper email address is added, and you cannot leave any field blank.
 
-![Contact Form pop up screenshot](recipes/static/assets/readme-images/invalid-input-error-email-form.png)
-
 ## Thank you page
 
-![Thank you re-direct page screenshot](recipes/static/assets/readme-images/thank-you-page.png)
+![Thank you re-direct page screenshot](recipes/static/assets/readme-images/contact-form-submission-page.png)
 
 * A quick message to the user to confirm their message has been submitted and to redirect them back to the app page within 5 seconds.
 
 ## Error 404 page
 
-![Error 404 page screenshot](recipes/static/assets/readme-images/error-404-page.png)
+![Error 404 page screenshot](recipes/static/assets/readme-images/404-page.png)
 
 * Should any errors occur, the user will be directed to this page. I have included this page in the sendmail js file function, should the form not successfully submit. The page has a button that links back to the app page, so the user can return back to the main site easily and quickly.
 
 ## Possible Future Features
 
-* Background music for ambience
-* Confetti animation when the user guesses the correct sequence
-* More drink variations
+* 
 
 # Deployment
 
