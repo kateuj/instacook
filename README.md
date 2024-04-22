@@ -4,7 +4,7 @@
 
 For my Milestone 3 project I have created a personalised Cookbook web application, where the user can log into their account, search for recipes and add them to their own virtual cookbook. They can also add their own recipes into their cookbook, as well as edit and delete when required. They can also give star ratings to their recipes to help them highlight their favourites and make them easier to find in the future.
 
-![Screen mock-ups of Instacook website](recipes/static/assets/readme-images/#)
+![Screen mock-ups of Instacook website](recipes/static/assets/readme-images/screen-mock-up.png)
 
 [Link to Instacook live site](https://instacook-64f0d9d64709.herokuapp.com/)
 
@@ -300,7 +300,7 @@ I have documented my testing in a separate document [TESTING.md](TESTING.md)
 * PostgresSQL relational database
 
 ## Frameworks, Libraries & Programs Used
-* [Am I Responsive](https://amiresponsive.co.uk/) - To generate a screen mockup of my web app for this README.
+* [Am I Responsive](https://ui.dev/amiresponsive?url=https://instacook-64f0d9d64709.herokuapp.com) - To generate a screen mockup of my web app for this README.
 * [Gitpod](https://gitpod.com) - To create, edit, preview and push my code to my Github repository.
 * [Git](https://git-scm.com/) - For version control.
 * [Github](github.com) - To store versions of my site's repository while developing and then for deployment.
