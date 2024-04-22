@@ -19,8 +19,8 @@ main {
 
 /*Nav-bar*/
 #nav-logo {
-    height: 3vh;
-    margin: auto;
+    width: 20vh;
+    margin-top: 2vh;
     padding-left: 2vh;
 }
 
@@ -30,7 +30,7 @@ main {
 
 /*Footer*/
 .footer-text {
-    color: #ffffff!important;
+    color: #ffffff !important;
     font-weight: 400;
     padding: 1vw;
 }
@@ -41,7 +41,7 @@ main {
 
 /*Hero-slider*/
 .slider {
-    max-height: 100vh!important;
+    max-height: 100vh !important;
     z-index: 1 !important;
     position: relative;
 }
@@ -63,11 +63,11 @@ main {
 }
 
 .card-title {
-    color:aliceblue;
+    color: aliceblue;
 }
 
 .card-title:active {
-    color:aliceblue;
+    color: aliceblue;
 }
 
 .card-title:hover {
@@ -111,12 +111,32 @@ main {
 
 /*Forms*/
 .input-text {
-    color: #5856D6!important;
-    font-size: large!important;
+    color: #5856D6 !important;
+    font-size: large !important;
 }
 
 /*Collapsible recipes*/
-.collapsible-header{
+.collapsible-header {
     background-color: #c93a7d;
     color: aliceblue;
+}
+
+
+/*Media Queries*/
+@media screen and (max-width: 1050px) {}
+
+@media screen and (max-width: 991px) {
+    #nav-logo {
+        padding-left: 0vh;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #nav-logo {
+        margin: 1vh;
+    }
+}
+
+@media screen and (max-width: 360px) {
+
 }
