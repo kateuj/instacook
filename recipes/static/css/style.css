@@ -20,7 +20,8 @@ main {
 /*Nav-bar*/
 #nav-logo {
     height: 3vh;
-    margin: 1vh;
+    margin: auto;
+    padding-left: 2vh;
 }
 
 .nav-footer-background {
