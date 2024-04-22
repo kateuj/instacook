@@ -127,7 +127,7 @@ I chose a cursive font for titles, 'Pacifico' and 'Poppins' a simple sans-serif 
 ### Imagery
 
 * I created the logo myself using the main title font 'Pacifico' and designing the logo in Adobe Illustrator.
-![Instacook logo](recipes/static/assets/site-images/instacook-logo.webp)
+![Instacook logo](recipes/static/assets/site-images/instacook-logo.webp | width:100)
 
 # Features #
 
@@ -139,33 +139,31 @@ I chose a cursive font for titles, 'Pacifico' and 'Poppins' a simple sans-serif 
 * I have considered readability contrast carefully for all visual elements.
 * I have included a Favicon page tab icon to make the page look professional and consistent.
 
-![Favicon screenshot]()
+![Favicon screenshot](recipes/static/assets/readme-images/favicon.png)
 
 ### Logo
-![Logo in navigation bar](recipes/static/assets/readme-images/logo.png)
+![Logo in navigation bar](recipes/static/assets/readme-images/nav-bar-logo.png)
 
-* I created my simple text logo using the Silkscreen font to give it the retro gaming feel.
+* I created my simple text logo using the Pacifico font to keep a design consistency within the site.
 
-## app page
+## Landing page
 
-![Home page screenshot](recipes/static/assets/readme-images/home-page-screenshot.png)
+![Home page screenshot](recipes/static/assets/readme-images/home-page.png)
 
 * To keep things clear I have sectioned out the page, so that the ingredients are on the left and the coffee drink is on the right to be created and filled up by the user. In mobile and tablet, the cup appears at the top with the ingredients at the bottom so the user instinctively reads the drink name first, sees the cup to fill and then proceeds to the ingredients to make choices.
 
-### Instructions pop-up
+### Login page
 
-![app instructions pop-up screenshot](recipes/static/assets/readme-images/app-pop-up-screenshot.png)
+![Login page screenshot](recipes/static/assets/readme-images/login-page.png)
 
 * I created an animated gif for the centre of the landing page to add to the initial visual impact of the site to draw users in. I have kept it in a hand-drawn style to keep it fun and intriguing for a younger audience and to get my own personality across to the user to make it feel more casual and relatable.
 
 ### Random drink generator
 
-![Drink title generator screenshot](recipes/static/assets/readme-images/random-drink-generator.png)
+![Register page screenshot](recipes/static/assets/readme-images/register-page.png)
 
 * This title prints a random drink from an array in the script-app.js file.
 * I have used a while loop to make sure no drink appears twice during one app. The loop checks the users correct drink answers array against the original drink name array. This user array has also been useful to then print out the drinks the user got correct in a pop up at the end of app play, to help them know where to focus on next time to improve their score.
-
-![Javascript code for drink name generator screenshot](recipes/static/assets/readme-images/drink-name-random-code.png)
 
 ### Ingredient text overlays
 
@@ -250,35 +248,9 @@ I chose a cursive font for titles, 'Pacifico' and 'Poppins' a simple sans-serif 
 
 # Deployment
 
-## GitHub pages
-I used GitHub pages to deploy my site. This required me to go to my project repository and then:
+## Heroku
+I used Heroku to deploy my site. This required me to go to my project repository and then:
 1. Click on the 'Settings' tab.
-2. Select 'Pages' from the menu that appears on the left.
-3. Select 'Deploy from a branch'.
-4. Select 'Main' in the drop-down menu called 'Select Branch'.
-5. Then alongside 'Main', there is a folder dropdown where you select '/Root'.
-6. Click 'Save' button.
-7. Refresh the page and a link to the live project will appear at the top of the page.
-
-## Forking a GitHub repository
-Forking allows users to make a copy of an original repository in GitHub and view and make changes to it without changing the original repository.
-To create a fork:
-1. Once logged into GitHub, follow the link to your chosen GitHub repository, or use the search bar to find it on the GitHub home page.
-2. Once in the repository window, click the 'Fork' drop down arrow button in the top right-hand corner.
-3. Select 'Create new fork'.
-4. Check the details in the window before clicking the green 'Create Fork' button.
-5. You will now be able to find the copy of the repository in your own GitHub account.
-
-## Making a Local Clone
-1. Once logged into GitHub, follow the link to your chosen GitHub repository, or use the search bar to find it on the GitHub home page.
-2. Once in the repository window, click the green 'Code' button.
-3. To clone the repository using HTTPS, copy the link provided below the HTTPS header.
-4. Open a terminal in your code editor.
-5. Change the location in the current working directory to where you want the cloned directory to be created.
-6. Type "git clone" into the terminal, and then paste the URL you copied and click enter.
-7. This should have created a local clone of the repository.
-
-Here is the live link to my website - <https://kateuj.github.io/coffee_cram/index.html>
 
 # Testing
 
@@ -326,8 +298,6 @@ I have documented my testing in a separate document [TESTING.md](TESTING.md)
 * [Favicon](https://favicon.io/) - Generated my favicon files from the favicon I designed.
 
 # Code
-
-* **Text overlay on ingredients** - I followed this tutorial and tailored it to my own style and needs [Text image overlays](https://www.youtube.com/watch?v=Qt-70hrdJZI&ab_channel=LearnWeb)
 
 * **Thank-you page** - I used this code snippet to get the Thank You page to re-direct back to the site after 5 seconds. This was from a [Stack Overflow thread.](https://stackoverflow.com/questions/3292038/redirect-website-after-specified-amount-of-time)
 ![Re-direct for the thank you page code snippet](recipes/static/assets/readme-images/redirect-code-snippet.png)
