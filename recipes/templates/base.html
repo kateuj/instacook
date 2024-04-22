@@ -76,51 +76,6 @@
 
     </header>
 
-    {% if request.path == url_for('home') %}
-    <div class="slider">
-        <ul class="slides">
-            <li>
-                <img src="{{ url_for('static', filename='assets/site-images/hero-image-4.webp') }}">
-                <div class="caption center-align">
-                    <h1>Welcome to Instacook</h1>
-                    <h5 class="light grey-text text-lighten-3">Create digital cookbooks to store your favourite recipes
-                        in.</h5>
-                    <div class="row center-align">
-                        <div class="col s12">
-                            <a href="{{ url_for('register') }}" class="purple-btns btn-large">Register</a>
-                            <a href="{{ url_for('login') }}" class="purple-btns btn-large">Log In</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <img src="{{ url_for('static', filename='assets/site-images/hero-image-3.webp') }}">
-                <div class="caption left-align">
-                    <h3>Looking for inspiration?</h3>
-                    <h5 class="light grey-text text-lighten-3">Search through recipes other users have created.</h5>
-                    <div class="row left-align">
-                        <div class="col s12">
-                            <a href="{{ url_for('search') }}" class="purple-btns btn-large">Explore Recipes</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <img src="{{ url_for('static', filename='assets/site-images/hero-image-2.webp') }}">
-                <div class="caption right-align">
-                    <h3>Have an account already?</h3>
-                    <h5 class="light grey-text text-lighten-3">Login below.</h5>
-                    <div class="row right-align">
-                        <div class="col s12">
-                            <a href="{{ url_for('login') }}" class="purple-btns btn-large">Login</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-    {% endif %}
-
     <section>
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
@@ -134,11 +89,15 @@
         {% endwith %}
     </section>
 
+    {% if request.path == url_for('home') %}
+        <main>
+    {% else %}
+        <main class="container">
+    {% endif %}
 
-    <main class="container">
-        {% block content %}
-        {% endblock %}
-    </main>
+    {% block content %}
+    {% endblock %}
+        </main>
 
     <footer class="page-footer nav-footer-background">
         <div class="container">
