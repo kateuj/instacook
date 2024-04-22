@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // sidenav initialization
+  // Sidenav initialization
   let sidenav = document.querySelectorAll(".sidenav");
   M.Sidenav.init(sidenav);
 
-  // select initialization
+  // Select initialization
   let selects = document.querySelectorAll("select");
   M.FormSelect.init(selects); 
     
@@ -14,10 +14,6 @@ document.addEventListener("DOMContentLoaded", function() {
   // Modal initialization
   let modals = document.querySelectorAll('.modal');
   M.Modal.init(modals);
-
-  // Carousel initialization
-  let carousel = document.querySelectorAll('.carousel');
-  M.Carousel.init(carousel);
 
   // Hero Slider initialization
   let slider = document.querySelectorAll('.slider');
