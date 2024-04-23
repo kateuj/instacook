@@ -192,19 +192,38 @@ The validator highlighted:
 
 ### Lighthouse
 
-To test performance and accessibility, I used Lighthouse within the Chrome Developer Tools. 
+To test performance and accessibility, I used Lighthouse within the Chrome Developer Tools. Accessibility was down by 1% on the search page, based on the contrast between the pink background and white recipe name text on top.
 
 | Page | Results |
 | --- | --- |
-| Home Page | <img src="./documentation/lighthouse/welcome.webp" alt="Light house results for home page"> |
-| Login Page | <img src="./documentation/lighthouse/login.webp" alt="Light house results for log in page"> |
-| Register Page | <img src="./documentation/lighthouse/register.webp" alt="Light house results for register page"> |
-| Dashboard Page | <img src="./documentation/lighthouse/budgets.webp" alt="Light house results for dashboard page"> |
-| Search Page | <img src="./documentation/lighthouse/budget.webp" alt="Light house results for search page"> |
-| Contact Page | <img src="./documentation/lighthouse/profile.webp" alt="Light house results for contact page"> |
-| Thank You Page | <img src="./documentation/lighthouse/profile.webp" alt="Light house results for thank you page"> |
-| Add Recipe Page | <img src="./documentation/lighthouse/profile.webp" alt="Light house results for add recipe page"> |
-| Edit Recipe Page | <img src="./documentation/lighthouse/profile.webp" alt="Light house results for edit recipe page"> |
-| Add Cookbook Page | <img src="./documentation/lighthouse/profile.webp" alt="Light house results for add cookbook page"> |
-| Edit Cookbook Page | <img src="./documentation/lighthouse/profile.webp" alt="Light house results for edit cookbook page"> |
-| Recipes Page | <img src="./documentation/lighthouse/profile.webp" alt="Light house results for recipes page"> |
+| Home Page | <img src="recipes/static/assets/readme-images/home-page-lighthouse.png" alt="Light house results for home page"> |
+| Login Page | <img src="recipes/static/assets/readme-images/login-page-lighthouse.png" alt="Light house results for log in page"> |
+| Register Page | <img src="recipes/static/assets/readme-images/register-page-lighthouse.png" alt="Light house results for register page"> |
+| Dashboard Page | <img src="recipes/static/assets/readme-images/dashboard-page-lighthouse.png" alt="Light house results for dashboard page"> |
+| Search Page | <img src="recipes/static/assets/readme-images/search-page-lighthouse.png" alt="Light house results for search page"> |
+| Contact Page | <img src="recipes/static/assets/readme-images/contact-page-lighthouse.png" alt="Light house results for contact page"> |
+| Add Recipe Page | <img src="recipes/static/assets/readme-images/add-recipe-page-lighthouse.png" alt="Light house results for add recipe page"> |
+| Edit Recipe Page | <img src="recipes/static/assets/readme-images/edit-recipe-page-lighthouse.png" alt="Light house results for edit recipe page"> |
+| Add Cookbook Page | <img src="recipes/static/assets/readme-images/add-cookbook-page-lighthouse.png" alt="Light house results for add cookbook page"> |
+| Edit Cookbook Page | <img src="recipes/static/assets/readme-images/edit-cookbook-name-page.png" alt="Light house results for edit cookbook page"> |
+| Recipes Page | <img src="recipes/static/assets/readme-images/recipes-page-lighthouse.png" alt="Light house results for recipes page"> |
+
+## MANUAL TESTING
+
+### Testing User Stories
+
+#### First time user
+
+#### Returning/Frequent user
+
+### Devices Used For Testing
+
+### Full Manual Testing
+
+### Bugs
+
+#### Solved Bugs
+
+#### Unsolved Bugs
+
+None known at this time.
