@@ -77,19 +77,20 @@
                     </p>
                 </div>
                 <div class="collapsible-body">
-                    <span>
-                        <p><strong>Dish Origin: </strong>{{ recipe.dish_origin }}</p>
-                        <p><strong>Meal Type: </strong>{{ recipe.meal_type }}</p>
-                        <p><strong>Ingredients:</strong>
-                            <br>
-                            {% autoescape false %}
-                            {{ recipe.recipe_ingredients | replace("\n", "<br/>") }}
-                            {% endautoescape %}
-                        </p>
-                        <p><strong>Instructions:</strong>
-                            <br>{% autoescape false %}
-                            {{ recipe.recipe_instructions | replace("\n", "<br/>") }}
-                            {% endautoescape %}</p>
+                    <p><strong>Dish Origin: </strong>{{ recipe.dish_origin }}</p>
+                    <p><strong>Meal Type: </strong>{{ recipe.meal_type }}</p>
+                    <p><strong>Ingredients:</strong>
+                        <br>
+                        {% autoescape false %}
+                        {{ recipe.recipe_ingredients | replace("\n", "<br/>") }}
+                        {% endautoescape %}
+                    </p>
+                    <p><strong>Instructions:</strong>
+                        <br>{% autoescape false %}
+                        {{ recipe.recipe_instructions | replace("\n", "<br/>") }}
+                        {% endautoescape %}
+                    </p>
+                </div>
             </li>
             {% endfor %}
         </ul>
