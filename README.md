@@ -189,11 +189,100 @@ I chose a cursive font for titles, 'Pacifico' and 'Poppins' a simple sans-serif 
 
 * 
 
+## Accessibility
+
 # Deployment
 
+I used Heroku to deploy my site, coupled with ElephantSQL to host my relational database for free.
+
+## ElephantSQL
+
+1. From the [ElephantSQL](https://www.elephantsql.com/) homepage, you need to sign up for an account or log in.
+
+2. Once logged in, you will be directed to the Instances page for your log in. You need to click on 'Create a new instance' in the top right hand corner.
+
+3. Name your database, choose the 'Tiny Turtle' free plan, select the closest region to your location and then click the 'Create Instance' button and the bottom right corner of the page.
+
+4. Then you will be able to see your new instance listed on your instances page. Click on your database name.
+
+5. Within the database details, you will see a URL section -  copy the URL link and save for later during the Heroku deployment.
+
+6. Finally, make sure in the '__init__.py' that you ad the if statement code snippet below. This ensures that SQLAlchemy can still read the external database.
+
+![if statement for init file](/recipes/static/assets/readme-images/init-file-if-statement-db-url.png)
+
 ## Heroku
-I used Heroku to deploy my site. This required me to go to my project repository and then:
-1. Click on the 'Settings' tab.
+
+1. Before navigating to the Heroku site to deploy, you need to make sure you have an up-to-date requirements.txt file and Procfile created in your repository. These will make sure Heroku knows all the required applications and their correct versions to deploy and function properly.
+
+2. To create the requirements.txt file, use the following command in your terminal:
+
+    "pip3 freeze --local > requirements.txt"
+
+3. Similarly for the Procfile, use the following command in your terminal (make sure Procfile is capitalised. It does not need a file extension. The example below assumes the python file to launch your app is called 'run.py', so please change out if required):
+
+    "echo web: python run.py > Procfile"
+
+4. Check both files have been created properly. A couple of potential issues to be made a aware of:
+- Make sure Procfile has the Heroku logo next to it in the file explorer view in your IDE
+- Check that there are no blank lines at the end of the Procfile and delete them if found, as this can prevent it from deploying when being read by Heroku. Save, commit and push these files to your repository.
+
+5. Login or register on the [Heroku](https://www.heroku.com) homepage.
+
+6. Once on your dashboard, click the 'New' button and then 'Create new app' when it drops down.
+
+7. Type in a unique app name, choose your region and click 'Create App'.
+
+8. Now this has been created, we can now linke this to our repository in GitHub and our ElephantSQL database. Click on 'settings' heading in the app dashboard, then scroll down to click 'Reveal Config Vars'.
+
+9. Add your config variables in this section for Heroku to build the app - these will be all the variables in your env.py file. It will look like this:
+
+    | KEY | VALUE |
+    | -- | -- |
+    | DATABASE_URL | POSTGRES_DB_URL_FROM_ELEPHANT_SQL |
+    | DEBUG | TRUE |
+    | IP | 0.0.0.0 |
+    | PORT | 5000 |
+    | SECRET_KEY| YOUR_SECRET_KEY |
+
+NOTES:
+- The secret key value can be anything, but needs to be kept confidential.
+- 'POSTGRES_DB_URL_FROM_ELEPHANT_SQL' - paste your ElephantSQL URL link in here.
+- DEBUG set to TRUE is only for during the development phase, so make sure when deploying the finished app, to delete this variable.
+
+10. You're now ready to click the enable automatic deploys and create button. Heroku will start building the app.
+
+11. We will now need to go the more button on the dashboard and select run console. This is where we will set up the tables in the database we have created on ElephantSQL.
+
+12. Type python3 and then once the python interpreter opens, we can run the following:
+
+    from recipes import db
+    db.create_all()
+    exit()
+    ```
+
+13. Now that the relational database has been set up and the tables created, we can now click open app and the budgify application should now open in a new tab.
+
+### Forking the GitHub Repository
+
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Login to GitHub.
+2. Locate the repository, you can use a link you have been provided with or use the search function in the top left of the screen.
+3. In the top right hand corner of the page locate and click the 'fork' button.
+4. Near the bottom of the page click the green button that says 'Create Fork'.
+5. You should now have a copy of the original repository in your GitHub account.
+
+### Making a Local Clone
+
+1. Login to GitHub.
+2. Locate the repository, you can use a link you have been provided with or use the search function in the top left of the screen.
+3. Near the top of the repository click the green 'Code' button.
+4. To clone the repository using HTTPS, under HTTPS copy the link provided.
+5. Open the terminal in your code editor. 
+6. Change the current working directory to the location where you want the cloned directory to be made.
+7. Type git clone, and then paste the URL you copied in Step 3.
+8. Press Enter. Your local clone should be created.
 
 # Testing
 
@@ -234,7 +323,7 @@ I have documented my testing in a separate document [TESTING.md](TESTING.md)
 * Google Dev Tools - Used to troubleshoot issues both front-end and back-end. It also includes Lighthouse which I used for testing.
 * [Google Fonts](https://fonts.google.com/) - To import the fonts I chose for the website.
 * [Jinja](https://jinja.palletsprojects.com/en/3.1.x/) - Templating engine
-* [html5pattern](html5pattern.com) - The the HTML 5 regex pattern to ensure users create a secure password.
+* [html5pattern](html5pattern.com) - The the HTML 5 regex pattern to make sure users create a secure password.
 * [JSHint](https://jshint.com/) - To validate javaScript code.
 * [SQLAlchemy](https://www.sqlalchemy.org/) - Database toolkit library for Python.
 * [W3C](https://validator.w3.org/) - To validate and test HTML and CSS code.
