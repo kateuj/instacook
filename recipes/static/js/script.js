@@ -1,12 +1,13 @@
-document.addEventListener("DOMContentLoaded", function() {
+// Materialize CSS initialization
+document.addEventListener("DOMContentLoaded", function () {
   // Sidenav initialization
   let sidenav = document.querySelectorAll(".sidenav");
   M.Sidenav.init(sidenav);
 
   // Select initialization
   let selects = document.querySelectorAll("select");
-  M.FormSelect.init(selects); 
-    
+  M.FormSelect.init(selects);
+
   // Collaspsible initialization
   let collapsibles = document.querySelectorAll('.collapsible');
   M.Collapsible.init(collapsibles);
@@ -20,3 +21,14 @@ document.addEventListener("DOMContentLoaded", function() {
   M.Slider.init(slider);
 
 });
+
+// Update query params for dropdown filters on search page.
+function updateQueryParams(key, value) {
+  const url = new URL(window.location);
+  if (value === 'All') {
+    url.searchParams.delete(key);
+  } else {
+    url.searchParams.set(key, value);
+  }
+  window.location = url.toString();
+}
