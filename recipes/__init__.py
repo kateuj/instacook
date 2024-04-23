@@ -20,4 +20,5 @@ else:
 
 db = SQLAlchemy(app)
 
+
 from recipes import routes
