@@ -109,15 +109,22 @@ I used Coolor to choose a fresh, vibrant colour palette for the site. Once chose
 
 ![Colour Scheme](recipes/static/assets/readme-images/instacook-colour-scheme.png)
 
-I checked the contrast combinations I would use, all with good readability except for yellow on white:
+### Colour Accessibility
+
+I checked the contrast on the colour combinations with ![Coolor contrast checker](https://coolors.co/contrast-checker) to determine if they met the ![WCAG AA guidelines](https://www.w3.org/TR/WCAG21/).
+All of the combinations good readability except for yellow on white:
 Purple
+
 ![Purple contrast](recipes/static/assets/readme-images/purple-contrast-checker.png)
 ![White Purple contrast](recipes/static/assets/readme-images/white-purple-contrast-checker.png)
 ![Blue Purple contrast](recipes/static/assets/readme-images/blue-purple-contrast-checker.png)
 Pink
+
 ![Pink contrast](recipes/static/assets/readme-images/pink-contrast-checker.png)
 Yellow
+
 ![Yellow contrast](recipes/static/assets/readme-images/yellow-contrast-checker.png)
+
 With the contrast not being acceptable between yellow and white, I have made sure I do not put yellow text on white  anywhere on the site.
 
 ### Typography
@@ -228,15 +235,17 @@ I chose a cursive font for titles, 'Pacifico' and 'Poppins' a simple sans-serif 
 
 * __Edit recipe form__ - Once submitted, this form updates the current recipe on the database linked the cookbook id that was selected in the drop down.
 
-### Edit recipe form
+### Add cookbook form
 
 ![Add cookbook page screenshot](recipes/static/assets/readme-images/add-cookbook-page.png)
 
-* __Cookbook name form__ - This form 
+* __Cookbook name form__ - This form posts the user's cookbook name to the database linked to the user id from the session cookie.
+
+### Edit cookbook form
 
 ![Edit cookbook name page screenshot](recipes/static/assets/readme-images/edit-cookbook-name-page.png)
 
-* __Edit cookbook name form__ - 
+* __Edit cookbook name form__ - Once submitted, this form updates the current cookbook on the database linked the user id from the session cookie.
 
 ### Contact Form
 
@@ -266,6 +275,13 @@ I chose a cursive font for titles, 'Pacifico' and 'Poppins' a simple sans-serif 
 * __Search Bar__ - To implement word search functionality so the user could search recipes using text rather than dropdowns. 
 
 ## Accessibility
+
+I did the following to ensure good accessibility:
+* Designed my app intuitively so it was easy to navigate around and create a positive user journey.
+* Added aria labels to the links across the site to achieve a higher accessibility score.
+* Used semantic HTML when building pages.
+* Checked colour contrast against accessbility standards (mentions above in Colour Accessibility section)
+* Added alt tags to all images.
 
 ## Media Queries
 
