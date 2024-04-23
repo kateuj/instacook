@@ -10,17 +10,141 @@ With the scale of this project in the grand scheme of things being quite small, 
 
 I have used a mixture of manual and automated testing while developing, both of which play a key role in forming a web application that works correctly and consistently. Automated testing can be great for doing quick overview results, for example checking code compliant with style guides etc., especially with more extensive projects and applications. Manual testing has allowed me to look at things at a deeper level, checking things like user experience design and in turn finding areas for improvement to strengthen my application as a whole. Using both has allowed me to build reliable functions and code and a higher quality end product.
 
+## Table of Contents
+
+1. [Automated Testing](#automated-testing)
+2. [Manual Testing](#manual-testing)
+
 ## AUTOMATED TESTING
 
-#### HTML Validator - [W3C](https://validator.w3.org/)
+### HTML Validator - [W3C](https://validator.w3.org/)
 
-| Page | Errors/Warnings | Solution | Image |
-| --- | --- | --- | --- |
-| Welcome Page | Warning: Section lacks h2-h6 heading. | There is little use for a h2 element on this page, however a section element is still more semantically correct so ignored this warning. | <img src="./documentation/validators/html/welcome.webp" alt="HTML validator results for welcome page"> |
-| Login Page | Warning: Section lacks h2-h6 heading. | Due to the design structure of this page again a h2 header isn't warranted however it is still more semantically correct to keep the section element instead of a DIV. | <img src="./documentation/validators/html/login.webp" alt="HTML validator results for login page"> |
-| Register Page | Warning: Section lacks h2-h6 heading. | Due to the design structure of this page again a h2 header isn't warranted however it is still more semantically correct to keep the section element instead of a DIV. | <img src="./documentation/validators/html/register.webp" alt="HTML validator results for register page"> |
-| Budget Page | N/A | N/A | <img src="./documentation/validators/html/budget.webp" alt="HTML validator results for budget page"> |
-| Budgets Page | Warning: Section lacks h2-h6 heading. | Due to the design structure of this page h2 header falls outside of the section element on this page. It would still be semantically correct to keep the section element instead of a DIV. | <img src="./documentation/validators/html/budgets.webp" alt="HTML validator results for budgets page"> |
-| Profile Page | N/A | N/A | <img src="./documentation/validators/html/profile.webp" alt="HTML validator results for profile page"> |
-| 404 Page | N/A | N/A | <img src="./documentation/validators/html/404page.webp" alt="HTML validator results for 404 page"> |
+I put every page in my site into the HTML validator. This was useful to highlight some code errors that I had missed looking through manually.
 
+#### Home Page
+
+The validator highlighted:
+* __Error:__ Missed alt tags on images.
+* __Error:__"type=text/javascript" - not required.
+* __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
+
+##### Before
+![Home page validator results before](recipes/static/assets/readme-images/home-page-validator-before.png)
+##### After updates
+![Home page validator results after](recipes/static/assets/readme-images/home-page-validator-after.png)
+
+#### Login Page
+
+The validator highlighted:
+* __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
+
+![Login page validator results](recipes/static/assets/readme-images/login-page-validator.png)
+
+#### Register Page
+
+The validator highlighted:
+* __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
+
+![Register page validator results](recipes/static/assets/readme-images/register-page-validator.png)
+
+#### Contact Page
+
+The validator highlighted:
+* __Error:__"type=text" on textarea - not required.
+* __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
+
+##### Before
+![Contact page validator results before](recipes/static/assets/readme-images/contact-page-validator-before.png)
+##### After updates
+![Contact page validator results after](recipes/static/assets/readme-images/contact-page-validator-after.png)
+
+#### Dashboard Page
+
+The validator would not work for the deployed link of this page, saying it was not retreiveable. This will be due to the fact that dashboard only loads when a session cookie is in place from a user login, so it would not be able to render in the validator. To work around this I added the raw code into the validator, and checked through for any justified errors. The validator, due to the fact the raw code has templating code in it that refers to the base.html for the header etc., was throwing alot of irrelevant errors, as you can see below. I checked each of them one by one, and none were justified errors that required changes.
+
+![Dashboard page validator results](recipes/static/assets/readme-images/dashboard-page-validator.png)
+
+#### Add Cookbook Page
+
+The validator highlighted:
+* __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
+
+![Add cookbook page validator results before](recipes/static/assets/readme-images/add-cookbook-page-validator.png)
+
+#### Edit Cookbook Page
+
+The validator highlighted:
+* __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
+
+![Edit cookbook page validator results](recipes/static/assets/readme-images/edit-cookbook-page-validator.png)
+
+#### Recipes Page
+
+The validator highlighted:
+* __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
+
+![Recipes page validator results](recipes/static/assets/readme-images/recipes-page-validator.png)
+
+#### Search Page
+
+The validator highlighted:
+* __Error:__ Unclosed div element - closed the element and it resolved the "/li" error .
+* __Error:__ Unclosed span element - removed the span element.
+* __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
+
+##### Before
+![Search page validator results before](recipes/static/assets/readme-images/search-page-validator-before.png)
+##### After updates
+![Search page validator results after](recipes/static/assets/readme-images/search-page-validator-after.png)
+
+#### Add Recipe Page
+
+The validator highlighted:
+* __Error:__"type=text" on textarea - not required.
+* __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
+
+##### Before
+![Add recipe page validator results before](recipes/static/assets/readme-images/add-recipe-page-validator-before.png)
+##### After updates
+![Add recipe page validator results after](recipes/static/assets/readme-images/add-recipe-page-validator-after.png)
+
+#### Edit Recipe Page
+
+The validator highlighted:
+* __Error:__"type=text" on textarea - not required.
+* __Error:__ first child disabled option in dropdown, the value should be empty - emptied the values on these options.
+* __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
+
+##### Before
+![Search page validator results before](recipes/static/assets/readme-images/edit-recipe-page-validator-before.png)
+##### After updates
+![Search page validator results after](recipes/static/assets/readme-images/edit-recipe-page-validator-after.png)
+
+#### Thank you Page
+
+The validator highlighted:
+* __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
+
+![Search page validator results](recipes/static/assets/readme-images/thank-you-page-validator.png)
+
+### CSS Validator - [W3C](https://jigsaw.w3.org/css-validator/)
+
+No errors were found in my CSS code when put through the validator.
+![CSS validator results](recipes/static/assets/readme-images/css-validator.png)
+
+### JSHint Validator - [JSHint](https://jshint.com/)
+
+#### Script.js
+* __Warning:__ 'let' is available in ES6 - no need to change
+* __Warning:__ 'M' undefined variable - This error is a side effect of using the Materialize library. I cannot change this quote without it affecting the function with the library, so have ignored this.
+* __Warning:__ 'updateQueryParams' unused variable - this is used within the search page funtionality, so this warning can be ignored in this instance.
+
+![script.js validator results](recipes/static/assets/readme-images/scriptjs-validator.png)
+
+#### Send_mail.js
+* __Warning:__ 'emailjs' undefined variable - this is the code snippet required to interact with the EmailJS API so I cannot change this.
+* __Warning:__ 'sendMail' unused variable - The variable is called within the contact page in the HTML, so does not require changing.
+
+![sendmail.js validator results](recipes/static/assets/readme-images/scriptjs-validator.png)
+
+#### Python Validator - [Code Institute Python Linter](https://pep8ci.herokuapp.com/) 
