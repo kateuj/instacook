@@ -16,8 +16,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <textarea placeholder="Edit list of ingredients for your recipe" id="recipe_ingredients"
-                    name="recipe_ingredients" minlength="5" maxlength="500" type="text"
-                    class="materialize-textarea validate" required>
+                    name="recipe_ingredients" minlength="5" maxlength="500" class="materialize-textarea validate"
+                    required>
                     {{- recipe.recipe_ingredients -}}
                 </textarea>
                 <label for="recipe_ingredients">Recipe Ingredients</label>
@@ -27,8 +27,8 @@
         <div class="row">
             <div class="input-field col s12">
                 <textarea placeholder="Edit list of instructions for your recipe" id="recipe_instructions"
-                    name="recipe_instructions" minlength="5" maxlength="750" type="text"
-                    class="materialize-textarea validate" required>
+                    name="recipe_instructions" minlength="5" maxlength="750" class="materialize-textarea validate"
+                    required>
                     {{- recipe.recipe_instructions -}}
                 </textarea>
                 <label for="recipe_instructions">Recipe Instructions</label>
@@ -39,7 +39,7 @@
             <div class="input-field col s12">
                 <i class="fa-solid fa-earth-americas prefix"></i>
                 <select id="dish_origin" name="dish_origin" class="validate" required>
-                    <option value="" disabled selected>Choose a dish origin</option>
+                    <option value="" disabled>Choose a dish origin</option>
                     <option value="European">European</option>
                     <option value="North American">North American</option>
                     <option value="South American">South American</option>
@@ -55,12 +55,12 @@
             <div class="input-field col s12">
                 <i class="fa-solid fa-star prefix"></i>
                 <select id="star_rating" name="star_rating" class="validate" required>
-                    <option value="{{ recipe.star_rating }}" disabled selected>Choose a rating out of 5</option>
+                    <option value="" disabled>Choose a rating out of 5</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
-                    <option value="5">5</option>   
+                    <option value="5">5</option>
                 </select>
                 <label for="star_rating">Star Rating</label>
             </div>
@@ -71,7 +71,7 @@
             <div class="input-field col s12">
                 <i class="fa-solid fa-drumstick-bite prefix"></i>
                 <select id="meal_type" name="meal_type" class="validate" required>
-                    <option value="{{ recipe.meal_type }}" disabled selected>Choose a meal type</option>
+                    <option value="" disabled>Choose a meal type</option>
                     <option value="Starter">Starter</option>
                     <option value="Main">Main</option>
                     <option value="Dessert">Dessert</option>
@@ -86,13 +86,13 @@
             <div class="input-field col s12">
                 <i class="fa-solid fa-book prefix"></i>
                 <select id="cookbook_id" name="cookbook_id" class="validate" required>
-                    <option value="" disabled selected>Choose Cookbook</option>
+                    <option value="" disabled>Choose Cookbook</option>
                     {% for cookbook in cookbook %}
-                        {% if cookbook == recipe.coobook %}                    
-                            <option value="{{ cookbook.id }}" selected>{{ cookbook.cookbook_name }}</option>
-                        {% else %}
-                            <option value="{{ cookbook.id }}">{{ cookbook.cookbook_name }}</option>
-                        {% endif %}
+                    {% if cookbook == recipe.coobook %}
+                    <option value="{{ cookbook.id }}" selected>{{ cookbook.cookbook_name }}</option>
+                    {% else %}
+                    <option value="{{ cookbook.id }}">{{ cookbook.cookbook_name }}</option>
+                    {% endif %}
                     {% endfor %}
                 </select>
                 <label for="cookbook_id">Cookbook</label>
