@@ -147,4 +147,46 @@ No errors were found in my CSS code when put through the validator.
 
 ![sendmail.js validator results](recipes/static/assets/readme-images/scriptjs-validator.png)
 
-#### Python Validator - [Code Institute Python Linter](https://pep8ci.herokuapp.com/) 
+### Python Validator - [Code Institute Python Linter](https://pep8ci.herokuapp.com/)
+
+#### run.py file
+
+The validator highlighted:
+* __Error:__"no new line at end of file" - added new line at the bottom of the code which cleared the error.
+
+![run.py validator results](recipes/static/assets/readme-images/runpy-validator.png)
+
+#### routes.py file
+
+The validator highlighted:
+* __Error:__"no new line at end of file" - added new line at the bottom of the code.
+* __Error:__"expected 2 blank lines, found 1" - added extra line.
+* __Error:__"line too long" - split the line up.
+* __Error:__"over-indented" - reduced indentation.
+* __Error:__"blank line contains whitespace" - removed white space.
+* __Error:__"missing whitespace around operator" - added whitespace.
+
+Cleared all the errors below.
+
+![routes.py validator results](recipes/static/assets/readme-images/routespy-validator.png)
+
+#### models.py file
+
+The validator highlighted:
+* __Error:__"no new line at end of file" - added new line at the bottom of the code.
+* __Error:__"expected 2 blank lines, found 1" - added extra line.
+* __Error:__"line too long" - split the line up.
+
+Cleared all the errors below.
+
+![models.py validator results](recipes/static/assets/readme-images/modelspy-validator.png)
+
+#### __init__.py file
+
+The validator highlighted:
+* __Error:__"indentation not a multiple of 4" - fixed indent.
+* __Error:__"over-indented" - reduced indent.
+* __Error:__"module level import not at top of file" - put line 24 at the top with other imports.
+
+![init.py validator results](recipes/static/assets/readme-images/initpy-validator.png)
+
