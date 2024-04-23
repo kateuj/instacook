@@ -1,7 +1,6 @@
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from recipes import routes
 if os.path.exists("env.py"):
     import env
 
@@ -20,3 +19,5 @@ else:
 
 
 db = SQLAlchemy(app)
+
+from recipes import routes
