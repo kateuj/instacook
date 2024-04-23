@@ -250,18 +250,24 @@ NOTES:
 - 'POSTGRES_DB_URL_FROM_ELEPHANT_SQL' - paste your ElephantSQL URL link in here.
 - DEBUG set to TRUE is only for during the development phase, so make sure when deploying the finished app, to delete this variable.
 
-10. You're now ready to click the enable automatic deploys and create button. Heroku will start building the app.
+10. Now the config variables are set up, go to the 'Deploy' heading. The quickest, easiest way to deploy is through selecting the 'Connect to GitHub' deployment method. Go through the login GitHub authentication steps.
 
-11. We will now need to go the more button on the dashboard and select run console. This is where we will set up the tables in the database we have created on ElephantSQL.
+11. Once your GitHub account is connected, select the respository you want to run in the 'Connect to GitHub' section.
 
-12. Type python3 and then once the python interpreter opens, we can run the following:
+12. For easier updating if you make changes to your repository, enable automatic deployment from GitHub.
 
+13. Now you are ready to click the 'Deploy' button from the main branch. Heroku will now build your app.
+
+14. Finally, we need to click on the 'More' button at the top of the dashboard screen and select 'Run Console' from the dropdown. This will set up the models in the ElephantSQL database. This is where we will set up the tables in the database we have created on ElephantSQL.
+
+12. When the terminal loads, type the following, hitting enter at the end of each line:
+
+    python3
     from recipes import db
     db.create_all()
     exit()
-    ```
 
-13. Now that the relational database has been set up and the tables created, we can now click open app and the budgify application should now open in a new tab.
+13. This has now created the relational database models from your repository into the ElephantSQL database. When you click on 'Open App' on the dashboard, it should now open Instacook.
 
 ### Forking the GitHub Repository
 
@@ -305,9 +311,9 @@ I have documented my testing in a separate document [TESTING.md](TESTING.md)
 
 ## Frameworks, Libraries & Programs Used
 * [Am I Responsive](https://ui.dev/amiresponsive?url=https://instacook-64f0d9d64709.herokuapp.com) - To generate a screen mockup of my web app for this README.
-* [Gitpod](https://gitpod.com) - To create, edit, preview and push my code to my Github repository.
+* [Gitpod](https://gitpod.com) - To create, edit, preview and push my code to my GitHub repository.
 * [Git](https://git-scm.com/) - For version control.
-* [Github](github.com) - To store versions of my site's repository while developing and then for deployment.
+* [GitHub](Github.com) - To store versions of my site's repository while developing and then for deployment.
 * [Heroku](heroku.com) - I deployed my project through Heroku.
 * [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html) - For designing the logo and favicon.
 * [Balsamiq](https://balsamiq.com/) - For wireframes.
