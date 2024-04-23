@@ -9,7 +9,7 @@
             <div class="input-field col s12">
                 <input placeholder="edit a name for your recipe" value="{{ recipe.recipe_name }}" id="recipe_name"
                     name="recipe_name" maxlength="25" type="text" class="validate" required>
-                <label for="recipe_name">Recipe Name</label>
+                <label class="input-text" for="recipe_name">Recipe Name</label>
             </div>
         </div>
         <!--Recipe Ingredients-->
@@ -20,7 +20,7 @@
                     required>
                     {{- recipe.recipe_ingredients -}}
                 </textarea>
-                <label for="recipe_ingredients">Recipe Ingredients</label>
+                <label class="input-text" for="recipe_ingredients">Recipe Ingredients</label>
             </div>
         </div>
         <!--Recipe Instructions-->
@@ -31,7 +31,7 @@
                     required>
                     {{- recipe.recipe_instructions -}}
                 </textarea>
-                <label for="recipe_instructions">Recipe Instructions</label>
+                <label class="input-text" for="recipe_instructions">Recipe Instructions</label>
             </div>
         </div>
         <!--Dish Origin-->
@@ -48,6 +48,7 @@
                     <option value="Australian">Australian</option>
                     <option value="Antarctican">Antarctican</option>
                 </select>
+                <label class="input-text" for="dish_origin">Dish Origin</label>
             </div>
         </div>
         <!--Star Rating-->
@@ -62,7 +63,7 @@
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-                <label for="star_rating">Star Rating</label>
+                <label class="input-text" for="star_rating">Star Rating</label>
             </div>
         </div>
 
@@ -77,6 +78,7 @@
                     <option value="Dessert">Dessert</option>
                     <option value="Snack">Snack</option>
                 </select>
+                <label class="input-text" for="meal_type">Meal Type</label>
             </div>
         </div>
 
@@ -95,7 +97,7 @@
                     {% endif %}
                     {% endfor %}
                 </select>
-                <label for="cookbook_id">Cookbook</label>
+                <label class="input-text" for="cookbook_id">Cookbook</label>
             </div>
         </div>
 
