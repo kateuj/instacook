@@ -3,6 +3,7 @@ from recipes import app, db
 from recipes.models import Users, Cookbook, Recipe
 from werkzeug.security import generate_password_hash, check_password_hash
 
+
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -14,9 +15,9 @@ def index():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    """Register a new user and log them in."""
+    # New user registered
     if request.method == "POST":
-        # Check if username already exists in DB
+        # Check if username exists in database
         existing_user = Users.query.filter_by(
             user_name=request.form.get("user_name")
         ).first()
@@ -44,13 +45,13 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        # Check if username exists in db
+        # Check if username exists in database
         existing_user = Users.query.filter_by(
             user_name=request.form.get("user_name").lower()
         ).first()
 
         if existing_user:
-            # Ensure hashed password matches user input
+            # Check password matches the user's input
             if check_password_hash(existing_user.password, request.form.get("password")):
                     session["user"] = request.form.get("user_name").lower()
                     flash("Welcome, {}".format(
@@ -58,12 +59,12 @@ def login():
                     return redirect(url_for(
                         "dashboard", user_name=session["user"]))
             else:
-                # Invalid password match
+                # Invalid password
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
-            # Username doesn't exist
+            # Username does not exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
@@ -72,7 +73,7 @@ def login():
 
 @app.route("/logout")
 def logout():
-    # remove users from session cookies
+    # Remove users from session cookies
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
@@ -80,7 +81,7 @@ def logout():
 
 @app.route("/dashboard", methods=["GET", "POST"])
 def dashboard():
-    # grab the session user's username from db
+    # Grab the session user's username from db
     user = Users.query.filter_by(user_name=session["user"]).first()
     if user:
         user_id = user.id
@@ -88,7 +89,7 @@ def dashboard():
         return render_template("user_dashboard.html", cookbooks=user_cookbook, user_name=user.user_name)
     
     else:
-        # if user is not logged in
+        # If user is not logged in
         flash("You are not logged in")
         return redirect(url_for("login"))
 
@@ -96,9 +97,9 @@ def dashboard():
 
 
 @app.route("/recipes/<int:id>", methods=["GET"])
+# Gets only recipes linked to cookbook_id
 def recipes(id):
     cookbook_name = Cookbook.query.get_or_404(id)
-    print(cookbook_name)
     recipes = list(Recipe.query.filter(Recipe.cookbook_id==id).all())
     return render_template("recipes.html", recipes=recipes, cookbook_name=cookbook_name)
 
@@ -111,7 +112,7 @@ def contact():
 @app.route("/search")
 def search():
 
-    # Get the query parameters from the request
+    # Get the query parameters from the requests below
     dish_origin = request.args.get('dish_origin')
     star_rating = request.args.get('star_rating')
     meal_type = request.args.get('meal_type')
@@ -119,24 +120,20 @@ def search():
                                   Recipe.star_rating == star_rating if star_rating else True,
                                   Recipe.meal_type == meal_type if meal_type else True
                                   ).all()
+    # Distinct query ensure no duplicates are displayed
     distinct_dish_origins = Recipe.query.distinct('dish_origin').all()
+    # Selected keeps the user's choice visilble when URL link updates to filter recipes
     return render_template("search.html", recipes=recipes, selected_meal_type=meal_type, 
                             selected_star_rating=star_rating, dish_origins=[i.dish_origin 
                             for i in distinct_dish_origins], selected_dish_origin=dish_origin)
 
 
-@app.route("/cookbook")
-def cookbook():
-    cookbook = list(Cookbook.query.order_by(Cookbook.cookbook_name).all())
-    return render_template("cookbook.html", cookbooks=cookbook)
-
-
 @app.route("/add_cookbook", methods=["GET", "POST"])
+# Posts new cookbook name linked to username
 def add_cookbook():
     if request.method == "POST":
         cookbook = Cookbook(cookbook_name=request.form.get("cookbook_name"))
         user = Users.query.filter_by(user_name=session["user"]).first()
-        print(session["user"])
         cookbook.user_id = user.id
         db.session.add(cookbook)
         db.session.commit()
@@ -146,6 +143,7 @@ def add_cookbook():
 
 
 @app.route("/edit_cookbook/<int:cookbook_id>", methods=["GET", "POST"])
+# Use cookbook ID to locate and edit specific cookbook name
 def edit_cookbook(cookbook_id):
     cookbook = Cookbook.query.get_or_404(cookbook_id)
     if request.method == "POST":
@@ -157,6 +155,7 @@ def edit_cookbook(cookbook_id):
 
 
 @app.route("/delete_cookbook/<int:cookbook_id>")
+# Use cookbook ID to locate and delete specific cookbook and all recipes linked to it
 def delete_cookbook(cookbook_id):
     cookbook = Cookbook.query.get_or_404(cookbook_id)
     db.session.delete(cookbook)
@@ -165,6 +164,7 @@ def delete_cookbook(cookbook_id):
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
+# Add recipe linked to chosen cookbook name
 def add_recipe():
     cookbook = list(Cookbook.query.order_by(Cookbook.cookbook_name).all())
     if request.method == "POST":
@@ -185,6 +185,7 @@ def add_recipe():
 
 
 @app.route("/edit_recipe/<int:recipe_id>", methods=["GET", "POST"])
+# Edit specific recipe using recipe_id
 def edit_recipe(recipe_id):
     recipe = Recipe.query.get_or_404(recipe_id)
     cookbook = list(Cookbook.query.order_by(Cookbook.cookbook_name).all())
@@ -201,16 +202,20 @@ def edit_recipe(recipe_id):
         return redirect(url_for("dashboard"))
     return render_template("edit_recipe.html", recipe=recipe, cookbook=cookbook)
 
+
 @app.route("/delete_recipe/<int:recipe_id>")
+# Delete specific recipe using recipe_id
 def delete_recipe(recipe_id):
     recipe = Recipe.query.get_or_404(recipe_id)
     db.session.delete(recipe)
     db.session.commit()
     return redirect(url_for("recipes"))
 
+
 @app.route("/thank_you")
 def thank_you():
     return render_template("thank_you.html")
+
 
 @app.route("/404")
 def page_not_found():
