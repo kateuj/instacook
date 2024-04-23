@@ -8,6 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 def home():
     return render_template("index.html")
 
+
 @app.route("/home")
 def index():
     return render_template("index.html")
@@ -41,7 +42,7 @@ def register():
 
     return render_template("register.html")
 
-    
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -52,11 +53,12 @@ def login():
 
         if existing_user:
             # Check password matches the user's input
-            if check_password_hash(existing_user.password, request.form.get("password")):
-                    session["user"] = request.form.get("user_name").lower()
-                    flash("Welcome, {}".format(
+            if check_password_hash(existing_user.password,
+                                   request.form.get("password")):
+                session["user"] = request.form.get("user_name").lower()
+                flash("Welcome, {}".format(
                         request.form.get("user_name")))
-                    return redirect(url_for(
+                return redirect(url_for(
                         "dashboard", user_name=session["user"]))
             else:
                 # Invalid password
@@ -85,9 +87,11 @@ def dashboard():
     user = Users.query.filter_by(user_name=session["user"]).first()
     if user:
         user_id = user.id
-        user_cookbook = list(Cookbook.query.filter(Cookbook.user_id==user_id).all())
-        return render_template("user_dashboard.html", cookbooks=user_cookbook, user_name=user.user_name)
-    
+        user_cookbook = list(Cookbook.query.filter(
+            Cookbook.user_id == user_id).all())
+        return render_template("user_dashboard.html", cookbooks=user_cookbook,
+                               user_name=user.user_name)
+
     else:
         # If user is not logged in
         flash("You are not logged in")
@@ -100,8 +104,9 @@ def dashboard():
 # Gets only recipes linked to cookbook_id
 def recipes(id):
     cookbook_name = Cookbook.query.get_or_404(id)
-    recipes = list(Recipe.query.filter(Recipe.cookbook_id==id).all())
-    return render_template("recipes.html", recipes=recipes, cookbook_name=cookbook_name)
+    recipes = list(Recipe.query.filter(Recipe.cookbook_id == id).all())
+    return render_template("recipes.html", recipes=recipes,
+                           cookbook_name=cookbook_name)
 
 
 @app.route("/contact")
@@ -116,16 +121,22 @@ def search():
     dish_origin = request.args.get('dish_origin')
     star_rating = request.args.get('star_rating')
     meal_type = request.args.get('meal_type')
-    recipes = Recipe.query.filter(Recipe.dish_origin == dish_origin if dish_origin else True,
-                                  Recipe.star_rating == star_rating if star_rating else True,
-                                  Recipe.meal_type == meal_type if meal_type else True
+    recipes = Recipe.query.filter(Recipe.dish_origin == dish_origin if
+                                  dish_origin else True,
+                                  Recipe.star_rating == star_rating if
+                                  star_rating else True,
+                                  Recipe.meal_type == meal_type if
+                                  meal_type else True
                                   ).all()
     # Distinct query ensure no duplicates are displayed
     distinct_dish_origins = Recipe.query.distinct('dish_origin').all()
-    # Selected keeps the user's choice visilble when URL link updates to filter recipes
-    return render_template("search.html", recipes=recipes, selected_meal_type=meal_type, 
-                            selected_star_rating=star_rating, dish_origins=[i.dish_origin 
-                            for i in distinct_dish_origins], selected_dish_origin=dish_origin)
+    # Selected keeps user's choice visible when URL link updates
+    return render_template("search.html", recipes=recipes,
+                           selected_meal_type=meal_type,
+                           selected_star_rating=star_rating,
+                           dish_origins=[i.dish_origin for i in
+                                         distinct_dish_origins],
+                           selected_dish_origin=dish_origin)
 
 
 @app.route("/add_cookbook", methods=["GET", "POST"])
@@ -155,7 +166,7 @@ def edit_cookbook(cookbook_id):
 
 
 @app.route("/delete_cookbook/<int:cookbook_id>")
-# Use cookbook ID to locate and delete specific cookbook and all recipes linked to it
+# Use cookbook ID to locate and delete cookbook and all recipes linked to it
 def delete_cookbook(cookbook_id):
     cookbook = Cookbook.query.get_or_404(cookbook_id)
     db.session.delete(cookbook)
@@ -200,7 +211,8 @@ def edit_recipe(recipe_id):
         db.session.commit()
         flash("Recipe updated")
         return redirect(url_for("dashboard"))
-    return render_template("edit_recipe.html", recipe=recipe, cookbook=cookbook)
+    return render_template("edit_recipe.html", recipe=recipe,
+                           cookbook=cookbook)
 
 
 @app.route("/delete_recipe/<int:recipe_id>")
