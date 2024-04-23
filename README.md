@@ -189,45 +189,50 @@ I chose a cursive font for titles, 'Pacifico' and 'Poppins' a simple sans-serif 
 
 ![Dashboard page screenshot](recipes/static/assets/readme-images/dashboard-page.png)
 
-* __Cookbook cards__ - 
+* __Cookbook cards__ - For each cookbook linked to the user's id, a card will appear on their dashboard so they can see them all in one place and add/edit recipes for each of them.
 
-* __Add cookbook button__ -
+* __Add cookbook button__ - To create new cookbooks, the 'Add Cookbook' button is at the top of the page for a concise user journey.
 
-* __View recipes button__ -
+* __View recipes button__ - On each cookbook card, there is a 'View Recipes' button which will take the user to a page that is populated with the recipes that are linked to that particular cookbook id.
 
-* __Add recipe button__ -
+* __Add recipe button__ - On each cookbook card, there is an 'Add Recipes' button for users to be redirected to the 'Create recipe' form.
 
-* __Edit and delete Cookbook buttons__ -
+* __Edit and delete Cookbook buttons__ - These buttons give the user the option to update the cookbook name or delete it and all of the recipes linked with it. With the delete button, a modal pops up to explain to the user that the action cannot be undone and that the recipes linked to it will be deleted too, so they fully understand the action before choosing to commit.
 
 ### User recipes page
 
 ![Recipes page screenshot](recipes/static/assets/readme-images/recipes-in-cookbook-page.png)
 
-* __Add recipes button__ - 
-
-* __Back to cookbook button__ -
+* __Add recipes button__ - To create new recipes, the 'Add Recipe' button is at the top of the page for a concise user journey.
+* __Back to cookbook button__ - The user can also return to their dashboard cookbook overview with one click with the 'back to cookbooks' button, which is also at the top of the page so it is easily located by the user.
 
 * __Collapsible recipe view__ - The collapsible recipe view allows more recipe titles to list on the screen at any given time, whilst also providing the user the ability to drill down into their chosen recipe content with one click.
 
-* __Edit and delete recipe buttons__ -
+* __Edit and delete recipe buttons__ - The edit and delete buttons are nested within each collapsible recipe, just below the instructions and ingredients content. These buttons allow the user to edit/delete that specific recipe. With the delete button, a modal pops up to explain to the user that the action cannot be undone, so they fully understand the action before choosing to commit.
 
 ### Add recipe form
 
 ![Add recipe page screenshot](recipes/static/assets/readme-images/add-recipe-page.png)
 
-* __Drop down options__ - 
+* __Drop down options__ - To create a simple choice for the user, I included drop downs for certain inputs within the recipe forms, to allow the user to populate it as quickly as possible.
+
+* __Add recipe form__ - Once submitted, this form adds a new recipe to the database linked the cookbook id that was selected in the drop down.
 
 ### Edit recipe form
 
 ![Edit recipe page screenshot](recipes/static/assets/readme-images/edit-recipe-page.png)
 
-* __Pre-populated edit recipe__ - 
+* __Pre-populated edit recipe__ - When the user is directed to the edit recipe page, the input fields are already populated with the previous content, to make editing and updating easy and quick for the user.
 
-* __Drop down options__ - 
+* __Drop down options__ - To create a simple choice for the user, I included drop downs for certain inputs within the recipe forms, to allow the user to populate it as quickly as possible.
+
+* __Edit recipe form__ - Once submitted, this form updates the current recipe on the database linked the cookbook id that was selected in the drop down.
+
+### Edit recipe form
 
 ![Add cookbook page screenshot](recipes/static/assets/readme-images/add-cookbook-page.png)
 
-* __Cookbook name form__ - 
+* __Cookbook name form__ - This form 
 
 ![Edit cookbook name page screenshot](recipes/static/assets/readme-images/edit-cookbook-name-page.png)
 
