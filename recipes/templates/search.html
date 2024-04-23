@@ -19,7 +19,7 @@
                 <option value="Dessert">Dessert</option>
                 <option value="Snack">Snack</option>
             </select>
-            <label for="meal_type">Meal Type</label>
+            <label class="filter-labels" for="meal_type">Meal Type</label>
         </div>
         <div class="input-field col l3 m6 s12">
             <i class="fa-solid fa-earth-americas prefix"></i>
@@ -31,7 +31,7 @@
                 <option>{{ dish_origin }}</option>
                 {% endfor %}
             </select>
-            <label for="dish_origin">Dish Origin</label>
+            <label class="filter-labels" for="dish_origin">Dish Origin</label>
         </div>
         <div class="input-field col l3 m6 s12">
             <i class="fa-solid fa-star prefix"></i>
@@ -44,7 +44,7 @@
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-            <label for="star_rating">Star Rating</label>
+            <label class="filter-labels" for="star_rating">Star Rating</label>
         </div>
         <div class="input-field col l3 m6 s12 center-align">
             <a class="btn purple-btns" href="{{ url_for('search') }}">Clear Selection</a>

@@ -51,6 +51,10 @@ main {
     z-index: 2 !important;
 }
 
+.filter-labels {
+    color: #5856D6!important;
+}
+
 /*Cards*/
 .card_buttons {
     margin: 5px;
