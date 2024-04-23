@@ -137,40 +137,109 @@ I chose a cursive font for titles, 'Pacifico' and 'Poppins' a simple sans-serif 
 
 * My site is fully responsive and can be viewed and used effectively on all screen sizes down to 320px width by 480px height.
 * I have considered readability contrast carefully for all visual elements.
-* I have included a Favicon page tab icon to make the page look professional and consistent.
+* __Favicon__ - I have included a Favicon page tab icon to make the page look professional and consistent.
 
 ![Favicon screenshot](recipes/static/assets/readme-images/favicon.png)
 
-### Logo
+* __Reponsive Nav Bar__ - The navigation bar at the top of all the pages reduces to an accordion menu on tablet and mobile view for ease for use for the user. The options displayed on the nav bar are also dependent on whether a user is logged in or not, for an optimum user experience where options, such as 'Register' are no longer visible for logged in users. This keeps the pages clean and easier to navigate. I have included a search icon as well as 'Explore Recipes' as some users respond more to icons rather than text and vice versa. This way both types of users will find it easy to navigate to the search recipes page in one click.
+
+* __Footer__ - Just like the nav bar, the links displayed in the footer are also dependent on whether a user is logged in or not, for an optimum user experience where options, such as 'Register' are no longer visible for logged in users. This keeps the pages clean and easier to navigate.
+
+* __Logo__ - I created my simple text logo using the Pacifico font to keep a design consistency within the site.
+
 ![Logo in navigation bar](recipes/static/assets/readme-images/nav-bar-logo.png)
 
-* I created my simple text logo using the Pacifico font to keep a design consistency within the site.
+* __Flash Messages__ - At various actions, messages will flash at the top of the page just below the nav bar to confirm to the user for instance, that a user account has been created, or a cookbook has been deleted. This gives the user a clear explanation of what has happened to avoid any unnecessary confusion.
 
 ## Landing page
-
 ![Home page screenshot](recipes/static/assets/readme-images/home-page.png)
 
-* To keep things clear I have sectioned out the page, so that the ingredients are on the left and the coffee drink is on the right to be created and filled up by the user. In mobile and tablet, the cup appears at the top with the ingredients at the bottom so the user instinctively reads the drink name first, sees the cup to fill and then proceeds to the ingredients to make choices.
+* __Hero image slider__ - I wanted to include something visually impactful to the home page to the user a positive emotional response when they land. It also draws the eye of the user to the main call to actions - 'Log in' or 'Register', so both new users and returning users can navigate quickly to get started using the app features. There a 3 large images that the slider flips through, to also suggest to the user they can go straight into exploring existing recipes on the search page.
 
 ### Register page
 
-![Login page screenshot](recipes/static/assets/readme-images/register-page.png)
+![Register page screenshot](recipes/static/assets/readme-images/register-page.png)
 
-* I c
+* __Registration form__ - This form submits a new username and password to the database and starts a session cookie, which triggers the user dashboard to be active and display the user's cookbooks / give them the option to create cookbooks to start collating recipes into.
+
+* __Password pattern required__ -  To make sure the user is creating strong passwords to keep their account secure, I have included an HTML5 regex pattern, so that the registration form will not submit unless the user has conformed to the requirements.
+
+* __Requirement descriptions__ -  So it is clear what patterns are required for passwords and usernames, I have included explanations under each input field.
 
 ### Login page
 
 ![Login page screenshot](recipes/static/assets/readme-images/login-page.png)
 
+* __Login form__ - This form starts a session cookie, which triggers the user dashboard to be active and display the user's cookbooks / give them the option to create cookbooks to start collating recipes into.
+
+* __Requirement descriptions__ -  So it is clear what patterns are required for passwords and usernames, I have included explanations under each input field.
+
+
 ### Explore recipes page
 
 ![Search page screenshot](recipes/static/assets/readme-images/search-page.png)
+
+* __Dropdown filters__ - I have included 3 dropdown filters for meal type, dish origin and star rating to give the user a few options of how they would like the filter and search through all the recipes on the database.
+
+* __Clear selection button__ - This button allows to quicky refresh all the filters in one simple click when desired.
+
+* __Collapsible recipe view__ - The collapsible recipe view allows more recipe titles to list on the screen at any given time, whilst also providing the user the ability to drill down into their chosen recipe content with one click.
+
+### User dashboard page
+
+![Dashboard page screenshot](recipes/static/assets/readme-images/dashboard-page.png)
+
+* __Cookbook cards__ - 
+
+* __Add cookbook button__ -
+
+* __View recipes button__ -
+
+* __Add recipe button__ -
+
+* __Edit and delete Cookbook buttons__ -
+
+### User recipes page
+
+![Recipes page screenshot](recipes/static/assets/readme-images/recipes-in-cookbook-page.png)
+
+* __Add recipes button__ - 
+
+* __Back to cookbook button__ -
+
+* __Collapsible recipe view__ - The collapsible recipe view allows more recipe titles to list on the screen at any given time, whilst also providing the user the ability to drill down into their chosen recipe content with one click.
+
+* __Edit and delete recipe buttons__ -
+
+### Add recipe form
+
+![Add recipe page screenshot](recipes/static/assets/readme-images/add-recipe-page.png)
+
+* __Drop down options__ - 
+
+### Edit recipe form
+
+![Edit recipe page screenshot](recipes/static/assets/readme-images/edit-recipe-page.png)
+
+* __Pre-populated edit recipe__ - 
+
+* __Drop down options__ - 
+
+![Add cookbook page screenshot](recipes/static/assets/readme-images/add-cookbook-page.png)
+
+* __Cookbook name form__ - 
+
+![Edit cookbook name page screenshot](recipes/static/assets/readme-images/edit-cookbook-name-page.png)
+
+* __Edit cookbook name form__ - 
 
 ### Contact Form
 
 ![Contact Form screenshot](recipes/static/assets/readme-images/contact-page.png)
 
-* All inputs are required
+* I have included a functional contact form created using emailjs for users to contact me.
+* When a form is submitted, I receive an email with the user's message, name and email address included so I can respond to their query.
+* All inputs are required.
 * The contact form checks the input is valid before sending and if not it will alert the user - the email input will not work unless a proper email address is added, and you cannot leave any field blank.
 
 ## Thank you page
@@ -187,11 +256,17 @@ I chose a cursive font for titles, 'Pacifico' and 'Poppins' a simple sans-serif 
 
 ## Possible Future Features
 
-* 
+* __Recipe API__ - In future I would like to implement a recipe api, to give the user the opportunity to search through a much larger database of recipes, and give them the oppourtunity to add copies of recipes to their own digital cookbooks.
+* __Shopping List__ - To provide the user with the ability to add items to their own digital shopping list.
+* __Search Bar__ - To implement word search functionality so the user could search recipes using text rather than dropdowns. 
 
 ## Accessibility
 
-# Deployment
+## Media Queries
+
+* I used Media Queries to debug and override some display issues that were not rectified with Materialize's responsive layouts.
+
+# Deployment #
 
 I used Heroku to deploy my site, coupled with ElephantSQL to host my relational database for free.
 
@@ -224,8 +299,8 @@ I used Heroku to deploy my site, coupled with ElephantSQL to host my relational 
     "echo web: python run.py > Procfile"
 
 4. Check both files have been created properly. A couple of potential issues to be made a aware of:
-- Make sure Procfile has the Heroku logo next to it in the file explorer view in your IDE
-- Check that there are no blank lines at the end of the Procfile and delete them if found, as this can prevent it from deploying when being read by Heroku. Save, commit and push these files to your repository.
+* Make sure Procfile has the Heroku logo next to it in the file explorer view in your IDE
+* Check that there are no blank lines at the end of the Procfile and delete them if found, as this can prevent it from deploying when being read by Heroku. Save, commit and push these files to your repository.
 
 5. Login or register on the [Heroku](https://www.heroku.com) homepage.
 
@@ -263,40 +338,38 @@ NOTES:
 12. When the terminal loads, type the following, hitting enter at the end of each line:
 
     python3
+
     from recipes import db
+
     db.create_all()
+
     exit()
 
 13. This has now created the relational database models from your repository into the ElephantSQL database. When you click on 'Open App' on the dashboard, it should now open Instacook.
 
 ### Forking the GitHub Repository
 
-By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
-
-1. Login to GitHub.
-2. Locate the repository, you can use a link you have been provided with or use the search function in the top left of the screen.
-3. In the top right hand corner of the page locate and click the 'fork' button.
-4. Near the bottom of the page click the green button that says 'Create Fork'.
-5. You should now have a copy of the original repository in your GitHub account.
+Forking allows users to make a copy of an original repository in GitHub and view and make changes to it without changing the original repository. To create a fork:
+1. Once logged into GitHub, follow the link to your chosen GitHub repository, or use the search bar to find it on the GitHub home page.
+2. Once in the repository window, click the 'Fork' drop down arrow button in the top right-hand corner.
+3. Select 'Create new fork'.
+4. Check the details in the window before clicking the green 'Create Fork' button.
+5. You will now be able to find the copy of the repository in your own GitHub account.
 
 ### Making a Local Clone
 
-1. Login to GitHub.
-2. Locate the repository, you can use a link you have been provided with or use the search function in the top left of the screen.
-3. Near the top of the repository click the green 'Code' button.
-4. To clone the repository using HTTPS, under HTTPS copy the link provided.
-5. Open the terminal in your code editor. 
-6. Change the current working directory to the location where you want the cloned directory to be made.
-7. Type git clone, and then paste the URL you copied in Step 3.
-8. Press Enter. Your local clone should be created.
+1. Once logged into GitHub, follow the link to your chosen GitHub repository, or use the search bar to find it on the GitHub home page.
+2. Once in the repository window, click the green 'Code' button.
+3. To clone the repository using HTTPS, copy the link provided below the HTTPS header.
+4. Open a terminal in your code editor.
+5. Change the location in the current working directory to where you want the cloned directory to be created.
+6. Type "git clone" into the terminal, and then paste the URL you copied and click enter.
+7. This should have created a local clone of the repository.
+8. Here is the live link to my website - https://instacook-64f0d9d64709.herokuapp.com/
 
-# Testing
+# Testing #
 
 I have documented my testing in a separate document [TESTING.md](TESTING.md)
-
-# Media Queries
-
-* I used Media Queries to debug and override some display issues that were not rectified with Bootstrap's responsive layouts.
 
 # Technologies Used #
 
@@ -348,7 +421,12 @@ I have documented my testing in a separate document [TESTING.md](TESTING.md)
 * Code Institute relational database walkthrough helped me work out how to create and best approach creating this project.
 * Google fonts for ['Silkscreen' typography.](https://fonts.google.com/specimen/Silkscreen) and ['Rubik' typography.](https://fonts.google.com/specimen/Rubik)
 * Logo and favicon I designed myself.
-* Images from [Pexels](pexels.com).
+* Images in the hero slider are from [Pexels](pexels.com):
+    * https://www.pexels.com/photo/steak-food-769289/
+    * https://www.pexels.com/photo/vegetable-salad-3026808/
+    * https://www.pexels.com/photo/ice-cream-on-bowl-beside-spoon-1343504/
+    * https://www.pexels.com/photo/assorted-salads-on-bowls-1640773/
+
 
 
 ### Thanks
