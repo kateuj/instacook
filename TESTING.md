@@ -186,7 +186,7 @@ Cleared all the errors below.
 The validator highlighted:
 * __Error:__"indentation not a multiple of 4" - fixed indent.
 * __Error:__"over-indented" - reduced indent.
-* __Error:__"module level import not at top of file" - put line 24 at the top with other imports.
+* __Error:__"module level import not at top of file" - this line has to be at the end of the file to be called after the rest.
 
 ![init.py validator results](recipes/static/assets/readme-images/initpy-validator.png)
 
