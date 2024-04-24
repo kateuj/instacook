@@ -435,11 +435,29 @@ I have documented my testing in a separate document [TESTING.md](TESTING.md)
 ![Re-direct for the thank you page code snippet](recipes/static/assets/readme-images/redirect-code-snippet.png)
 
 * **Favicon** - I used a [Favicon generator](https://favicon.io/) to create the appropriate files for me to upload to my site, as well as this code snippet to install it site-wide.
-![Favicon installation code snippet](#)
 
 * **Login functionality** - I used the Code Institute non relational database walkthrough to base my code on for the login and user creation functionality on the site, tailoring it where needed to fit into a relational database setting.
 
-https://stackoverflow.com/questions/73140435/why-custom-404-page-not-working-with-flask
+* **Materialize code** - I used a few materialize code snippets in my project:
+    * Sidenav
+    * Footer
+    * Cards
+    * Form
+    * Dropdown selections
+    * Collapsible
+    * Modal pop-ups
+    * Hero slider
+I have annotated within my code where these site.
+
+* **EmailJS** - I have annotated in my code where EmailJS API code appears for the contact form.
+
+* **Dropdown Filters** - I used the following articles to help formulate the code for my dropdown filters on the search page:
+    * [Query String Parameters](https://www.claravine.com/a-query-on-using-query-strings-parameters/) - reading through this gave me the idea to use this particular solution for this feature.
+    * [Search Parameters](https://developer.mozilla.org/en-US/docs/Web/API/URL/searchParams) - reading on URL object and search params which I used in the JS snippets in my script.js file.
+    * [SQLAlchemy filters](https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_orm_filter_operators.htm) - how to apply filters with SQLAlchemy.
+    * [Update a query string parameter](https://stackoverflow.com/a/68499745) - I used the solution below to help form the JS function.
+    
+    ![JS query parameters code](recipes/static/assets/readme-images/update-query-params-code-snippet.png)
 
 
 # Credits
