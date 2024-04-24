@@ -3,6 +3,7 @@
 <h1>Create a new recipe</h1>
 <br>
 <div class="row card-panel">
+    <!-- Materialize Form -->
     <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
         <!--Recipe Name-->
         <div class="row">
@@ -27,6 +28,7 @@
                 <label for="recipe_instructions" class="input-text">Recipe Instructions</label>
             </div>
         </div>
+        <!-- Materialize Dropdowns -->
         <!--Dish Origin-->
         <div class="row">
             <div class="input-field col s12">

@@ -12,6 +12,7 @@
     </div>
 </div>
 
+<!-- Materialize Collapsible -->
 <ul class="collapsible">
     {% for recipe in recipes %}
     <li>
@@ -40,7 +41,7 @@
                     <a href="#modal-{{ recipe.id }}" class="btn delete-btn modal-trigger">Delete</a>
                 </p>
 
-                <!-- Modal Structure -->
+                <!-- Materialize Modal Structure -->
                 <div id="modal-{{ recipe.id }}" class="modal">
                     <div class="modal-content">
                         <h4>Are you sure you want to delete this recipe?</h4>
