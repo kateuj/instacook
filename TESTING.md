@@ -241,7 +241,7 @@ Google Pixel - Chrome
 
 ### Full Manual Testing
 
-#### Home Page
+#### Home
 | Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Login button | User is redirected to the Login page when clicked | Clicked Login button | Redirected to the login page | Pass |
@@ -317,12 +317,14 @@ Google Pixel - Chrome
 | Input fields left too short when form submitted | Validation message to appear "Please lengthen this text to 5 characters or more" | Submit the form with each input short strings individually | Each input had the validation message appear as expected | Pass |
 | Input fields with too many characters | Should not be possible, after max length, characters typed will not appear | Tried to type a message with more than max length in each input field | No characters typed over 750 characters appear | Pass |
 | Create recipe button | Redirect to dashboard, with recipe in their chosen Cookbook card | Click create recipe button | Redirect to dashboard successfully, with recipe in their chosen Cookbook card | Pass |
-| Dropdown options left empty | If a dropdown is left empty when form submitted, validation message should appear | Leave each dropdown empty individually to check | The form does not submit, but no validation message appears to tell the user why | Fail | RETEST
+| Dropdown options left empty | If a dropdown is left empty when form submitted, validation message should appear | Leave each dropdown empty individually to check | The form does not submit, but no validation message appears to tell the user why | Fail |
+After adding an if statement to check if dropdowns are left blank, I re-tested.
+| Dropdown options left empty | If a dropdown is left empty when form submitted, validation message should appear | Leave each dropdown empty individually to check | The form does not submit and flash message appears telling the user to make a selection | Pass |
 
 #### Edit Recipe
 | Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| pre-populated input field | Previously saved recipe inputs to pre-populate the input field | Direct to the edit recipe page from dashboard | Previously saved recipe info was pre-populated into the input field, ready for editing | Pass |
+| Pre-populated input field | Previously saved recipe inputs to pre-populate the input field | Direct to the edit recipe page from dashboard | Previously saved recipe info was pre-populated into the input field, ready for editing | Pass |
 | Save changes button | Redirect to dashboard, flash message 'Recipe updated', with the chosen cookbook name updated on its respective card | Save changes button | Redirected to dashboard page successfully with flash message 'Cookbook updated', Cookbook name updated on card | Pass |
 
 #### Add Cookbook
@@ -339,19 +341,23 @@ I revisited the 404 app route and found a code error - not '@app.errorhandler', 
 | User tries to access an incorrect URL or page cannot cannot be found | User is redirected to the 404 page with a message displayed "Sorry this page doesn't exist", with a button linked to the Home page. | Typed an incorrect URL into address bar | Redirected to custom 404 page | Pass |
 
 #### Log out nav bar
-#### Log in nav bar
+| Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| User logs out using log out link in nav bar | User is redirected to login page with a message displayed "You have been logged out", and the link disappears from the nav bar, replaced by Login and Register | Click on log out link | Redirected successfully to login page with a message displayed "You have been logged out", and the link disappears from the nav bar. Register and Login reappear as links in nav bar. | Pass |
+
 
 #### Footer
+| Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Links change when logged in | User logs in and links change from 'Login, Register and Contact' to 'Dashboard, Logout, Contact' | Login to registered user accunt | Links changed from 'Login, Register and Contact' to 'Dashboard, Logout, Contact' | Pass |
 
 ### Bugs
 
 #### Solved Bugs
-delete recipe button not working
+
 cookbook showing all user's cookbooks not just particular user's
 if dropdown not selected validation message
-edit recipe button not working
-delete recipe button not working
-create recipe button not working
+
 
 #### Unsolved Bugs
 
