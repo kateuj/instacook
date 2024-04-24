@@ -263,16 +263,63 @@ Google Pixel - Chrome
 | Login link | Redirect to the login page. | Clicked login button | Redirected to the the login page | Pass |
 
 #### Search
+| Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Select a meal type filter dropdown option | Should filter recipes to show only recipes that match the meal type and selection remain visible in the dropdown | Selected each of the dropdown options to view recipes filtered for each | Recipes filtered successfully and selection remained visible in dropdown | Pass |
+| Select a dish origin filter dropdown option | Should filter recipes to show only recipes that match the dish origin and selection remain visible in the dropdown | Selected each of the dropdown options to view recipes filtered for each | Recipes filtered successfully and selection remained visible in dropdown | Pass |
+| Select a star rating filter dropdown option | Should filter recipes to show only recipes that match the star rating and selection remain visible in the dropdown | Selected each of the dropdown options to view recipes filtered for each | Recipes filtered successfully and selection remained visible in dropdown | Pass |
+| Select a filter dropdown option from two of the dropdowns | Should filter recipes to show only recipes that match the dish origin and selection remain visible in the dropdown | Selected a dropdown option from two dropdowns (tried all combinations) at the same time | Recipes filtered successfully  and selection remained visible in dropdown| Pass |
+| Select a filter dropdown option from all three of the dropdowns | Should filter recipes to show only recipes that match the dish origin | Selected a dropdown option for all three dropdowns at the same time | Recipes filtered successfully and selection remained visible in dropdown| Pass |
+| Clear selection button | Should reset all filters to blank by refreshing the page | Click the 'clear selection' button | Page refreshed successfully | Pass |
+| Collapsed recipe | Should open to display recipe info when clicked | Click recipe title | Recipe info appeared correctly | Pass |
+
 #### Contact
+| Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Input first name with over 30 characters | Should not be possible, after 30 characters, characters typed will not appear | Tried to input more than 30 characters | No characters typed over 30 characters appear | Pass |
+| Leave inputs blank | Stays on page and validation message with appear prompting the user to input info into field | Left username, email and message inputs empty individually before pressing submit button | Validation message appeared to prompt user to add input | Pass |
+| Email input without @ symbol | Validation message appears to prompt user to add @ sign | Input text into email input without @ symbol | Validation message is visible | Pass |
+| Type a message with not enough characters | Validation message is visible | Added an input less than 10 characters long | Validation message is visible | Pass |
+| Type a message with too many characters | Should not be possible, after 750 characters, characters typed will not appear | Tried to type a message with more than 750 characters | No characters typed over 750 characters appear | Pass |
+| Submit will all correct format inputs | Redirect to the thank you page | Input correctly into fields and click submit button | Redirected to thank you page | Pass |
+
 #### Thank you
+| Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Redirect countdown | Redirect to the home page after 5 second countdown | Load the thank you page | Redirected to home page successfully after 5 seconds | Pass |
+
 #### Dashboard
+| Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Add Cookbook button | Redirect to add cookbook page | Click add cookbook button | Redirected to add cookbook page successfully | Pass |
+| Edit Cookbook button | Redirect to edit cookbook page for specific cookbook | Click edit cookbook button | Redirected to edit cookbook page successfully | Pass |
+| View Recipes button | Redirect to recipes page with view of recipes linked to specific cookbook | Click view recipes button | Redirected to view recipes page successfully with view of recipes linked to specific cookbook | Pass |
+| Add Recipe button | Redirect to add recipe page | Click add recipe button | Redirected to add recipe page successfully | Pass |
+| Delete Cookbook button | Modal pop-up to confirm the user wants to delete with 'delete' and 'cancel' buttons | Click delete cookbook button | Modal pop-up appears with 'delete' or 'cancel' options. Cancel button closes the modal. Delete button successfully deletes the chosen cookbook | Pass |
+
 #### Recipes
+| Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Add Recipe button | Redirect to add recipe page | Click add recipe button | Redirected to add recipe page successfully | Pass |
+| Back to cookbooks button | Redirect to dashboard page | Click back to cookbooks button | Redirected to dashboard page successfully | Pass |
+| Collapsed recipe | Should open to display recipe info when clicked | Click recipe title | Recipe info appeared correctly | Pass |
+
 #### Edit Recipe
 #### Edit Cookbook
 #### Add Recipe
-#### Add Cookbook
-#### 404 Page
 
+#### Add Cookbook
+| Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Create cookbook button |  | Click create cookbook button | Redirected to dashboard page successfully with flash message 'Cookbook created' | Pass |
+
+#### 404 Page
+| Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| User tries to access an incorrect URL or page cannot cannot be found | User is redirected to the 404 page with a message displayed "Sorry this page doesn't exist", with a button linked to the Home page. | Typed an incorrect URL into address bar | Not redirected to custom 404 page. | Fail |
+I revisited the 404 app route and found a code error - not '@app.errorhandler', so fixed this and tested again.
+![404 App route fix](/recipes/static/assets/readme-images/404-page-route-update.png)
+| User tries to access an incorrect URL or page cannot cannot be found | User is redirected to the 404 page with a message displayed "Sorry this page doesn't exist", with a button linked to the Home page. | Typed an incorrect URL into address bar | Redirected to custom 404 page | Pass |
 
 #### Log out nav bar
 #### Log in nav bar
