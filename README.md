@@ -437,10 +437,15 @@ I have documented my testing in a separate document [TESTING.md](TESTING.md)
 * **Favicon** - I used a [Favicon generator](https://favicon.io/) to create the appropriate files for me to upload to my site, as well as this code snippet to install it site-wide.
 ![Favicon installation code snippet](#)
 
+* **Login functionality** - I used the Code Institute non relational database walkthrough to base my code on for the login and user creation functionality on the site, tailoring it where needed to fit into a relational database setting.
+
+https://stackoverflow.com/questions/73140435/why-custom-404-page-not-working-with-flask
+
+
 # Credits
 
 * Code Institute relational database walkthrough helped me work out how to create and best approach creating this project.
-* Google fonts for ['Silkscreen' typography.](https://fonts.google.com/specimen/Silkscreen) and ['Rubik' typography.](https://fonts.google.com/specimen/Rubik)
+* Google fonts for ['Pacifico' typography.](https://fonts.google.com/specimen/Pacifico) and ['Poppins' typography.](https://fonts.google.com/specimen/Poppins)
 * Logo and favicon I designed myself.
 * Images in the hero slider are from [Pexels](pexels.com):
     * https://www.pexels.com/photo/steak-food-769289/
