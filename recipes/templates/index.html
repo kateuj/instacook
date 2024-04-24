@@ -6,6 +6,17 @@
     <ul class="slides">
         <li>
             <img alt="selection of colourful salad bowls" src="{{ url_for('static', filename='assets/site-images/hero-image-4.webp') }}">
+            {% if session.user %}
+            <div class="caption center-align">
+                <h1>Welcome back!</h1>
+                <h5 class="light grey-text text-lighten-3">Go to your dashboard to get straight back to your favourite recipes.</h5>
+                <div class="row center-align">
+                    <div class="col s12">
+                        <a href="{{ url_for('dashboard') }}" class="purple-btns btn-large">Dashboard</a>
+                    </div>
+                </div>
+            </div>
+            {% else %}
             <div class="caption center-align">
                 <h1>Welcome to Instacook</h1>
                 <h5 class="light grey-text text-lighten-3">Create digital cookbooks to store your favourite recipes
@@ -17,6 +28,7 @@
                     </div>
                 </div>
             </div>
+            {% endif %}
         </li>
         <li>
             <img alt="ice cream in a dark bowl" src="{{ url_for('static', filename='assets/site-images/hero-image-3.webp') }}">
@@ -32,6 +44,17 @@
         </li>
         <li>
             <img alt="noodles and vegetable bowls" src="{{ url_for('static', filename='assets/site-images/hero-image-2.webp') }}">
+            {% if session.user %}
+            <div class="caption center-align">
+                <h1>Your recipes await!</h1>
+                <h5 class="light grey-text text-lighten-3">Go to your dashboard to get straight back to your favourite recipes.</h5>
+                <div class="row center-align">
+                    <div class="col s12">
+                        <a href="{{ url_for('dashboard') }}" class="purple-btns btn-large">Dashboard</a>
+                    </div>
+                </div>
+            </div>
+            {% else %}
             <div class="caption right-align">
                 <h3>Have an account already?</h3>
                 <h5 class="light grey-text text-lighten-3">Login below.</h5>
@@ -40,7 +63,8 @@
                         <a href="{{ url_for('login') }}" class="purple-btns btn-large">Login</a>
                     </div>
                 </div>
-            </div>
+            </div>            
+            {% endif %}
         </li>
     </ul>
 </div>
