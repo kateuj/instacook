@@ -6,7 +6,7 @@ class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_name = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(260), nullable=False)
-    cookbook = db.relationship('Cookbook', backref='users',
+    cookbook = db.relationship("Cookbook", backref="users",
                                cascade="all, delete", lazy=True)
 
     def __repr__(self):
