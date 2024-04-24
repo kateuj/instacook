@@ -205,7 +205,7 @@ To test performance and accessibility, I used Lighthouse within the Chrome Devel
 | Add Recipe Page | <img src="recipes/static/assets/readme-images/add-recipe-page-lighthouse.png" alt="Light house results for add recipe page"> |
 | Edit Recipe Page | <img src="recipes/static/assets/readme-images/edit-recipe-page-lighthouse.png" alt="Light house results for edit recipe page"> |
 | Add Cookbook Page | <img src="recipes/static/assets/readme-images/add-cookbook-page-lighthouse.png" alt="Light house results for add cookbook page"> |
-| Edit Cookbook Page | <img src="recipes/static/assets/readme-images/edit-cookbook-name-page.png" alt="Light house results for edit cookbook page"> |
+| Edit Cookbook Page | <img src="recipes/static/assets/readme-images/edit-cookbook-page-lighthouse.png" alt="Light house results for edit cookbook page"> |
 | Recipes Page | <img src="recipes/static/assets/readme-images/recipes-page-lighthouse.png" alt="Light house results for recipes page"> |
 
 ## MANUAL TESTING
@@ -214,11 +214,70 @@ To test performance and accessibility, I used Lighthouse within the Chrome Devel
 
 #### First time user
 
+| Goals | How are they achieved? | Image |
+| --- | --- | --- |
+| As a first time user, I need to be able to understand the purpose of the site instantly and lead intuitively to thr first call-to-action. | This is achieved through a simple and clear synopsis on screen as the first thing the user sees. Right below to call-to-action to 'Register' is easily visible. | ![Home Page](/recipes/static/assets/readme-images/home-page.png) |
+| I want to be able to start creating digital cookbooks quickly and add recipes to them. | Once the new user has registered they are automatically redirected to their dashboard where they can create cookbooks and the create recipes within them. | ![Dashboard Page](/recipes/static/assets/readme-images/dashboard-page.png) |
+| I need to have simple instructions and layout so I am not overwhelmed by too much content or instructions. | This is achieved with clear calls to action buttons, like the buttons on each cookbook card on the user's dashboard clearly demonstrate what is possible as next steps. | ![Dashboard Page](/recipes/static/assets/readme-images/dashboard-page.png) |
+| I want to be able to get inspiration and a feel for what other recipes users have uploaded. | Whether logged in or not I can filter through and view all the recipes on the site, with 3 simple dropdown filters. A link to this page is in the nav bar on all pages. | ![Search page](/recipes/static/assets/readme-images/search-page.png)|
+| Should I have any questions or issues, I need to be able to contact the developer easily | The user can find a link to the contact form on all pages in both the nav bar and footer, so wherever the user is looking on the page, a link will always be clearly visible | ![Contact Page](/recipes/static/assets/readme-images/contact-page.png) |
+
+
 #### Returning/Frequent user
+| Goals | How are they achieved? | Image |
+| --- | --- | --- |
+| As a returning user, I want to easily log in to my existing account to access my content. | The home page displays a prominent login call to action button and once a user is logged in, they are redirected to their dashboard to see their current cookbooks.| ![Home Page](/recipes/static/assets/readme-images/home-page.png) ![Dashboard Page](/recipes/static/assets/readme-images/dashboard-page.png)|
+| I want to be able to modify or delete existing cookbooks and recipes | From their dashboard, the user can edit their cookbook names by clicking the edit button on their chosen cookbook card. They can also delete cookbooks and all recipes within that cookbook, just by clicking the delete button on the cookbook card. They will be met with a modal pop-up asking them to confirm their action, to avoid cookbooks and recipes within them being deleted accidentally. From the recipes page view, they can edit and delete recipes using the buttons at the bottom of the recipe info. | ![Dashboard Page](/recipes/static/assets/readme-images/dashboard-page.png) ![Recipes page](/recipes/static/assets/readme-images/edit-delete-recipe-buttons.png) |
 
 ### Devices Used For Testing
 
+I have asked friends and family to test the site on their devices. This app has been tested on the following:
+
+Poco X3 NFC - Chrome
+Iphone 10 - Firefox
+Ipad Pro - Safari
+Huawei Matebook Pro - Microsoft Edge and Chrome
+Google Pixel - Chrome
+
 ### Full Manual Testing
+
+#### Home Page
+| Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Login button | User is redirected to the Login page when clicked | Clicked Login button | Redirected to the login page | Pass |
+| Register button | User is redirected to the Register page when clicked | Clicked the Register button | Redirected to the register page | Pass  |
+
+#### Login
+| Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Login with correct credentials | User is redirected to the their dashboard with a flash message at the top of the page that says 'Welcome "Username"' | Used correct credentials in input fields | Redirected to the Dashboard and flash message appeared | Pass |
+| Login with incorrect credentials | User is kept on the Login page and a flash message appears at the top of the page saying 'Incorrect Username and/or Password' | Used incorrect credentials in input fields | Flash message appeared | Pass  |
+| Register link | User is redirected to the Register page when clicked | Clicked the Register button | Redirected to the register page | Pass  |
+
+#### Register
+| Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Register with incorrect username format | It stays on the register page and a validation message appears asking them to match the required format. | Entered a username below 5 characters, over 15 characters and with special characters. | Validation message appeared | Pass |
+| Register with incorrect password format | It stays on the register page and a validation message appears asking them to match the required format. | Tried to register with a password below 5 characters, over 15 characters, only numbers, only lowercase letters, only uppercase characters, only lowercase characters and numbers, only uppercase characters and numbers, only special characters. | Validation message appeared | Pass |
+| Input correct username and password. | User is redirected to their dashboard and flash message 'Registration successful'. | Registered with correct details. | Redirected to the dashboard with flash message "Registration successful".| Pass |
+| Login link | Redirect to the login page. | Clicked login button | Redirected to the the login page | Pass |
+
+#### Search
+#### Contact
+#### Thank you
+#### Dashboard
+#### Recipes
+#### Edit Recipe
+#### Edit Cookbook
+#### Add Recipe
+#### Add Cookbook
+#### 404 Page
+
+
+#### Log out nav bar
+#### Log in nav bar
+
+#### Footer
 
 ### Bugs
 
