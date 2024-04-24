@@ -229,6 +229,6 @@ def thank_you():
     return render_template("thank_you.html")
 
 
-@app.route("/404")
-def page_not_found():
-    return render_template("404.html"), 404
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404 
