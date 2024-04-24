@@ -221,7 +221,8 @@ def delete_recipe(recipe_id):
     recipe = Recipe.query.get_or_404(recipe_id)
     db.session.delete(recipe)
     db.session.commit()
-    return redirect(url_for("recipes"))
+    flash("Recipe deleted from cookbook")
+    return redirect(url_for("dashboard"))
 
 
 @app.route("/thank_you")
