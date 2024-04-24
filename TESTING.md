@@ -304,9 +304,26 @@ Google Pixel - Chrome
 | Back to cookbooks button | Redirect to dashboard page | Click back to cookbooks button | Redirected to dashboard page successfully | Pass |
 | Collapsed recipe | Should open to display recipe info when clicked | Click recipe title | Recipe info appeared correctly | Pass |
 
-#### Edit Recipe
 #### Edit Cookbook
+| Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Pre-populated input field | Previously saved cookbook name to pre-populate the input field | Direct to the edit cookbook page from dashboard | Previously saved cookbook name was pre-populated into the input field, ready for editing | Pass |
+| Save changes button | Redirect to dashboard, flash message 'Cookbook updated', with the chosen cookbook name updated on its respective card | Save changes button | Redirected to dashboard page successfully with flash message 'Cookbook updated', Cookbook name updated on card | Pass |
+
 #### Add Recipe
+| Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Input fields left empty when form submitted | Validation message to appear "Please fill in this field" | Submit the form with each input left empty on their own | Each input had the validation message appear as expected | Pass |
+| Input fields left too short when form submitted | Validation message to appear "Please lengthen this text to 5 characters or more" | Submit the form with each input short strings individually | Each input had the validation message appear as expected | Pass |
+| Input fields with too many characters | Should not be possible, after max length, characters typed will not appear | Tried to type a message with more than max length in each input field | No characters typed over 750 characters appear | Pass |
+| Create recipe button | Redirect to dashboard, with recipe in their chosen Cookbook card | Click create recipe button | Redirect to dashboard successfully, with recipe in their chosen Cookbook card | Pass |
+| Dropdown options left empty | If a dropdown is left empty when form submitted, validation message should appear | Leave each dropdown empty individually to check | The form does not submit, but no validation message appears to tell the user why | Fail | RETEST
+
+#### Edit Recipe
+| Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| pre-populated input field | Previously saved recipe inputs to pre-populate the input field | Direct to the edit recipe page from dashboard | Previously saved recipe info was pre-populated into the input field, ready for editing | Pass |
+| Save changes button | Redirect to dashboard, flash message 'Recipe updated', with the chosen cookbook name updated on its respective card | Save changes button | Redirected to dashboard page successfully with flash message 'Cookbook updated', Cookbook name updated on card | Pass |
 
 #### Add Cookbook
 | Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
@@ -329,6 +346,12 @@ I revisited the 404 app route and found a code error - not '@app.errorhandler', 
 ### Bugs
 
 #### Solved Bugs
+delete recipe button not working
+cookbook showing all user's cookbooks not just particular user's
+if dropdown not selected validation message
+edit recipe button not working
+delete recipe button not working
+create recipe button not working
 
 #### Unsolved Bugs
 
