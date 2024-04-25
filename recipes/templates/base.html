@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
         integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
         crossorigin="anonymous" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
     <title>Instacook</title>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
@@ -46,7 +47,7 @@
                 </a>
                 <a href="#" data-target="mobile-demo" aria-label="Open mobile menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('search') }}" aria-label="Link to search recipes page"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="{{ url_for('search') }}" aria-label="Link to search recipes page"><i class="material-icons">search</i></a></li>
                     <li><a href="{{ url_for('search') }}" aria-label="Link to search recipes page">Explore Recipes</a></li>
                     <!-- If user is logged in, different links display -->
                     {% if session.user %}
@@ -64,7 +65,7 @@
 
         <!-- Materialize Mobile nav bar -->
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="{{ url_for('search') }}" aria-label="Link to search recipes page"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+            <li><a href="{{ url_for('search') }}" aria-label="Link to search recipes page"><i class="material-icons">search</i></a></li>
             <li><a href="{{ url_for('search') }}" aria-label="Link to search recipes page">Explore Recipes</a></li>
             {% if session.user %}
             <li><a href="{{ url_for('dashboard', user_name=session['user']) }}" aria-label="Link to dashboard page">Dashboard</a></li>
