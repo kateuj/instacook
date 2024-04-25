@@ -111,7 +111,7 @@ I used Coolor to choose a fresh, vibrant colour palette for the site. Once chose
 
 ### Colour Accessibility
 
-I checked the contrast on the colour combinations with ![Coolor contrast checker](https://coolors.co/contrast-checker) to determine if they met the ![WCAG AA guidelines](https://www.w3.org/TR/WCAG21/).
+I checked the contrast on the colour combinations with [Coolor contrast checker](https://coolors.co/contrast-checker) to determine if they met the [WCAG AA guidelines](https://www.w3.org/TR/WCAG21/).
 All of the combinations good readability except for yellow on white:
 Purple
 
