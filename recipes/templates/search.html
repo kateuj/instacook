@@ -71,14 +71,23 @@
                     <p><strong>Meal Type: </strong>{{ recipe.meal_type }}</p>
                     <p><strong>Ingredients:</strong>
                         <br>
-                        {% autoescape false %}
-                        {{ recipe.recipe_ingredients | replace("\n", "<br/>") }}
-                        {% endautoescape %}
+                        {% set lineSplit = recipe.recipe_ingredients.split('\n') %}
+                        {% for item in lineSplit %}
+                        {{ item }}
+                            {% if not loop.last %}
+                            <br/>
+                            {% endif %}
+                        {% endfor %}
                     </p>
                     <p><strong>Instructions:</strong>
-                        <br>{% autoescape false %}
-                        {{ recipe.recipe_instructions | replace("\n", "<br/>") }}
-                        {% endautoescape %}
+                        <br>
+                        {% set lineSplit = recipe.recipe_instructions.split('\n') %}
+                        {% for item in lineSplit %}
+                        {{ item }}
+                            {% if not loop.last %}
+                            <br/>
+                            {% endif %}
+                        {% endfor %}
                     </p>
                 </div>
             </li>

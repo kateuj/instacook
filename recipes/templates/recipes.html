@@ -28,15 +28,24 @@
                 <p><strong>Meal Type: </strong>{{ recipe.meal_type }}</p>
                 <p><strong>Ingredients:</strong>
                     <br>
-                    {% autoescape false %}
-                    {{ recipe.recipe_ingredients | replace("\n", "<br/>") }}
-                    {% endautoescape %}
+                    {% set lineSplit = recipe.recipe_ingredients.split('\n') %}
+                    {% for item in lineSplit %}
+                    {{ item }}
+                        {% if not loop.last %}
+                        <br/>
+                        {% endif %}
+                    {% endfor %}
                 </p>
                 <p><strong>Instructions:</strong>
-                    <br>{% autoescape false %}
-                    {{ recipe.recipe_instructions | replace("\n", "<br/>") }}
-                    {% endautoescape %}</p>
-                <p>
+                    <br>
+                    {% set lineSplit = recipe.recipe_instructions.split('\n') %}
+                    {% for item in lineSplit %}
+                    {{ item }}
+                        {% if not loop.last %}
+                        <br/>
+                        {% endif %}
+                    {% endfor %}
+                </p>
                     <a href="{{ url_for('edit_recipe', recipe_id=recipe.id) }}" class="btn green accent-4">Edit</a>
                     <a href="#modal-{{ recipe.id }}" class="btn delete-btn modal-trigger">Delete</a>
                 </p>
