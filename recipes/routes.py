@@ -177,6 +177,11 @@ def delete_cookbook(cookbook_id):
 @app.route("/add_recipe", methods=["GET", "POST"])
 # Add recipe linked to chosen cookbook name
 def add_recipe():
+    user = Users.query.filter_by(user_name=session["user"]).first()
+    if user:
+        user_id = user.id
+        user_cookbook = list(Cookbook.query.filter(
+            Cookbook.user_id == user_id).all())
     cookbook = list(Cookbook.query.order_by(Cookbook.cookbook_name).all())
     if request.method == "POST":
         recipe = Recipe(
@@ -192,12 +197,17 @@ def add_recipe():
         db.session.commit()
         flash("Recipe added")
         return redirect(url_for("dashboard"))
-    return render_template("add_recipe.html", cookbook=cookbook)
+    return render_template("add_recipe.html", cookbooks=user_cookbook)
 
 
 @app.route("/edit_recipe/<int:recipe_id>", methods=["GET", "POST"])
 # Edit specific recipe using recipe_id
 def edit_recipe(recipe_id):
+    user = Users.query.filter_by(user_name=session["user"]).first()
+    if user:
+        user_id = user.id
+        user_cookbook = list(Cookbook.query.filter(
+            Cookbook.user_id == user_id).all())
     recipe = Recipe.query.get_or_404(recipe_id)
     cookbook = list(Cookbook.query.order_by(Cookbook.cookbook_name).all())
     if request.method == "POST":
@@ -212,7 +222,7 @@ def edit_recipe(recipe_id):
         flash("Recipe updated")
         return redirect(url_for("dashboard"))
     return render_template("edit_recipe.html", recipe=recipe,
-                           cookbook=cookbook)
+                           cookbooks=user_cookbook)
 
 
 @app.route("/delete_recipe/<int:recipe_id>")
