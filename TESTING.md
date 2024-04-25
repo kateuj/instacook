@@ -360,15 +360,10 @@ I revisited the 404 app route and found a code error - not '@app.errorhandler', 
 | 1. | Pre-populated dropdown options not working in the Edit Recipe form. | Removed ‘selected’ from options.  |
 | 2. | Contact form submit button triggering a new window to open Thank you page rather than just redirect. | Changed from 'window.open' to 'window.location.replace' in function.  |
 | 3. | Mobile side nav not working. | Code was missing a closing bracket, so added to fix.  |
-| 4. | Cookbook dropdown on add recipe and edit recipe pages showing all cookbooks on database not just particular user's cookbooks. |  |
+| 4. | Cookbook dropdown on add recipe and edit recipe pages showing all cookbooks on database, not just specific user's cookbooks. | I updated the app routes to include user queries and update the render template to call just the user's cookbooks. |
 | 5. | Recipe Ingredients and Instructions displaying as one full line without breaks on recipes page and search page. | Searched solutions and found this to add to breaks to the code [Line Breaks Solutions](https://stackoverflow.com/questions/3206344/passing-html-to-template-using-flask-jinja2) |
-| 6. | If dropdowns on Add and edit recipe pages not selected, no validation message appearing |  |
+| 6. | If dropdowns on Add and edit recipe pages not selected, no validation message appearing | Inspecting the dropdowns in google dev tools I spotted that materialize adds a "display:none" to dropdowns, which removes the usual validation messages. I searched for a solution and found this 'select' code snippet [Dropdown solution](https://stackoverflow.com/questions/34248898/how-to-validate-select-option-for-a-materialize-dropdown ) to remove the materialize CSS on it so that the validation now shows again. Given this issue, I intend on using Materialize alternatives in future to avoid this issue. |
 | 7. | Custom 404 page not appearing when incorrect URLs are created | Needed to change the app route to '@app.errorhandler(404)' [Custom 404 app route solution](https://stackoverflow.com/questions/73140435/why-custom-404-page-not-working-with-flask) |
-
-
-cookbook showing all user's cookbooks not just particular user's
-if dropdown not selected validation message
-
 
 ### Unsolved Bugs
 

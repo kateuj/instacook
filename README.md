@@ -461,6 +461,7 @@ I have annotated within my code where these site.
     
     ![JS query parameters code](recipes/static/assets/readme-images/update-query-params-code-snippet.png)
 
+* **Dropdown validation bug fix** - Initially, if dropdowns on Add and edit recipe pages not selected, no validation message was appearing. Upon inspection of the dropdowns in Google Dev Tools I spotted that Materialize adds a "Display:none" to dropdowns, which removes the usual validation messages. I searched for a solution and found this 'select' code snippet [Dropdown solution](https://stackoverflow.com/questions/34248898/how-to-validate-select-option-for-a-materialize-dropdown ) to remove the materialize CSS on it, so that the validation would show again.
 
 # Credits
 
