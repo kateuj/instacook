@@ -46,7 +46,7 @@
                 </a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('search') }}"><i class="material-icons">search</i></a></li>
+                    <li><a href="{{ url_for('search') }}"><i class="fa-solid fa-magnifying-glass"></i></a></li>
                     <li><a href="{{ url_for('search') }}">Explore Recipes</a></li>
                     <!-- If user is logged in, different links display -->
                     {% if session.user %}
@@ -64,7 +64,7 @@
 
         <!-- Materialize Mobile nav bar -->
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="{{ url_for('search') }}"><i class="material-icons">search</i></a></li>
+            <li><a href="{{ url_for('search') }}"><i class="fa-solid fa-magnifying-glass"></i></a></li>
             <li><a href="{{ url_for('search') }}">Explore Recipes</a></li>
             {% if session.user %}
             <li><a href="{{ url_for('dashboard', user_name=session['user']) }}">Dashboard</a></li>
