@@ -10,153 +10,153 @@ With the scale of this project in the grand scheme of things being quite small, 
 
 I have used a mixture of manual and automated testing while developing, both of which play a key role in forming a web application that works correctly and consistently. Automated testing can be great for doing quick overview results, for example checking code compliant with style guides etc., especially with more extensive projects and applications. Manual testing has allowed me to look at things at a deeper level, checking things like user experience design and in turn finding areas for improvement to strengthen my application as a whole. Using both has allowed me to build reliable functions and code and a higher quality end product.
 
-## Table of Contents
+# Table of Contents
 
 1. [Automated Testing](#automated-testing)
 2. [Manual Testing](#manual-testing)
 
-## AUTOMATED TESTING
+# AUTOMATED TESTING
 
-### HTML Validator - [W3C](https://validator.w3.org/)
+## HTML Validator - [W3C](https://validator.w3.org/)
 
 I put every page in my site into the HTML validator. This was useful to highlight some code errors that I had missed looking through manually.
 
-#### Home Page
+### Home Page
 
 The validator highlighted:
 * __Error:__ Missed alt tags on images.
 * __Error:__"type=text/javascript" - not required.
 * __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
 
-##### Before
+#### Before
 ![Home page validator results before](recipes/static/assets/readme-images/home-page-validator-before.png)
-##### After updates
+#### After updates
 ![Home page validator results after](recipes/static/assets/readme-images/home-page-validator-after.png)
 
-#### Login Page
+### Login Page
 
 The validator highlighted:
 * __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
 
 ![Login page validator results](recipes/static/assets/readme-images/login-page-validator.png)
 
-#### Register Page
+### Register Page
 
 The validator highlighted:
 * __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
 
 ![Register page validator results](recipes/static/assets/readme-images/register-page-validator.png)
 
-#### Contact Page
+### Contact Page
 
 The validator highlighted:
 * __Error:__"type=text" on textarea - not required.
 * __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
 
-##### Before
+#### Before
 ![Contact page validator results before](recipes/static/assets/readme-images/contact-page-validator-before.png)
-##### After updates
+#### After updates
 ![Contact page validator results after](recipes/static/assets/readme-images/contact-page-validator-after.png)
 
-#### Dashboard Page
+### Dashboard Page
 
 The validator would not work for the deployed link of this page, saying it was not retreiveable. This will be due to the fact that dashboard only loads when a session cookie is in place from a user login, so it would not be able to render in the validator. To work around this I added the raw code into the validator, and checked through for any justified errors. The validator, due to the fact the raw code has templating code in it that refers to the base.html for the header etc., was throwing alot of irrelevant errors, as you can see below. I checked each of them one by one, and none were justified errors that required changes.
 
 ![Dashboard page validator results](recipes/static/assets/readme-images/dashboard-page-validator.png)
 
-#### Add Cookbook Page
+### Add Cookbook Page
 
 The validator highlighted:
 * __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
 
 ![Add cookbook page validator results before](recipes/static/assets/readme-images/add-cookbook-page-validator.png)
 
-#### Edit Cookbook Page
+### Edit Cookbook Page
 
 The validator highlighted:
 * __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
 
 ![Edit cookbook page validator results](recipes/static/assets/readme-images/edit-cookbook-page-validator.png)
 
-#### Recipes Page
+### Recipes Page
 
 The validator highlighted:
 * __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
 
 ![Recipes page validator results](recipes/static/assets/readme-images/recipes-page-validator.png)
 
-#### Search Page
+### Search Page
 
 The validator highlighted:
 * __Error:__ Unclosed div element - closed the element and it resolved the "/li" error .
 * __Error:__ Unclosed span element - removed the span element.
 * __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
 
-##### Before
+#### Before
 ![Search page validator results before](recipes/static/assets/readme-images/search-page-validator-before.png)
-##### After updates
+#### After updates
 ![Search page validator results after](recipes/static/assets/readme-images/search-page-validator-after.png)
 
-#### Add Recipe Page
+### Add Recipe Page
 
 The validator highlighted:
 * __Error:__"type=text" on textarea - not required.
 * __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
 
-##### Before
+#### Before
 ![Add recipe page validator results before](recipes/static/assets/readme-images/add-recipe-page-validator-before.png)
-##### After updates
+#### After updates
 ![Add recipe page validator results after](recipes/static/assets/readme-images/add-recipe-page-validator-after.png)
 
-#### Edit Recipe Page
+### Edit Recipe Page
 
 The validator highlighted:
 * __Error:__"type=text" on textarea - not required.
 * __Error:__ first child disabled option in dropdown, the value should be empty - emptied the values on these options.
 * __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
 
-##### Before
+#### Before
 ![Search page validator results before](recipes/static/assets/readme-images/edit-recipe-page-validator-before.png)
-##### After updates
+#### After updates
 ![Search page validator results after](recipes/static/assets/readme-images/edit-recipe-page-validator-after.png)
 
-#### Thank you Page
+### Thank you Page
 
 The validator highlighted:
 * __Warning:__ Section lacks h2-h6 heading - The design structure does not require a header for this part. It is the section that holds the flash messages, but from a semantic perspective, it is better to keep the section element rather than a div so I ignored this warning.
 
 ![Search page validator results](recipes/static/assets/readme-images/thank-you-page-validator.png)
 
-### CSS Validator - [W3C](https://jigsaw.w3.org/css-validator/)
+## CSS Validator - [W3C](https://jigsaw.w3.org/css-validator/)
 
 No errors were found in my CSS code when put through the validator.
 ![CSS validator results](recipes/static/assets/readme-images/css-validator.png)
 
-### JSHint Validator - [JSHint](https://jshint.com/)
+## JSHint Validator - [JSHint](https://jshint.com/)
 
-#### Script.js
+### Script.js
 * __Warning:__ 'let' is available in ES6 - no need to change
 * __Warning:__ 'M' undefined variable - This error is a side effect of using the Materialize library. I cannot change this quote without it affecting the function with the library, so have ignored this.
 * __Warning:__ 'updateQueryParams' unused variable - this is used within the search page funtionality, so this warning can be ignored in this instance.
 
 ![script.js validator results](recipes/static/assets/readme-images/scriptjs-validator.png)
 
-#### Send_mail.js
+### Send_mail.js
 * __Warning:__ 'emailjs' undefined variable - this is the code snippet required to interact with the EmailJS API so I cannot change this.
 * __Warning:__ 'sendMail' unused variable - The variable is called within the contact page in the HTML, so does not require changing.
 
 ![sendmail.js validator results](recipes/static/assets/readme-images/scriptjs-validator.png)
 
-### Python Validator - [Code Institute Python Linter](https://pep8ci.herokuapp.com/)
+## Python Validator - [Code Institute Python Linter](https://pep8ci.herokuapp.com/)
 
-#### run.py file
+### run.py file
 
 The validator highlighted:
 * __Error:__"no new line at end of file" - added new line at the bottom of the code which cleared the error.
 
 ![run.py validator results](recipes/static/assets/readme-images/runpy-validator.png)
 
-#### routes.py file
+### routes.py file
 
 The validator highlighted:
 * __Error:__"no new line at end of file" - added new line at the bottom of the code.
@@ -170,7 +170,7 @@ Cleared all the errors below.
 
 ![routes.py validator results](recipes/static/assets/readme-images/routespy-validator.png)
 
-#### models.py file
+### models.py file
 
 The validator highlighted:
 * __Error:__"no new line at end of file" - added new line at the bottom of the code.
@@ -181,7 +181,7 @@ Cleared all the errors below.
 
 ![models.py validator results](recipes/static/assets/readme-images/modelspy-validator.png)
 
-#### __init__.py file
+### __init__.py file
 
 The validator highlighted:
 * __Error:__"indentation not a multiple of 4" - fixed indent.
@@ -190,7 +190,7 @@ The validator highlighted:
 
 ![init.py validator results](recipes/static/assets/readme-images/initpy-validator.png)
 
-### Lighthouse
+## Lighthouse
 
 To test performance and accessibility, I used Lighthouse within the Chrome Developer Tools. Accessibility was down by 1% on the search page, based on the contrast between the pink background and white recipe name text on top.
 
@@ -208,11 +208,11 @@ To test performance and accessibility, I used Lighthouse within the Chrome Devel
 | Edit Cookbook Page | <img src="recipes/static/assets/readme-images/edit-cookbook-page-lighthouse.png" alt="Light house results for edit cookbook page"> |
 | Recipes Page | <img src="recipes/static/assets/readme-images/recipes-page-lighthouse.png" alt="Light house results for recipes page"> |
 
-## MANUAL TESTING
+# MANUAL TESTING
 
-### Testing User Stories
+## Testing User Stories
 
-#### First time user
+### First time user
 
 | Goals | How are they achieved? | Image |
 | --- | --- | --- |
@@ -223,13 +223,13 @@ To test performance and accessibility, I used Lighthouse within the Chrome Devel
 | Should I have any questions or issues, I need to be able to contact the developer easily | The user can find a link to the contact form on all pages in both the nav bar and footer, so wherever the user is looking on the page, a link will always be clearly visible | ![Contact Page](/recipes/static/assets/readme-images/contact-page.png) |
 
 
-#### Returning/Frequent user
+### Returning/Frequent user
 | Goals | How are they achieved? | Image |
 | --- | --- | --- |
 | As a returning user, I want to easily log in to my existing account to access my content. | The home page displays a prominent login call to action button and once a user is logged in, they are redirected to their dashboard to see their current cookbooks.| ![Home Page](/recipes/static/assets/readme-images/home-page.png) ![Dashboard Page](/recipes/static/assets/readme-images/dashboard-page.png)|
 | I want to be able to modify or delete existing cookbooks and recipes | From their dashboard, the user can edit their cookbook names by clicking the edit button on their chosen cookbook card. They can also delete cookbooks and all recipes within that cookbook, just by clicking the delete button on the cookbook card. They will be met with a modal pop-up asking them to confirm their action, to avoid cookbooks and recipes within them being deleted accidentally. From the recipes page view, they can edit and delete recipes using the buttons at the bottom of the recipe info. | ![Dashboard Page](/recipes/static/assets/readme-images/dashboard-page.png) ![Recipes page](/recipes/static/assets/readme-images/edit-delete-recipe-buttons.png) |
 
-### Devices Used For Testing
+## Devices Used For Testing
 
 I have asked friends and family to test the site on their devices. This app has been tested on the following:
 
@@ -239,22 +239,22 @@ Ipad Pro - Safari
 Huawei Matebook Pro - Microsoft Edge and Chrome
 Google Pixel - Chrome
 
-### Full Manual Testing
+## Full Manual Testing
 
-#### Home
+### Home
 | Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Login button | User is redirected to the Login page when clicked | Clicked Login button | Redirected to the login page | Pass |
 | Register button | User is redirected to the Register page when clicked | Clicked the Register button | Redirected to the register page | Pass  |
 
-#### Login
+### Login
 | Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Login with correct credentials | User is redirected to the their dashboard with a flash message at the top of the page that says 'Welcome "Username"' | Used correct credentials in input fields | Redirected to the Dashboard and flash message appeared | Pass |
 | Login with incorrect credentials | User is kept on the Login page and a flash message appears at the top of the page saying 'Incorrect Username and/or Password' | Used incorrect credentials in input fields | Flash message appeared | Pass  |
 | Register link | User is redirected to the Register page when clicked | Clicked the Register button | Redirected to the register page | Pass  |
 
-#### Register
+### Register
 | Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Register with incorrect username format | It stays on the register page and a validation message appears asking them to match the required format. | Entered a username below 5 characters, over 15 characters and with special characters. | Validation message appeared | Pass |
@@ -262,7 +262,7 @@ Google Pixel - Chrome
 | Input correct username and password. | User is redirected to their dashboard and flash message 'Registration successful'. | Registered with correct details. | Redirected to the dashboard with flash message "Registration successful".| Pass |
 | Login link | Redirect to the login page. | Clicked login button | Redirected to the the login page | Pass |
 
-#### Search
+### Search
 | Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Select a meal type filter dropdown option | Should filter recipes to show only recipes that match the meal type and selection remain visible in the dropdown | Selected each of the dropdown options to view recipes filtered for each | Recipes filtered successfully and selection remained visible in dropdown | Pass |
@@ -273,7 +273,7 @@ Google Pixel - Chrome
 | Clear selection button | Should reset all filters to blank by refreshing the page | Click the 'clear selection' button | Page refreshed successfully | Pass |
 | Collapsed recipe | Should open to display recipe info when clicked | Click recipe title | Recipe info appeared correctly | Pass |
 
-#### Contact
+### Contact
 | Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Input first name with over 30 characters | Should not be possible, after 30 characters, characters typed will not appear | Tried to input more than 30 characters | No characters typed over 30 characters appear | Pass |
@@ -283,12 +283,12 @@ Google Pixel - Chrome
 | Type a message with too many characters | Should not be possible, after 750 characters, characters typed will not appear | Tried to type a message with more than 750 characters | No characters typed over 750 characters appear | Pass |
 | Submit will all correct format inputs | Redirect to the thank you page | Input correctly into fields and click submit button | Redirected to thank you page | Pass |
 
-#### Thank you
+### Thank you
 | Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Redirect countdown | Redirect to the home page after 5 second countdown | Load the thank you page | Redirected to home page successfully after 5 seconds | Pass |
 
-#### Dashboard
+### Dashboard
 | Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Add Cookbook button | Redirect to add cookbook page | Click add cookbook button | Redirected to add cookbook page successfully | Pass |
@@ -297,20 +297,20 @@ Google Pixel - Chrome
 | Add Recipe button | Redirect to add recipe page | Click add recipe button | Redirected to add recipe page successfully | Pass |
 | Delete Cookbook button | Modal pop-up to confirm the user wants to delete with 'delete' and 'cancel' buttons | Click delete cookbook button | Modal pop-up appears with 'delete' or 'cancel' options. Cancel button closes the modal. Delete button successfully deletes the chosen cookbook | Pass |
 
-#### Recipes
+### Recipes
 | Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Add Recipe button | Redirect to add recipe page | Click add recipe button | Redirected to add recipe page successfully | Pass |
 | Back to cookbooks button | Redirect to dashboard page | Click back to cookbooks button | Redirected to dashboard page successfully | Pass |
 | Collapsed recipe | Should open to display recipe info when clicked | Click recipe title | Recipe info appeared correctly | Pass |
 
-#### Edit Cookbook
+### Edit Cookbook
 | Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Pre-populated input field | Previously saved cookbook name to pre-populate the input field | Direct to the edit cookbook page from dashboard | Previously saved cookbook name was pre-populated into the input field, ready for editing | Pass |
 | Save changes button | Redirect to dashboard, flash message 'Cookbook updated', with the chosen cookbook name updated on its respective card | Save changes button | Redirected to dashboard page successfully with flash message 'Cookbook updated', Cookbook name updated on card | Pass |
 
-#### Add Recipe
+### Add Recipe
 | Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Input fields left empty when form submitted | Validation message to appear "Please fill in this field" | Submit the form with each input left empty on their own | Each input had the validation message appear as expected | Pass |
@@ -321,18 +321,18 @@ Google Pixel - Chrome
 After adding an if statement to check if dropdowns are left blank, I re-tested.
 | Dropdown options left empty | If a dropdown is left empty when form submitted, validation message should appear | Leave each dropdown empty individually to check | The form does not submit and flash message appears telling the user to make a selection | Pass |
 
-#### Edit Recipe
+### Edit Recipe
 | Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Pre-populated input field | Previously saved recipe inputs to pre-populate the input field | Direct to the edit recipe page from dashboard | Previously saved recipe info was pre-populated into the input field, ready for editing | Pass |
 | Save changes button | Redirect to dashboard, flash message 'Recipe updated', with the chosen cookbook name updated on its respective card | Save changes button | Redirected to dashboard page successfully with flash message 'Cookbook updated', Cookbook name updated on card | Pass |
 
-#### Add Cookbook
+### Add Cookbook
 | Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Create cookbook button |  | Click create cookbook button | Redirected to dashboard page successfully with flash message 'Cookbook created' | Pass |
 
-#### 404 Page
+### 404 Page
 | Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | User tries to access an incorrect URL or page cannot cannot be found | User is redirected to the 404 page with a message displayed "Sorry this page doesn't exist", with a button linked to the Home page. | Typed an incorrect URL into address bar | Not redirected to custom 404 page. | Fail |
@@ -340,25 +340,36 @@ I revisited the 404 app route and found a code error - not '@app.errorhandler', 
 ![404 App route fix](/recipes/static/assets/readme-images/404-page-route-update.png)
 | User tries to access an incorrect URL or page cannot cannot be found | User is redirected to the 404 page with a message displayed "Sorry this page doesn't exist", with a button linked to the Home page. | Typed an incorrect URL into address bar | Redirected to custom 404 page | Pass |
 
-#### Log out nav bar
+### Log out nav bar
 | Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | User logs out using log out link in nav bar | User is redirected to login page with a message displayed "You have been logged out", and the link disappears from the nav bar, replaced by Login and Register | Click on log out link | Redirected successfully to login page with a message displayed "You have been logged out", and the link disappears from the nav bar. Register and Login reappear as links in nav bar. | Pass |
 
 
-#### Footer
+### Footer
 | Feature/Action | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Links change when logged in | User logs in and links change from 'Login, Register and Contact' to 'Dashboard, Logout, Contact' | Login to registered user accunt | Links changed from 'Login, Register and Contact' to 'Dashboard, Logout, Contact' | Pass |
 
-### Bugs
+## Bugs
 
-#### Solved Bugs
+### Solved Bugs
+
+| No. | Bug | How I solved the issue |
+| --- | --- | --- |
+| 1. | Pre-populated dropdown options not working in the Edit Recipe form. | Removed ‘selected’ from options.  |
+| 2. | Contact form submit button triggering a new window to open Thank you page rather than just redirect. | Changed from 'window.open' to 'window.location.replace' in function.  |
+| 3. | Mobile side nav not working. | Code was missing a closing bracket, so added to fix.  |
+| 4. | Cookbook dropdown on add recipe and edit recipe pages showing all cookbooks on database not just particular user's cookbooks. |  |
+| 5. | Recipe Ingredients and Instructions displaying as one full line without breaks on recipes page and search page. | Searched solutions and found this to add to breaks to the code [Line Breaks Solutions](https://stackoverflow.com/questions/3206344/passing-html-to-template-using-flask-jinja2) |
+| 6. | If dropdowns on Add and edit recipe pages not selected, no validation message appearing |  |
+| 7. | Custom 404 page not appearing when incorrect URLs are created | Needed to change the app route to '@app.errorhandler(404)' [Custom 404 app route solution](https://stackoverflow.com/questions/73140435/why-custom-404-page-not-working-with-flask) |
+
 
 cookbook showing all user's cookbooks not just particular user's
 if dropdown not selected validation message
 
 
-#### Unsolved Bugs
+### Unsolved Bugs
 
 None known at this time.

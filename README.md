@@ -161,7 +161,7 @@ I chose a cursive font for titles, 'Pacifico' and 'Poppins' a simple sans-serif 
 ## Landing page
 ![Home page screenshot](recipes/static/assets/readme-images/home-page.png)
 
-* __Hero image slider__ - I wanted to include something visually impactful to the home page to the user a positive emotional response when they land. It also draws the eye of the user to the main call to actions - 'Log in' or 'Register', so both new users and returning users can navigate quickly to get started using the app features. There a 3 large images that the slider flips through, to also suggest to the user they can go straight into exploring existing recipes on the search page.
+* __Hero image slider__ - I wanted to include something visually impactful to the home page to the user a positive emotional response when they land. It also draws the eye of the user to the main call to actions - 'Log in' or 'Register', so both new users and returning users can navigate quickly to get started using the app features. There a 3 large images that the slider flips through, to also suggest to the user they can go straight into exploring existing recipes on the search page. Whilst in the development stage, a friend tested the site and gave the feedback that the text content should maybe change dependent on whether or not the user is logged in. With this in mind I have added an if statement in the code, so now the text content on the sliders change dependent on whether or not the user is logged in - it changes to links to go straight to their dashboard rather than 'register' and 'login' which are irrelevant if they are signed in.
 
 ### Register page
 
@@ -450,6 +450,8 @@ I have documented my testing in a separate document [TESTING.md](TESTING.md)
 I have annotated within my code where these site.
 
 * **EmailJS** - I have annotated in my code where EmailJS API code appears for the contact form.
+
+* **Recipe Ingredients and Instructions formatting** - Do add breaks into the instructions and ingredient lists of recipes, I used this solution to change '/n' to 'br' breaks for better readability: [Line Breaks Solutions](https://stackoverflow.com/questions/3206344/passing-html-to-template-using-flask-jinja2)
 
 * **Dropdown Filters** - I used the following articles to help formulate the code for my dropdown filters on the search page:
     * [Query String Parameters](https://www.claravine.com/a-query-on-using-query-strings-parameters/) - reading through this gave me the idea to use this particular solution for this feature.
