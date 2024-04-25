@@ -40,23 +40,23 @@
         <!-- Materialize Nav bar -->
         <nav class="nav-footer-background">
             <div class="nav-wrapper">
-                <a href="{{ url_for('home') }}" class="brand-logo">
+                <a href="{{ url_for('home') }}" aria-label="Link to home page" class="brand-logo">
                     <img id="nav-logo" alt="instacook logo with spatula icon"
                         src="{{ url_for('static', filename='assets/site-images/instacook-logo-white.webp') }}">
                 </a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <a href="#" data-target="mobile-demo" aria-label="Open mobile menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('search') }}"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                    <li><a href="{{ url_for('search') }}">Explore Recipes</a></li>
+                    <li><a href="{{ url_for('search') }}" aria-label="Link to search recipes page"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="{{ url_for('search') }}" aria-label="Link to search recipes page">Explore Recipes</a></li>
                     <!-- If user is logged in, different links display -->
                     {% if session.user %}
-                    <li><a href="{{ url_for('dashboard', user_name=session['user']) }}">Dashboard</a></li>
-                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
-                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    <li><a href="{{ url_for('dashboard', user_name=session['user']) }}" aria-label="Link to user dashboard page">Dashboard</a></li>
+                    <li><a href="{{ url_for('logout') }}" aria-label="Link to log user out">Logout</a></li>
+                    <li><a href="{{ url_for('contact') }}" aria-label="Link to contact page">Contact</a></li>
                     {% else %}
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
-                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    <li><a href="{{ url_for('login') }}" aria-label="Link to login page">Login</a></li>
+                    <li><a href="{{ url_for('register') }}" aria-label="Link to search register page">Register</a></li>
+                    <li><a href="{{ url_for('contact') }}" aria-label="Link to search contact page">Contact</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -64,16 +64,16 @@
 
         <!-- Materialize Mobile nav bar -->
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="{{ url_for('search') }}"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-            <li><a href="{{ url_for('search') }}">Explore Recipes</a></li>
+            <li><a href="{{ url_for('search') }}" aria-label="Link to search recipes page"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+            <li><a href="{{ url_for('search') }}" aria-label="Link to search recipes page">Explore Recipes</a></li>
             {% if session.user %}
-            <li><a href="{{ url_for('dashboard', user_name=session['user']) }}">Dashboard</a></li>
-            <li><a href="{{ url_for('logout') }}">Logout</a></li>
-            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('dashboard', user_name=session['user']) }}" aria-label="Link to dashboard page">Dashboard</a></li>
+            <li><a href="{{ url_for('logout') }}" aria-label="Link to log user out">Logout</a></li>
+            <li><a href="{{ url_for('contact') }}" aria-label="Link to contact page">Contact</a></li>
             {% else %}
-            <li><a href="{{ url_for('login') }}">Login</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
-            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('login') }}" aria-label="Link to login page">Login</a></li>
+            <li><a href="{{ url_for('register') }}" aria-label="Link to register page">Register</a></li>
+            <li><a href="{{ url_for('contact') }}" aria-label="Link to contact page">Contact</a></li>
             {% endif %}
         </ul>
 
@@ -111,13 +111,13 @@
                     <!-- If user is logged in, different links display -->
                     {% if session.user %}
                     <a href="{{ url_for('dashboard', user_name=session['user']) }}"
-                        class="footer-text">Dashboard</a> |
-                    <a href="{{ url_for('logout') }}" class="footer-text">Logout</a> |
-                    <a href="{{ url_for('contact') }}" class="footer-text">Contact</a>
+                        class="footer-text" aria-label="Link to user dashboard page">Dashboard</a> |
+                    <a href="{{ url_for('logout') }}" class="footer-text" aria-label="Link to log user out">Logout</a> |
+                    <a href="{{ url_for('contact') }}" class="footer-text" aria-label="Link to contact page">Contact</a>
                     {% else %}
-                    <a href="{{ url_for('login') }}" class="footer-text">Login</a> |
-                    <a href="{{ url_for('register') }}" class="footer-text">Register</a> |
-                    <a href="{{ url_for('contact') }}" class="footer-text">Contact</a>
+                    <a href="{{ url_for('login') }}" class="footer-text" aria-label="Link to login page">Login</a> |
+                    <a href="{{ url_for('register') }}" class="footer-text" aria-label="Link to register page">Register</a> |
+                    <a href="{{ url_for('contact') }}" class="footer-text" aria-label="Link to contact page">Contact</a>
                     {% endif %}
                 </div>
             </div>
