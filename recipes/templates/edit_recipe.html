@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>{{ cookbook.cookbook_name }}Edit Recipe</h1>
+<h1>{{ cookbooks.cookbook_name }}Edit Recipe</h1>
 
 <div class="row card-panel ">
     <!-- Materialize Form -->
@@ -85,14 +85,13 @@
         </div>
 
         <!-- Cookbook ID -->
-
         <div class="row">
             <div class="input-field col s12">
                 <i class="fa-solid fa-book prefix"></i>
                 <select id="cookbook_id" name="cookbook_id" class="validate" required>
                     <option value="" disabled>Choose Cookbook</option>
-                    {% for cookbook in cookbook %}
-                    {% if cookbook == recipe.coobook %}
+                    {% for cookbook in cookbooks %}
+                    {% if cookbook == recipe.cookbook %}
                     <option value="{{ cookbook.id }}" selected>{{ cookbook.cookbook_name }}</option>
                     {% else %}
                     <option value="{{ cookbook.id }}">{{ cookbook.cookbook_name }}</option>
